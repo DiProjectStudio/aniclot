@@ -1,0 +1,62 @@
+#popup-callback.popup.popup-callback
+
+    .popup-title Заказать звонок
+
+    .popup-subtitle оставьте нам свой номер телефона и мы перезвоним
+
+    form(action="/")
+
+        .popup-form
+
+            .input-style
+                label(for="callback_name") Ваше имя
+                input#callback_name(type="text" name="name" placeholder="Представьтесь, как вас зовут?" autocomplete="off" required)
+
+            .input-style
+                label(for="callback_phone") Телефон
+                input#callback_phone(type="text" name="phone" placeholder="+7 (999) 999-99-99" autocomplete="off" phone-number required)
+
+            button(type="submit").btn.btn--red Отправить сообщение
+
+            .agreement
+                .checkbox-style
+                    input#callback_agreement(type="checkbox", name="agreement" checked)
+                    label(for="callback_agreement")
+                        p Согласен с  <a href="/policy/" target="_blank">политикой конфиденциальности сайта</a>
+    
+    // !!! ДЛЯ ВЫЗОВА ПОПАПА УСПЕХА - popupSuccess();
+
+#popup-discuss.popup.popup-discuss
+
+    .popup-pretitle Дополним ваше мероприятие
+
+    .popup-title Обсудим ваш проект
+
+    
+    form(action="/")
+
+        .discuss-form
+
+            .input-style
+                label(for="discuss_name") Ваше имя
+                input#discuss_name(type="text" name="name" placeholder="Представьтесь, как вас зовут?" autocomplete="off" required)
+
+            .input-style
+                label(for="discuss_phone") Телефон
+                input#discuss_phone(type="text" name="phone" placeholder="+7 (999) 999-99-99" autocomplete="off" phone-number required)
+
+            .input-style
+                label(for="discuss_email") Ваш E-mail:
+                input#discuss_email(type="email" name="email" placeholder="E-mail" autocomplete="off")
+            
+            .textarea-style
+                label(for="discuss_textarea") Чем мы можем помочь вам?
+                textarea#discuss_textarea(name="textarea" placeholder="Комментарий")
+
+            .agreement
+                .checkbox-style
+                    input#discuss_agreement(type="checkbox", name="agreement" checked)
+                    label(for="discuss_agreement")
+                        p Согласен с  <a href="/policy/" target="_blank">политикой конфиденциальности сайта</a>
+
+            button(type="submit").btn.btn--red Отправить сообщение

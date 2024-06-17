@@ -1,0 +1,18 @@
+block header
+
+    header#header.header
+
+        .container
+
+            .header__inner
+
+                .header__logo
+                    a(href="/")
+                        +img('logo.svg') 
+
+                .header__phone
+                    include ../icons/phone.svg
+                    a(href="+79000000000") +7 900 000-00-00
+
+                .header__menu
+                    +img('menu.svg')

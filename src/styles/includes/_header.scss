@@ -1,0 +1,15 @@
+.header {
+    padding-top: 10px;
+    z-index: 20;
+
+    @include breakpoint(md) {
+        padding-top: 20px;
+    }
+
+    .page-main & {
+        padding: 10px;
+        position: fixed;
+        top: 10px;
+        width: 100%;
+    }
+}
