@@ -13,7 +13,7 @@ const heroSlider = new Swiper('.hero .swiper', {
     },
 
     navigation: {
-        nextEl: '.hero .swiper-button-next',
-        prevEl: '.hero .swiper-button-prev'
+        nextEl: '.hero .swiper-btn-next',
+        prevEl: '.hero .swiper-btn-prev'
     }
 });

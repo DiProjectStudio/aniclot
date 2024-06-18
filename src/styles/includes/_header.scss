@@ -1,3 +1,24 @@
+#header::before {
+    @include breakpointMax(lg) {
+        content: '';
+        background: rgba(0, 0, 0, 0);
+        display: block;
+        transition: all 0.5s ease;
+    }
+}
+
+#header.bg-overlay::before {
+    @include breakpointMax(lg) {
+        background: rgba(0, 0, 0, 0.6);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+    }
+}
+
 .header {
     padding-top: 10px;
     z-index: 20;
@@ -11,5 +32,406 @@
         position: fixed;
         top: 10px;
         width: 100%;
+
+        @include breakpoint(md) {
+            top: 20px;
+        }
+
+        @include breakpoint(lg) {
+            padding: 20px;
+        }
+
+        @include breakpoint(hd) {
+            padding: 20px 40px;
+        }
+    }
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__logo {
+    width: 50px;
+
+    @include breakpoint(md) {
+        width: 70px;
+    }
+
+    @include breakpoint(lg) {
+        width: 80px;
+    }
+
+    @include breakpoint(hd) {
+        width: 112px;
+    }
+}
+
+.header__nav {
+    @include breakpointMax(lg) {
+        padding: 10px;
+        background: #fff;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 360px;
+        height: 100%;
+        transition: $transition;
+        z-index: 10;
+
+        @include breakpoint(md) {
+            padding: 20px;
+            left: -50%;
+        }
+
+        &.mobile-menu {
+            left: 0;
+            overflow-y: scroll;
+        }
+    }
+}
+
+.close-menu {
+    @include breakpointMax(lg) {
+        margin-left: auto;
+        background-color: $brand;
+        background-image: url(/assets/images/x.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+    }
+
+    @include breakpoint(lg) {
+        display: none;
+    }
+}
+
+.nav {
+    padding: 0;
+    display: grid;
+    list-style: none;
+
+    @include breakpointMax(lg) {
+        margin-top: 40px;
+        row-gap: 30px;
+    }
+
+    @include breakpoint(lg) {
+        grid-auto-flow: column;
+        column-gap: 10px;
+    }
+
+    @include breakpoint(hd) {
+        column-gap: 30px;
+    }
+}
+
+.nav__item {
+    position: relative;
+}
+
+.nav__item.has-child:hover::after {
+    content: '';
+    position: absolute;
+    top: calc(100% - 5px);
+    left: 0;
+    width: calc(100% + 5px);
+    height: 25px;
+}
+
+.nav__item-link {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: $transition;
+
+    @include breakpoint(lg) {
+        font-size: 13px;
+        color: #fff;
+    }
+
+    @include breakpoint(hd) {
+        font-size: 14px;
+    }
+}
+
+.nav__item:hover .nav__item-link {
+    .page-main & {
+        color: #8c8c8c;
+    }
+
+    body:not(.page-main) & {
+        color: #666;
+    }
+}
+
+.nav__item .arrow-down {
+    @include breakpointMax(lg) {
+        background: url(/assets/images/chevron-down.svg) no-repeat;
+        position: absolute;
+        top: 5px;
+        right: 0;
+        width: 16px;
+        height: 16px;
+        transition: $transition;
+    }
+
+    @include breakpoint(lg) {
+        display: none;
+    }
+}
+
+.nav__item.active .arrow-down {
+    @include breakpointMax(lg) {
+        transform: rotate(180deg);
+    }
+}
+
+.subnav {
+    padding: 0;
+    display: none;
+    list-style: none;
+
+    @include breakpointMax(lg) {
+        margin-top: 30px;
+    }
+
+    @include breakpoint(lg) {
+        padding: 30px;
+        background: #fff;
+        position: absolute;
+        top: calc(100% + 20px);
+        left: -15px;
+        border-radius: 20px;
+        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav__item.has-child:first-child & {
+        grid-auto-flow: column;
+        grid-template-rows: repeat(8, auto);
+        column-gap: 40px;
+        row-gap: 12px;
+        width: max-content;
+    }
+
+    .nav__item.has-child:first-child:hover & {
+        display: grid;
+    }
+
+    .nav__item.has-child:hover & {
+        display: block;
+    }
+}
+
+.subnav::before {
+    @include breakpoint(lg) {
+        content: '';
+        background: url(/assets/images/polygon.svg) no-repeat;
+        background-size: contain;
+        position: absolute;
+        top: -15px;
+        left: 30px;
+        width: 19px;
+        height: 19px;
+    }
+}
+
+.subnav li {
+    @include breakpoint(lg) {
+        line-height: 1.2;
+    }
+}
+
+.subnav li ~ li {
+    @include breakpointMax(lg) {
+        margin-top: 20px;
+    }
+}
+
+.subnav li a {
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: $transition;
+}
+
+.subnav li:hover a {
+    color: #666;
+}
+
+.header__phone {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    transition: $transition;
+
+    @include breakpoint(hd) {
+        font-size: 16px;
+    }
+
+    & path {
+        transition: $transition;
+    }
+}
+
+.header__phone:hover {
+    .page-main & {
+        color: #c1c1c1;
+
+        & path {
+            stroke: #c1c1c1;
+        }
+    }
+
+    body:not(.page-main) & {
+        color: #666;
+
+        & path {
+            stroke: #666;
+        }
+    }
+}
+
+.header__phone a {
+    margin-left: 4px;
+
+    @include breakpoint(hd) {
+        margin-left: 10px;
+    }
+}
+
+.header__user {
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    transition: $transition;
+
+    @include breakpointMax(md) {
+        display: none;
+    }
+
+    & path {
+        transition: $transition;
+    }
+}
+
+.header__user:hover {
+    .page-main & {
+        color: #c1c1c1;
+
+        & path {
+            fill: #c1c1c1;
+        }
+    }
+
+    body:not(.page-main) & {
+        color: #666;
+
+        & path {
+            stroke: #666;
+        }
+    }
+}
+
+.header__user a {
+    display: flex;
+    align-items: center;
+}
+
+.header__user p {
+    margin-left: 4px;
+    max-width: 130px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+
+    @include breakpoint(hd) {
+        margin-left: 8px;
+        font-size: 14px;
+    }
+}
+
+.header__user span {
+    margin-left: 4px;
+    font-size: 12px;
+    font-weight: 400;
+
+    @include breakpoint(hd) {
+        margin-left: 8px;
+        font-size: 14px;
+    }
+}
+
+.header__icons {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 20px;
+
+    @include breakpointMax(md) {
+        display: none;
+    }
+}
+
+.header__icons .icon {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+
+    @include breakpoint(lg) {
+        width: 20px;
+        height: 20px;
+    }
+
+    & path {
+        transition: $transition;
+    }
+}
+
+.header__icons .icon:hover {
+    .page-main & {
+        & path {
+            fill: #c1c1c1;
+        }
+    }
+}
+
+.header__icons a {
+    display: block;
+    height: 100%;
+}
+
+.header__icons .count-item::before {
+    content: attr(data-item);
+    background: $accent;
+    position: absolute;
+    right: -3px;
+    bottom: -8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 14px;
+    height: 14px;
+    font-size: 8px;
+    font-weight: 700;
+    color: #fff;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+
+    @include breakpoint(lg) {
+        bottom: -5px;
+        font-size: 10px;
+    }
+}
+
+.header__menu {
+    @include breakpoint(lg) {
+        display: none;
     }
 }

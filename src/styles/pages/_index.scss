@@ -1,15 +1,58 @@
 .section-hero {
-    margin-top: 10px;
+    padding-top: 10px;
+
+    @include breakpoint(md) {
+        padding-top: 20px;
+    }
+
+    @include breakpoint(lg) {
+        height: 100vh;
+        height: 100dvh;
+    }
+}
+
+.section-hero .container {
+    @include breakpoint(lg) {
+        height: 100%;
+    }
+}
+
+.hero {
+    position: relative;
+
+    @include breakpoint(lg) {
+        height: 100%;
+    }
+}
+
+.hero .swiper {
+    @include breakpoint(lg) {
+        height: 100%;
+    }
 }
 
 .hero .swiper-slide {
     aspect-ratio: 340 / 502;
     border-radius: 20px;
     overflow: hidden;
+
+    @include breakpoint(md) {
+        aspect-ratio: 704 / 413;
+    }
 }
 
 .hero .swiper-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.hero .btn {
+    @include breakpoint(lg) {
+        --position: 20px;
+    }
+
+    @include breakpoint(hd) {
+        --position: 40px;
+    }
 }

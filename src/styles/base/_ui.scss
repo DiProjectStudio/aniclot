@@ -235,6 +235,10 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @include breakpoint(md) {
+        display: none;
+    }
 }
 
 .swiper.swiper-initialized .swiper-pagination {
@@ -242,35 +246,19 @@ section {
 }
 
 .swiper-navigation {
-    display: flex;
-    align-items: center;
-    column-gap: 5px;
-
-    @include breakpoint(lg) {
-        column-gap: 10px;
+    @include breakpointMax(md) {
+        display: none;
     }
 }
 
-.swiper-navigation .swiper-button {
-    --swiper-navigation-size: 10px;
-    --swiper-theme-color: #fff;
-    margin: 0;
-    background: #565b65;
-    position: static;
-    font-weight: 600;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
+.swiper-navigation .btn {
+    --position: 10px;
+    position: absolute;
+    top: 50%;
     opacity: 0;
     animation: fadeOut 2s ease forwards;
-    transition: all 0.3s ease;
-    cursor: pointer;
-
-    @include breakpoint(lg) {
-        --swiper-navigation-size: 24px;
-        width: 48px;
-        height: 48px;
-    }
+    transform: translateY(-50%);
+    z-index: 1;
 }
 
 @keyframes fadeOut {
@@ -282,7 +270,11 @@ section {
     }
 }
 
-.swiper-navigation .swiper-button:hover {
-    background: #fff;
-    --swiper-theme-color: #565b65;
+.swiper-navigation .swiper-btn-next {
+    right: var(--position);
+}
+
+.swiper-navigation .swiper-btn-prev {
+    left: var(--position);
+    transform: translateY(-50%) rotate(180deg);
 }

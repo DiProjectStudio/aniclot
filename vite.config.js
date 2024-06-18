@@ -53,6 +53,19 @@ export default defineConfig({
     },
 
     build: {
+        // minify: 'terser',
+
+        // terserOptions: {
+        //     compress: {
+        //         defaults: false
+        //     },
+        //     mangle: false,
+        //     format: {
+        //         beautify: true,
+        //         comments: 'all'
+        //     }
+        // },
+
         modulePreload: {
             polyfill: false
         },

@@ -14,7 +14,7 @@ html(lang="ru")
         include ../includes/_fonts
         // Fonts::End
 
-        script.
+        script(data-skip-moving="true").
             const home_dir = './';
         script(type="module", src="/src/scripts/main.js")
 
@@ -23,7 +23,7 @@ html(lang="ru")
 
         // Yandex Map
         if yandexMap == true
-            script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU")
+            script(data-skip-moving="true" src="https://api-maps.yandex.ru/2.1/?lang=ru_RU")
 
         include ../includes/_favicon
 
