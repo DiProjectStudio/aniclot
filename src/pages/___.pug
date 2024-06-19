@@ -1,0 +1,38 @@
+extends /layout/layout
+
+block title
+    - var title = 'Инструкции'
+
+block main
+
+    style.
+        body {
+            padding: 50px;
+            background: #333;
+            color: #fff;
+        }
+
+        .header {
+            display: none;
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            column-gap: 25px;
+        }
+
+        code {
+            color: yellow;
+        }
+
+    div
+        code popupSuccess()
+        span —
+        p Вызывает попап успеха
+
+    div
+        code popupAddedCart($img, $productName)
+        span —
+        p Товар добавлен в корзину

@@ -1,0 +1,20 @@
+mixin product(img, category, title)
+
+    .product-item
+
+        .product-label New!
+
+        .product-favourite
+            include ../icons/003-heart.svg
+
+        a(href="product.html")
+
+            .product-item__img
+                img(src="/assets/images/" + img, alt="")
+
+            .product-item__cat= category
+            
+            .product-item__title= title
+
+            .product-item__price 10 000 ₽
+                .discount 20 000 ₽

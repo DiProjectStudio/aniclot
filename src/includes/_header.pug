@@ -14,7 +14,7 @@ block header
                     .close-menu
                     ul.nav
                         li.nav__item.has-child
-                            a.nav__item-link(href="#") Аниме
+                            a.nav__item-link(href="catalog.html") Аниме
                             .arrow-down
                             ul.subnav
                                 li
@@ -87,7 +87,7 @@ block header
                                 li
                                     a(href="#") Контакты
                         li.nav__item.has-child
-                            a.nav__item-link(href="#") Новости
+                            a.nav__item-link(href="news.html") Новости
                             .arrow-down
                             ul.subnav
                                 li
@@ -95,7 +95,7 @@ block header
                                 li
                                     a(href="#") Сводка из мира аниме
                         li.nav__item
-                            a.nav__item-link(href="#") Контакты
+                            a.nav__item-link(href="contacts.html") Контакты
 
                 .header__phone
                     include ../icons/phone.svg
@@ -108,7 +108,11 @@ block header
                         span 10 000 бал.
 
                 .header__icons
-                    .icon.icon__search
+                    .icon.icon__user
+                        a(href="#")
+                            include ../icons/user.svg
+
+                    .icon.icon__search(href="#popup-search" data-fancybox)
                         include ../icons/002-search.svg
 
                     .icon.icon__fav.count-item(data-item=10)

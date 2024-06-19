@@ -8,15 +8,13 @@ Fancybox.bind('[data-fancybox]', {
     dragToClose: false,
     autoFocus: false,
     hideScrollbar: false,
-
-    on: {
-        done: () => {
-            // Найти кнопку закрытия и изменить ее title
-            const closeButton = document.querySelector('.is-close-btn');
-            if (closeButton) {
-                closeButton.setAttribute('title', 'Закрыть');
-            }
-        }
+    showClass: 'fancybox-slideDown', // Класс для анимации появления
+    hideClass: 'fancybox-slideUp', // Класс для анимации исчезновения
+    l10n: {
+        CLOSE: 'Закрыть',
+        NEXT: 'Следующий',
+        PREV: 'Предыдущий',
+        MODAL: 'Вы можете закрыть это модальное окно, нажав клавишу ESC'
     }
 });
 
@@ -31,48 +29,38 @@ const popupSuccess = () => {
     Fancybox.show([{ src: template, type: 'html' }], {
         dragToClose: false,
         autoFocus: false,
-        hideScrollbar: false
+        hideScrollbar: false,
+        l10n: {
+            CLOSE: 'Закрыть',
+            MODAL: 'Вы можете закрыть это модальное окно, нажав клавишу ESC'
+        }
     });
 };
 
 window.popupSuccess = popupSuccess;
 
-// FANCYBOX REVIEWS
-document.querySelectorAll('.js-image').forEach((button) => {
-    button.addEventListener('click', function () {
-        let image = this.parentElement.querySelector('.image img').getAttribute('src');
+// POPUP CART ADDED
+let timeout;
 
-        Fancybox.show(
-            [
-                {
-                    src: image
-                }
-            ],
-            {
-                hideScrollbar: false
-            }
-        );
-    });
-});
+function popupAddedCart($img, $productName) {
+    clearTimeout(timeout);
 
-document.querySelectorAll('.js-popup').forEach((button) => {
-    button.addEventListener('click', function () {
-        let text = this.closest('.reviews__item').querySelector('.reviews__item-text').innerHTML;
+    const headerContainer = document.querySelector('#header .container');
+    const headerPopup = document.createElement('div');
+    headerPopup.className = 'header-popup';
+    headerPopup.innerHTML = `
+        <div class="header-popup-image"><img src="${$img}" alt=""></div>
+        <div class="header-popup-wrap">
+            <div class="header-popup-title">Товар добавлен в корзину</div>
+            <div class="header-popup-item">${$productName}</div>
+        </div>
+    `;
 
-        Fancybox.show(
-            [
-                {
-                    src: `
-                        <div class="r-popup popup">
-                            <div class="r-review">${text}</div>
-                        </div>
-                    `,
-                    type: 'html'
-                }
-            ],
-            {
-                hideScrollbar: false
-            }
-        );
-    });
-});
+    headerContainer.appendChild(headerPopup);
+
+    timeout = setTimeout(() => {
+        headerPopup.remove();
+    }, 5000);
+}
+
+window.popupAddedCart = popupAddedCart;
