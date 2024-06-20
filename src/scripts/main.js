@@ -36,16 +36,18 @@ Inputmask({
 }).mask('[calendar]');
 
 // HEADER
-$(window).on('scroll', function () {
+if ($('body').hasClass('page-main')) {
+    $(window).on('scroll', function () {
+        if ($(window).scrollTop() > $('#header').height()) {
+            $('#header').addClass('header-fixed');
+        } else if ($(window).scrollTop() == 0) {
+            $('#header').removeClass('header-fixed');
+        }
+    });
+
     if ($(window).scrollTop() > $('#header').height()) {
         $('#header').addClass('header-fixed');
-    } else if ($(window).scrollTop() == 0) {
-        $('#header').removeClass('header-fixed');
     }
-});
-
-if ($(window).scrollTop() > $('#header').height()) {
-    $('#header').addClass('header-fixed');
 }
 
 // HEADER MENU
@@ -105,4 +107,9 @@ $(window).on('resize', () => {
         $('body').removeClass('overflow-hidden');
         $('#header').removeClass('bg-overlay');
     }
+});
+
+// ADD FAVOURITE
+$('.product-favourite').on('click', (e) => {
+    $(e.currentTarget).toggleClass('active');
 });

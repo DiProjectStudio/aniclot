@@ -21,6 +21,7 @@
 
 .header {
     padding-top: 10px;
+    transition: $transition;
     z-index: 20;
 
     @include breakpoint(md) {
@@ -44,6 +45,71 @@
         @include breakpoint(hd) {
             padding: 20px 40px;
         }
+    }
+}
+
+.header.header-fixed {
+    background: #fff;
+    top: 0;
+
+    @include breakpoint(md) {
+        top: 0;
+    }
+
+    & .header__logo {
+        filter: brightness(0);
+    }
+
+    & .nav__item-link {
+        color: $brand;
+    }
+
+    & .header__phone {
+        color: $brand;
+
+        & path {
+            stroke: $brand;
+        }
+
+        &:hover {
+            color: #666;
+
+            & path {
+                stroke: #666;
+            }
+        }
+    }
+
+    & .header__user {
+        color: $brand;
+
+        & path {
+            fill: $brand;
+        }
+
+        &:hover {
+            color: #666;
+
+            & path {
+                fill: #666;
+            }
+        }
+    }
+
+    & .header__icons .icon {
+        & path {
+            fill: $brand;
+        }
+
+        &:hover {
+            & path {
+                fill: #666;
+            }
+        }
+    }
+
+    & .header__menu {
+        filter: brightness(0);
     }
 }
 
@@ -296,14 +362,6 @@
 
         & path {
             stroke: #c1c1c1;
-        }
-    }
-
-    body:not(.page-main) & {
-        color: #666;
-
-        & path {
-            stroke: #666;
         }
     }
 }

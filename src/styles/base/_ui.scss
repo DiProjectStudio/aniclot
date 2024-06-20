@@ -216,7 +216,7 @@ section {
 }
 
 .btn--gray {
-    background: #e0e0e0;
+    background: #f4f4f4;
     color: $brand;
 
     & path {
@@ -226,6 +226,18 @@ section {
 
 .btn--gray:hover {
     background: #c1c1c1;
+}
+
+.btn--dark-gray {
+    background: #666;
+}
+
+.btn--dark-gray:hover {
+    background: #fff;
+
+    & path {
+        stroke: $brand;
+    }
 }
 
 .btn--border-white {
@@ -257,6 +269,10 @@ section {
 
 .btn-arrow {
     padding: 10px;
+
+    @include breakpoint(md) {
+        padding: 10px;
+    }
 
     &.btn--white:hover {
         background: $brand;
@@ -335,13 +351,16 @@ section {
 }
 
 .swiper-navigation .btn {
-    --position: 10px;
     position: absolute;
     top: 50%;
     opacity: 0;
     animation: fadeOut 2s ease forwards;
     transform: translateY(-50%);
     z-index: 1;
+
+    @include breakpoint(md) {
+        --position: 30px;
+    }
 }
 
 @keyframes fadeOut {

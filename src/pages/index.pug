@@ -8,30 +8,28 @@ block main
 
     section.section-hero
 
-        .container
+        .hero
 
-            .hero
+            .swiper
 
-                .swiper
+                .swiper-wrapper
 
-                    .swiper-wrapper
+                    .swiper-slide
+                        +img('hero-bg.jpg')
 
-                        .swiper-slide
-                            +img('hero-bg.jpg')
+                    .swiper-slide
+                        +img('hero-bg.jpg')
 
-                        .swiper-slide
-                            +img('hero-bg.jpg')
+                    .swiper-slide
+                        +img('hero-bg.jpg')
 
-                        .swiper-slide
-                            +img('hero-bg.jpg')
+            .swiper-pagination
 
-                .swiper-pagination
-
-                .swiper-navigation
-                    .btn.btn--black.btn-arrow.swiper-btn-next
-                        include ../icons/arrow-right.svg
-                    .btn.btn--black.btn-arrow.swiper-btn-prev
-                        include ../icons/arrow-right.svg
+            .swiper-navigation
+                .btn.btn--black.btn-arrow.swiper-btn-next
+                    include ../icons/arrow-right.svg
+                .btn.btn--black.btn-arrow.swiper-btn-prev
+                    include ../icons/arrow-right.svg
 
     section.section-slider
 
@@ -42,35 +40,35 @@ block main
                 a(href="catalog.html").btn.btn-arrow-right.btn--black Все новинки
                     include ../icons/arrow-right.svg
 
-            .slider
+        .slider
 
-                .swiper
+            .swiper
 
-                    .swiper-wrapper
+                .swiper-wrapper
 
-                        .swiper-slide
-                            +product('item-1.png', 'клинок рассекающий демонов', 'Футболка аниме клинок рассекающий демонов, чёрный цвет, 46 размер, 100% хлопок')
-                        .swiper-slide
-                            +product('item-2.png', 'Магическая битва', 'Футболка Магическая битва')
-                        .swiper-slide    
-                            +product('item-3.png', 'клинок рассекающий демонов', 'Футболка аниме клинок рассекающий демонов, чёрный цвет, 46 размер, 100% хлопок')
-                        .swiper-slide    
-                            +product('item-4.png', 'Магическая битва', 'Футболка Магическая битва')
-                        .swiper-slide    
-                            +product('item-1.png', 'клинок рассекающий демонов', 'Футболка аниме клинок рассекающий демонов, чёрный цвет, 46 размер, 100% хлопок')
-                        .swiper-slide    
-                            +product('item-2.png', 'Магическая битва', 'Футболка Магическая битва')
+                    .swiper-slide
+                        +product('item-1.png', 'клинок рассекающий демонов', 'Футболка аниме клинок рассекающий демонов, чёрный цвет, 46 размер, 100% хлопок')
+                    .swiper-slide
+                        +product('item-2.png', 'Магическая битва', 'Футболка Магическая битва')
+                    .swiper-slide    
+                        +product('item-3.png', 'клинок рассекающий демонов', 'Футболка аниме клинок рассекающий демонов, чёрный цвет, 46 размер, 100% хлопок')
+                    .swiper-slide    
+                        +product('item-4.png', 'Магическая битва', 'Футболка Магическая битва')
+                    .swiper-slide    
+                        +product('item-1.png', 'клинок рассекающий демонов', 'Футболка аниме клинок рассекающий демонов, чёрный цвет, 46 размер, 100% хлопок')
+                    .swiper-slide    
+                        +product('item-2.png', 'Магическая битва', 'Футболка Магическая битва')
 
-                .swiper-pagination
+            .swiper-pagination
 
-                .swiper-navigation
-                    .btn.btn--black.btn-arrow.swiper-btn-next
-                        include ../icons/arrow-right.svg
-                    .btn.btn--black.btn-arrow.swiper-btn-prev
-                        include ../icons/arrow-right.svg
-
-                a(href="catalog.html").btn.btn-arrow-right.btn--black Все новинки
+            .swiper-navigation
+                .btn.btn--gray.btn-arrow.swiper-btn-next
                     include ../icons/arrow-right.svg
+                .btn.btn--gray.btn-arrow.swiper-btn-prev
+                    include ../icons/arrow-right.svg
+
+            a(href="catalog.html").btn.btn-arrow-right.btn--black Все новинки
+                include ../icons/arrow-right.svg
 
     section.section-slider
 
@@ -81,32 +79,125 @@ block main
                 a(href="catalog.html").btn.btn-arrow-right.btn--black Все скидки
                     include ../icons/arrow-right.svg
 
-            .slider
+        .slider
 
-                .swiper
+            .swiper
 
-                    .swiper-wrapper
+                .swiper-wrapper
 
-                        .swiper-slide
-                            +product('item-2.png', 'Магическая битва', 'Футболка Магическая битва')
-                        .swiper-slide
-                            +product('item-1.png', 'клинок рассекающий демонов', 'Футболка аниме клинок рассекающий демонов, чёрный цвет, 46 размер, 100% хлопок')
-                        .swiper-slide    
-                            +product('item-4.png', 'Магическая битва', 'Футболка Магическая битва')
-                        .swiper-slide    
-                            +product('item-3.png', 'клинок рассекающий демонов', 'Футболка аниме клинок рассекающий демонов, чёрный цвет, 46 размер, 100% хлопок')
-                        .swiper-slide    
-                            +product('item-2.png', 'Магическая битва', 'Футболка Магическая битва')
-                        .swiper-slide    
-                            +product('item-1.png', 'клинок рассекающий демонов', 'Футболка аниме клинок рассекающий демонов, чёрный цвет, 46 размер, 100% хлопок')
+                    .swiper-slide
+                        +product('item-2.png', 'Магическая битва', 'Футболка Магическая битва')
+                    .swiper-slide
+                        +product('item-1.png', 'клинок рассекающий демонов', 'Футболка аниме клинок рассекающий демонов, чёрный цвет, 46 размер, 100% хлопок')
+                    .swiper-slide    
+                        +product('item-4.png', 'Магическая битва', 'Футболка Магическая битва')
+                    .swiper-slide    
+                        +product('item-3.png', 'клинок рассекающий демонов', 'Футболка аниме клинок рассекающий демонов, чёрный цвет, 46 размер, 100% хлопок')
+                    .swiper-slide    
+                        +product('item-2.png', 'Магическая битва', 'Футболка Магическая битва')
+                    .swiper-slide    
+                        +product('item-1.png', 'клинок рассекающий демонов', 'Футболка аниме клинок рассекающий демонов, чёрный цвет, 46 размер, 100% хлопок')
 
-                .swiper-pagination
+            .swiper-pagination
 
-                .swiper-navigation
-                    .btn.btn--black.btn-arrow.swiper-btn-next
-                        include ../icons/arrow-right.svg
-                    .btn.btn--black.btn-arrow.swiper-btn-prev
-                        include ../icons/arrow-right.svg
-
-                a(href="catalog.html").btn.btn-arrow-right.btn--black Все скидки
+            .swiper-navigation
+                .btn.btn--gray.btn-arrow.swiper-btn-next
                     include ../icons/arrow-right.svg
+                .btn.btn--gray.btn-arrow.swiper-btn-prev
+                    include ../icons/arrow-right.svg
+
+            a(href="catalog.html").btn.btn-arrow-right.btn--black Все скидки
+                include ../icons/arrow-right.svg
+
+    section.section-banner
+
+        .container
+
+            a(href="catalog.html") 
+                picture
+                    source(media="(max-width: 743px)", srcset="/assets/images/hero-bg.jpg")
+                    img(src="/assets/images/banner.jpg", alt="")
+
+    section.section-collection
+
+        .container
+
+            .section-title Популярные коллекции
+
+            .collection
+
+                .collection__item
+                    .collection__item-title Коллекция
+                    .collection__item-name Клинок рассекающий демонов
+                    .collection__item-img
+                        +img('img-1.png')
+                    .btn.btn--dark-gray.btn-arrow
+                        include ../icons/arrow-right.svg
+
+                .collection__item
+                    .collection__item-title Коллекция
+                    .collection__item-name Человек — бензопила
+                    .collection__item-img
+                        +img('img-2.png')
+                    .btn.btn--dark-gray.btn-arrow
+                        include ../icons/arrow-right.svg
+
+                .collection__item
+                    .collection__item-title Коллекция
+                    .collection__item-name Евангелион
+                    .collection__item-img
+                        +img('img-3.png')
+                    .btn.btn--dark-gray.btn-arrow
+                        include ../icons/arrow-right.svg
+
+                .collection__item
+                    .collection__item-title Коллекция
+                    .collection__item-name Клинок рассекающий демонов
+                    .collection__item-img
+                        +img('img-4.png')
+                    .btn.btn--dark-gray.btn-arrow
+                        include ../icons/arrow-right.svg
+
+                .collection__item
+                    .collection__item-title Коллекция
+                    .collection__item-name Берсерк
+                    .collection__item-img
+                        +img('img-5.png')
+                    .btn.btn--dark-gray.btn-arrow
+                        include ../icons/arrow-right.svg
+
+                .collection__item
+                    .collection__item-title Коллекция
+                    .collection__item-name Моя геройская академия
+                    .collection__item-img
+                        +img('img-6.png')
+                    .btn.btn--dark-gray.btn-arrow
+                        include ../icons/arrow-right.svg
+
+                .collection__item
+                    .collection__item-title Коллекция
+                    .collection__item-name Блич
+                    .collection__item-img
+                        +img('img-7.png')
+                    .btn.btn--dark-gray.btn-arrow
+                        include ../icons/arrow-right.svg
+
+                .collection__item
+                    .collection__item-title Коллекция
+                    .collection__item-name One-Punch Man
+                    .collection__item-img
+                        +img('img-8.png')
+                    .btn.btn--dark-gray.btn-arrow
+                        include ../icons/arrow-right.svg
+
+            a(href="#").btn.btn-arrow-right.btn--black Все коллекции
+                include ../icons/arrow-right.svg
+
+    section.section-banner
+
+        .container
+
+            a(href="catalog.html") 
+                picture
+                    source(media="(max-width: 743px)", srcset="/assets/images/hero-bg.jpg")
+                    img(src="/assets/images/banner.jpg", alt="")

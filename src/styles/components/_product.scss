@@ -1,3 +1,11 @@
+.slider {
+    position: relative;
+}
+
+.slider .swiper {
+    padding: 0 var(--container);
+}
+
 .slider .btn {
     @include breakpointMax(md) {
         margin: 20px auto 0;
@@ -56,6 +64,18 @@
     & path {
         fill: $brand;
     }
+
+    &:hover path {
+        fill: #666666;
+    }
+
+    &.active svg[data-state='default'] {
+        display: none;
+    }
+
+    &:not(.active) svg[data-state='active'] {
+        display: none;
+    }
 }
 
 .product-item__img {
@@ -100,4 +120,10 @@
     line-height: 160%;
     color: #8c8c8c;
     text-decoration: line-through;
+}
+
+.slider > .btn {
+    @include breakpoint(md) {
+        display: none;
+    }
 }

@@ -4,7 +4,7 @@ import { Navigation, Pagination } from 'swiper/modules';
 const heroSlider = new Swiper('.hero .swiper', {
     modules: [Navigation, Pagination],
     slidesPerView: 1,
-    spaceBetween: 10,
+    spaceBetween: 20,
     loop: true,
 
     pagination: {
