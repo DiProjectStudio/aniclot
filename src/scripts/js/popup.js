@@ -8,12 +8,22 @@ Fancybox.bind('[data-fancybox]', {
     dragToClose: false,
     autoFocus: false,
     hideScrollbar: false,
-    showClass: 'fancybox-slideDown', // Класс для анимации появления
-    hideClass: 'fancybox-slideUp', // Класс для анимации исчезновения
     l10n: {
         CLOSE: 'Закрыть',
         NEXT: 'Следующий',
         PREV: 'Предыдущий',
+        MODAL: 'Вы можете закрыть это модальное окно, нажав клавишу ESC'
+    }
+});
+
+Fancybox.bind('.icon__search[data-fancybox]', {
+    dragToClose: false,
+    autoFocus: false,
+    hideScrollbar: false,
+    showClass: 'fancybox-slideDown', // Класс для анимации появления
+    hideClass: 'fancybox-slideUp', // Класс для анимации исчезновения
+    l10n: {
+        CLOSE: 'Закрыть',
         MODAL: 'Вы можете закрыть это модальное окно, нажав клавишу ESC'
     }
 });

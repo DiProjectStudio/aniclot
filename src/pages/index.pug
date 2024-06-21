@@ -122,19 +122,22 @@ block main
 
         .container
 
-            .section-title Популярные коллекции
-
             .collection
 
-                .collection__item
+                .collection-title
+                    .section-title Популярные коллекции
+                    a(href="catalog.html").btn.btn-arrow-right.btn--black Все коллекции
+                        include ../icons/arrow-right.svg
+
+                a(href="catalog.html").collection__item
                     .collection__item-title Коллекция
-                    .collection__item-name Клинок рассекающий демонов
+                    .collection__item-name Магическая битва
                     .collection__item-img
                         +img('img-1.png')
                     .btn.btn--dark-gray.btn-arrow
                         include ../icons/arrow-right.svg
 
-                .collection__item
+                a(href="catalog.html").collection__item
                     .collection__item-title Коллекция
                     .collection__item-name Человек — бензопила
                     .collection__item-img
@@ -142,7 +145,7 @@ block main
                     .btn.btn--dark-gray.btn-arrow
                         include ../icons/arrow-right.svg
 
-                .collection__item
+                a(href="catalog.html").collection__item
                     .collection__item-title Коллекция
                     .collection__item-name Евангелион
                     .collection__item-img
@@ -150,7 +153,7 @@ block main
                     .btn.btn--dark-gray.btn-arrow
                         include ../icons/arrow-right.svg
 
-                .collection__item
+                a(href="catalog.html").collection__item
                     .collection__item-title Коллекция
                     .collection__item-name Клинок рассекающий демонов
                     .collection__item-img
@@ -158,7 +161,7 @@ block main
                     .btn.btn--dark-gray.btn-arrow
                         include ../icons/arrow-right.svg
 
-                .collection__item
+                a(href="catalog.html").collection__item
                     .collection__item-title Коллекция
                     .collection__item-name Берсерк
                     .collection__item-img
@@ -166,7 +169,7 @@ block main
                     .btn.btn--dark-gray.btn-arrow
                         include ../icons/arrow-right.svg
 
-                .collection__item
+                a(href="catalog.html").collection__item
                     .collection__item-title Коллекция
                     .collection__item-name Моя геройская академия
                     .collection__item-img
@@ -174,7 +177,7 @@ block main
                     .btn.btn--dark-gray.btn-arrow
                         include ../icons/arrow-right.svg
 
-                .collection__item
+                a(href="catalog.html").collection__item
                     .collection__item-title Коллекция
                     .collection__item-name Блич
                     .collection__item-img
@@ -182,16 +185,13 @@ block main
                     .btn.btn--dark-gray.btn-arrow
                         include ../icons/arrow-right.svg
 
-                .collection__item
+                a(href="catalog.html").collection__item
                     .collection__item-title Коллекция
                     .collection__item-name One-Punch Man
                     .collection__item-img
                         +img('img-8.png')
                     .btn.btn--dark-gray.btn-arrow
                         include ../icons/arrow-right.svg
-
-            a(href="#").btn.btn-arrow-right.btn--black Все коллекции
-                include ../icons/arrow-right.svg
 
     section.section-banner
 
@@ -201,3 +201,31 @@ block main
                 picture
                     source(media="(max-width: 743px)", srcset="/assets/images/hero-bg.jpg")
                     img(src="/assets/images/banner.jpg", alt="")
+
+    section.section-offer
+
+        .container
+
+            .offer
+
+                .offer-print
+                    .offer-print__img
+                        +img('t-shirt.png')
+                    .offer-print__title Напечатаем твой принт
+                    .offer-print__text Пришли нам своё изображение и мы напечатаем его для тебя
+                    .btn.btn-arrow-right.btn--black(data-src="#popup-request" data-fancybox) Оставить заявку
+                        include ../icons/arrow-right.svg
+
+                .offer-sale
+                    .offer-sale__label 20% скидка
+                    .offer-sale__text на первый заказ после регистрации
+                    .offer-sale__arrow
+                        +img('arrow.svg')
+                        .btn.btn-arrow-right.btn--white(data-src="#popup-auth" data-fancybox) Зарегистрироваться
+                            include ../icons/arrow-right.svg
+
+                .offer-bonus
+                    .offer-bonus__title Возвращаем бонусы с каждой покупки!
+                    .offer-bonus__item 1 бонус = 1 рубль
+                    .offer-bonus__item Оплачивай до 30% от покупки
+                    .offer-bonus__item Баллы действуют 1 год

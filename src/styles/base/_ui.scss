@@ -99,6 +99,7 @@ ol {
 
 section {
     margin-bottom: 60px;
+    position: relative;
 
     @include breakpoint(lg) {
         margin-bottom: 80px;
