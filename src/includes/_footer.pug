@@ -1,3 +1,84 @@
 block footer
 
     footer#footer.footer
+
+        .container
+
+            .footer__inner
+
+                .footer__nav
+
+                    ul
+                        li
+                            a(href="catalog.html") Аниме
+                            ul
+                                li
+                                    a(href="catalog.html") Магическая битва
+                                li
+                                    a(href="catalog.html") Клинок, рассекающий демонов
+                                li
+                                    a(href="catalog.html") Берсерк
+                                li
+                                    a(href="catalog.html") Баскетбол Куроко
+                                li
+                                    a(href="catalog.html") Человек-бензопила
+                                li
+                                    a(href="catalog.html") Моя геройская академия
+                                li
+                                    a(href="catalog.html") Евангелион
+                                li
+                                    a(href="catalog.html") Блич
+                                li
+                                    a(href="catalog.html") Все коллекции
+
+                        li
+                            a(href="catalog.html") Футболки
+                        li
+                            a(href="catalog.html") Лонгсливы
+                        li
+                            a(href="catalog.html") Худи
+                        li
+                            a(href="catalog.html") Новости
+                            ul
+                                li
+                                    a(href="catalog.html") Новости бренда
+                                li
+                                    a(href="catalog.html") Сводка из мира аниме
+
+                        li
+                            a(href="catalog.html") Инфо
+                            ul
+                                li
+                                    a(href="catalog.html") О Бренде
+                                li
+                                    a(href="catalog.html") Доставка и оплата
+                                li
+                                    a(href="catalog.html") Возврат и обмен
+                                li
+                                    a(href="catalog.html") FAQ
+                                li
+                                    a(href="catalog.html") Контакты
+
+                .footer__logo
+                    a(href="/")
+                        +img('logo-black.svg')
+
+                .footer__contacts
+                    a.footer__contacts-title(href="contacts.html") Контакты
+                    a.footer__contacts-phone(href="tel:+79000000000") +7 900 000-00-00
+                    a.footer__contacts-email(href="mailto:support@aniclot.com") support@aniclot.com
+                    .footer__contacts-social
+                        a(href="vk.com" target="_blank")
+                            include ../icons/vk.svg
+                        a(href="instagram.com" target="_blank")
+                            include ../icons/insta.svg
+                        a(href="web.telegram.org" target="_blank")
+                            include ../icons/telegram.svg
+
+                .footer__policy
+                    p © ООО «Рога и копыта» 2024. Все права защищены
+                    a(href="/policy/") Политика конфиденциальности
+
+                .footer__devs
+                    a(href="https://di-project.studio/") Разработка сайта
+                        span &nbsp;Di-Project.Studio

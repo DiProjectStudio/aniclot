@@ -1,0 +1,7 @@
+.footer {
+    padding: 20px 12px 30px;
+
+    @include breakpointMax(md) {
+        margin-bottom: 60px;
+    }
+}

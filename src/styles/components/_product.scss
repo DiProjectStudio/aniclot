@@ -26,6 +26,12 @@
     overflow: hidden;
     text-align: center;
     isolation: isolate;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+
+    &:hover {
+        border-color: #c1c1c1;
+    }
 }
 
 .product-item a {

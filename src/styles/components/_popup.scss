@@ -129,7 +129,6 @@
 .popup-search .btn {
     margin-left: 4px;
     padding: 0;
-    justify-content: center;
 
     @include breakpointMax(md) {
         width: 40px;

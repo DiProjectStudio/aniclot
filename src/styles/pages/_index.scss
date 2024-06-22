@@ -334,8 +334,12 @@
     }
 
     @include breakpoint(lg) {
-        grid-template-columns: 5fr 4fr 3fr;
+        grid-template-columns: repeat(3, 1fr);
         gap: 20px;
+    }
+
+    @include breakpoint(hd) {
+        grid-template-columns: 5fr 4fr 3fr;
     }
 }
 
@@ -537,7 +541,6 @@
     margin-left: 12px;
     padding: 14px 20px;
     display: flex;
-    justify-content: center;
     width: 100%;
 
     @include breakpoint(lg) {
@@ -601,5 +604,153 @@
 
     .offer-bonus__title + & {
         margin-top: auto;
+    }
+}
+
+.subscribe {
+    display: flex;
+    background: #231f20;
+    border-radius: 20px;
+
+    @include breakpointMax(lg) {
+        flex-direction: column-reverse;
+    }
+
+    @include breakpoint(xl) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        @include breakpointMax(hd) {
+            column-gap: 20px;
+        }
+    }
+}
+
+.subscribe-block {
+    padding: 20px;
+    color: #fff;
+
+    @include breakpoint(lg) {
+        padding: 38px 20px;
+    }
+
+    @include breakpoint(hd) {
+        padding: 60px;
+    }
+}
+
+.subscribe__title {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 140%;
+
+    @include breakpoint(lg) {
+        font-size: 20px;
+    }
+
+    @include breakpoint(hd) {
+        margin-bottom: 25px;
+        font-size: 35px;
+    }
+}
+
+.subscribe__text {
+    margin-bottom: 30px;
+
+    @include breakpoint(hd) {
+        margin-bottom: 40px;
+        font-size: 20px;
+    }
+}
+
+.subscribe__form {
+    display: grid;
+    gap: 10px;
+
+    @include breakpoint(md) {
+        grid-template-columns: 8fr 3fr;
+    }
+
+    @include breakpoint(lg) {
+        grid-template-columns: 4fr 2fr;
+    }
+
+    @include breakpoint(xl) {
+        grid-template-columns: 5fr 2fr;
+    }
+
+    @include breakpoint(hd) {
+        grid-template-columns: 3fr 1fr;
+    }
+}
+
+.subscribe .input-style input {
+    background: #666;
+    color: #fff;
+
+    @include breakpoint(md) {
+        @include breakpointMax(hd) {
+            height: 52px;
+        }
+    }
+}
+
+.subscribe .btn {
+    @include breakpoint(md) {
+        @include breakpointMax(hd) {
+            height: 52px;
+        }
+    }
+}
+
+.subscribe .agreement {
+    margin-top: 10px;
+    color: #c1c1c1;
+
+    @include breakpoint(hd) {
+        margin-top: 20px;
+    }
+}
+
+.subscribe-bg {
+    position: relative;
+
+    @include breakpointMax(lg) {
+        margin-bottom: 20px;
+    }
+
+    @include breakpoint(lg) {
+        max-width: 574px;
+    }
+
+    @include breakpoint(xl) {
+        margin-left: 90px;
+    }
+
+    @include breakpoint(hd) {
+        max-width: 892px;
+    }
+}
+
+.subscribe-bg::before {
+    @include breakpointMax(lg) {
+        content: '';
+        background: linear-gradient(180deg, rgba(35, 31, 32, 0) 90%, #231f20 100%);
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+}
+
+.subscribe-bg img {
+    height: 100%;
+    object-fit: cover;
+
+    @include breakpointMax(md) {
+        transform: translateX(20px);
     }
 }

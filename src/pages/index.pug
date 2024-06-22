@@ -229,3 +229,29 @@ block main
                     .offer-bonus__item 1 бонус = 1 рубль
                     .offer-bonus__item Оплачивай до 30% от покупки
                     .offer-bonus__item Баллы действуют 1 год
+
+    section.section-subscribe
+
+        .container
+
+            .subscribe
+
+                .subscribe-block
+                    .subscribe__title Не хватает новостей?
+                        br
+                        |Хочется чего‑то свеженького?
+                        br
+                        |Тогда подписывайтесь на нашу рассылку!
+                    .subscribe__text Обещаем не спамить, а присылать только самое интересное: акции, скидки, новые коллекции и многое другое.
+                    
+                    form(action="/")
+                        .subscribe__form
+                            .input-style
+                                input(type="text" name="email" placeholder="Email" autocomplete="off")
+                            button(type="submit").btn.btn-arrow-right.btn--white Подписаться
+                                include ../icons/arrow-right.svg
+                    
+                    .agreement Нажимая кнопку, вы соглашаетесь с обработкой ваших персональных данных
+
+                .subscribe-bg
+                    +img('pikaso_reimagine_colorful-flat-illustration-classical-animes-A-youn.png')
