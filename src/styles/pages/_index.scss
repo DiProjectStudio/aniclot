@@ -715,6 +715,7 @@
 
 .subscribe-bg {
     position: relative;
+    overflow: hidden;
 
     @include breakpointMax(lg) {
         margin-bottom: 20px;
