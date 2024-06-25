@@ -213,7 +213,7 @@ block main
                         +img('t-shirt.png')
                     .offer-print__title Напечатаем твой принт
                     .offer-print__text Пришли нам своё изображение и мы напечатаем его для тебя
-                    .btn.btn-arrow-right.btn--black(data-src="#popup-request" data-fancybox) Оставить заявку
+                    .btn.btn-arrow-right.btn--black(data-src="#popup-upload" data-fancybox) Оставить заявку
                         include ../icons/arrow-right.svg
 
                 .offer-sale
@@ -243,14 +243,14 @@ block main
                         br
                         |Тогда подписывайтесь на нашу рассылку!
                     .subscribe__text Обещаем не спамить, а присылать только самое интересное: акции, скидки, новые коллекции и многое другое.
-                    
+
                     form(action="/")
                         .subscribe__form
                             .input-style
                                 input(type="text" name="email" placeholder="Email" autocomplete="off")
                             button(type="submit").btn.btn-arrow-right.btn--white Подписаться
                                 include ../icons/arrow-right.svg
-                    
+
                     .agreement Нажимая кнопку, вы соглашаетесь с обработкой ваших персональных данных
 
                 .subscribe-bg

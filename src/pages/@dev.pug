@@ -12,7 +12,7 @@ block main
             color: #fff;
         }
 
-        .header {
+        .header,.footer {
             display: none;
         }
 
@@ -30,7 +30,17 @@ block main
     div
         code popupSuccess()
         span —
-        p Вызывает попап успеха
+        p Вызывает попап успешной заявки
+
+    div
+        code popupSuccessReg()
+        span —
+        p Вызывает попап успешной регистрации
+
+    div
+        code popupSuccessSubscribe()
+        span —
+        p Вызывает попап успешной подписки
 
     div
         code popupAddedCart($img, $productName)

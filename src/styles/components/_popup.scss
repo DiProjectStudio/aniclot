@@ -16,24 +16,24 @@
 }
 
 .fancybox__carousel .fancybox__content > .f-button.is-close-btn {
-    --f-button-color: #222;
+    --f-button-color: #fff;
     --f-button-svg-width: 18px;
     --f-button-svg-height: 18px;
     --f-button-hover-color: #fff;
-    --f-button-border-radius: unset;
+    --f-button-border-radius: 10px;
     --f-button-outline-color: unset;
-    --f-button-bg: transparent;
+    --f-button-bg: #231f20;
     --f-button-active-bg: unset;
     --f-button-hover-bg: unset;
     --f-button-svg-stroke-width: 3px;
-    --f-button-width: 24px;
-    --f-button-height: 24px;
-    top: 50%;
+    --f-button-width: 44px;
+    --f-button-height: 44px;
+    top: 10px;
     right: 10px;
-    transform: translateY(-50%);
     opacity: 1;
 
-    @include breakpoint(sm) {
+    @include breakpoint(md) {
+        top: 20px;
         right: 20px;
     }
 }
@@ -47,13 +47,102 @@
     --fancybox-bg: rgba(0, 0, 0, 0.5);
 }
 
-.popup {
+.popup-search {
     display: none;
-}
 
-.popup.fancybox-slideDown {
-    animation-name: slideDown;
-    animation-duration: 0.2s;
+    &.fancybox-slideDown {
+        animation-name: slideDown;
+        animation-duration: 0.2s;
+    }
+
+    &.fancybox-slideUp {
+        animation-name: slideUp;
+        animation-duration: 0.2s;
+    }
+
+    &.fancybox__content {
+        padding: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    &.fancybox__content > .f-button.is-close-btn {
+        --f-button-color: #231f20;
+        --f-button-border-radius: unset;
+        --f-button-bg: transparent;
+        --f-button-svg-stroke-width: 3px;
+        --f-button-width: 24px;
+        --f-button-height: 24px;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+
+        @include breakpoint(sm) {
+            right: 20px;
+        }
+    }
+
+    & .popup-search-container {
+        margin: 0 auto;
+        padding: 20px $container;
+        width: 100%;
+
+        @include breakpoint(hd) {
+            padding: 40px $container;
+        }
+    }
+
+    & .search-form {
+        display: flex;
+        align-items: center;
+
+        @include breakpoint(md) {
+            align-items: flex-end;
+        }
+    }
+
+    & .input-style {
+        width: calc(100% - 88px);
+
+        @include breakpoint(md) {
+            width: calc(100% - 206px);
+        }
+    }
+
+    & input {
+        @include breakpointMax(md) {
+            padding: 10px;
+            height: 40px;
+            border-radius: 8px;
+        }
+    }
+
+    & .btn {
+        margin-left: 4px;
+        padding: 0;
+
+        @include breakpointMax(md) {
+            width: 40px;
+            height: 40px;
+        }
+
+        @include breakpoint(md) {
+            margin-left: 10px;
+            padding: 18px 28px;
+        }
+    }
+
+    & .btn p {
+        @include breakpointMax(md) {
+            display: none;
+        }
+
+        @include breakpoint(md) {
+            margin-right: 10px;
+        }
+    }
 }
 
 @keyframes slideDown {
@@ -67,11 +156,6 @@
     }
 }
 
-.popup.fancybox-slideUp {
-    animation-name: slideUp;
-    animation-duration: 0.2s;
-}
-
 @keyframes slideUp {
     0% {
         transform: translateZ(0);
@@ -83,70 +167,141 @@
     }
 }
 
-.popup-search.fancybox__content {
-    padding: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-}
-
-.popup-search-container {
-    margin: 0 auto;
-    padding: 20px $container;
+.popup {
+    padding-top: 74px;
+    display: none;
     width: 100%;
 
-    @include breakpoint(hd) {
-        padding: 40px $container;
+    @include breakpointMax(md) {
+        height: 100%;
+    }
+
+    @include breakpoint(md) {
+        padding: 20px;
+        max-width: 700px;
+        border-radius: 20px;
     }
 }
 
-.search-form {
+.popup-tab {
+    margin-bottom: 40px;
     display: flex;
     align-items: center;
+    column-gap: 10px;
+}
 
-    @include breakpoint(md) {
-        align-items: flex-end;
+.popup-tab__item {
+    padding: 6px 10px;
+    background: #f1f4f5;
+    font-size: 18px;
+    font-weight: 700;
+    color: #8c8c8c;
+    border-radius: 4px;
+    user-select: none;
+    cursor: pointer;
+
+    &.active {
+        color: $brand;
     }
 }
 
-.popup-search .input-style {
-    width: calc(100% - 88px);
+.popup-block {
+    display: none;
+    animation-name: fadeIn;
+    animation-duration: 0.2s;
 
-    @include breakpoint(md) {
-        width: calc(100% - 206px);
+    &.active {
+        display: block;
     }
 }
 
-.popup-search input {
+.popup-title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 140%;
+}
+
+.popup-form {
+    display: grid;
+    row-gap: 10px;
+}
+
+.popup-submit {
+    margin-top: 10px;
+
+    @include breakpoint(md) {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+    }
+}
+
+.popup-submit .btn {
     @include breakpointMax(md) {
-        padding: 10px;
-        height: 40px;
-        border-radius: 8px;
-    }
-}
-
-.popup-search .btn {
-    margin-left: 4px;
-    padding: 0;
-
-    @include breakpointMax(md) {
-        width: 40px;
-        height: 40px;
+        width: 100%;
     }
 
     @include breakpoint(md) {
-        margin-left: 10px;
-        padding: 18px 28px;
+        flex-shrink: 0;
     }
 }
 
-.popup-search .btn p {
+.popup-submit .agreement {
     @include breakpointMax(md) {
-        display: none;
+        margin-top: 10px;
     }
 
     @include breakpoint(md) {
-        margin-right: 10px;
+        max-width: 334px;
+    }
+}
+
+.popup-forgot {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 140%;
+    color: #666;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.popup-success {
+    @include breakpoint(md) {
+        padding: 40px 40px 20px;
+        font-size: 20px;
+    }
+
+    & img {
+        margin-bottom: 20px;
+        width: 80px;
+        height: 80px;
+
+        @include breakpoint(md) {
+            width: 125px;
+            height: 125px;
+        }
+    }
+
+    & p {
+        margin-bottom: 20px;
+
+        & + p {
+            margin-bottom: 10px;
+        }
+    }
+
+    & ul {
+        margin-bottom: 20px;
+    }
+}
+
+.popup-upload {
+    @include breakpoint(md) {
+        padding-top: 84px;
     }
 }

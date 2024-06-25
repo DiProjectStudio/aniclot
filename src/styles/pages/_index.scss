@@ -270,6 +270,10 @@
     color: #fff;
     @include textLimit(2);
 
+    @include breakpoint(md) {
+        margin: 4px 20px 0 12px;
+    }
+
     @include breakpoint(xl) {
         font-size: 16px;
     }

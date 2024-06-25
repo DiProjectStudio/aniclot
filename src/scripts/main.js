@@ -114,3 +114,31 @@ $(window).on('resize', () => {
 $('.product-favourite').on('click', (e) => {
     $(e.currentTarget).toggleClass('active');
 });
+
+// PASSWORD SHOW
+$('.pass-eye').on('click', (e) => {
+    if ($(e.currentTarget).prev('input').attr('type') != 'text') {
+        $(e.currentTarget).prev('input').attr('type', 'text');
+        $(e.currentTarget)
+            .find('svg')
+            .html(
+                '<path id="Icon" d="M3 3L6.58916 6.58916M21 21L17.4112 17.4112M13.8749 18.8246C13.2677 18.9398 12.6411 19 12.0005 19C7.52281 19 3.73251 16.0571 2.45825 12C2.80515 10.8955 3.33851 9.87361 4.02143 8.97118M9.87868 9.87868C10.4216 9.33579 11.1716 9 12 9C13.6569 9 15 10.3431 15 12C15 12.8284 14.6642 13.5784 14.1213 14.1213M9.87868 9.87868L14.1213 14.1213M9.87868 9.87868L6.58916 6.58916M14.1213 14.1213L6.58916 6.58916M14.1213 14.1213L17.4112 17.4112M6.58916 6.58916C8.14898 5.58354 10.0066 5 12.0004 5C16.4781 5 20.2684 7.94291 21.5426 12C20.8357 14.2507 19.3545 16.1585 17.4112 17.4112" stroke="#231F20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>'
+            );
+    } else {
+        $(e.currentTarget).prev('input').attr('type', 'password');
+        $(e.currentTarget)
+            .find('svg')
+            .html(
+                '<path d="M14.9998 12C14.9998 13.6569 13.6566 15 11.9998 15C10.3429 15 8.99976 13.6569 8.99976 12C8.99976 10.3431 10.3429 9 11.9998 9C13.6566 9 14.9998 10.3431 14.9998 12Z" stroke="#231F20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M2.45801 12C3.73228 7.94288 7.52257 5 12.0002 5C16.4778 5 20.2681 7.94291 21.5424 12C20.2681 16.0571 16.4778 19 12.0002 19C7.52256 19 3.73226 16.0571 2.45801 12Z" stroke="#231F20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>'
+            );
+    }
+});
+
+// AUTH TABS
+$('.popup-tab__item').on('click', (e) => {
+    $('.popup-tab__item').removeClass('active');
+    $(e.currentTarget).addClass('active');
+
+    $('.popup-block').removeClass('active');
+    $(`.popup-block[data-show=${$(e.currentTarget).attr('data-active')}]`).addClass('active');
+});

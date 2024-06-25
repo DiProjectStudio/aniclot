@@ -547,7 +547,7 @@
     color: #fff;
     border-radius: 20px;
     z-index: 20;
-    animation: fadeOut 5s ease forwards;
+    animation: headerPopup 5s ease forwards;
 
     @include breakpoint(md) {
         right: 10px;
@@ -560,7 +560,7 @@
     }
 }
 
-@keyframes fadeOut {
+@keyframes headerPopup {
     0% {
         opacity: 0;
     }

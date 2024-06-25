@@ -55,6 +55,14 @@
     @include breakpoint(hd) {
         font-size: 14px;
     }
+
+    & a {
+        transition: $transition;
+    }
+
+    & a:hover {
+        color: #666;
+    }
 }
 
 .footer__nav > ul {
@@ -184,6 +192,16 @@
 .footer__contacts-social a {
     width: 30px;
     height: 30px;
+
+    & rect {
+        transition: $transition;
+    }
+
+    &:hover {
+        & rect {
+            fill: #666;
+        }
+    }
 }
 
 .footer__policy {

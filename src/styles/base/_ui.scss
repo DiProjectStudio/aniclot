@@ -311,6 +311,25 @@ section {
     color: inherit;
 }
 
+.input-style-password {
+    position: relative;
+}
+
+.input-style-password input {
+    padding-right: 50px;
+}
+
+.input-style-password .pass-eye {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    display: flex;
+    transform: translateY(-50%);
+    z-index: 1;
+    user-select: none;
+    cursor: pointer;
+}
+
 .agreement {
     font-size: 14px;
     color: #666;
@@ -361,7 +380,7 @@ section {
     position: absolute;
     top: 50%;
     opacity: 0;
-    animation: fadeOut 2s ease forwards;
+    animation: fadeIn 2s ease forwards;
     transform: translateY(-50%);
     z-index: 1;
 
@@ -370,7 +389,7 @@ section {
     }
 }
 
-@keyframes fadeOut {
+@keyframes fadeIn {
     from {
         opacity: 0;
     }

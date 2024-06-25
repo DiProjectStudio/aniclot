@@ -1,5 +1,5 @@
 // ПОПАП "ПОИСК"
-#popup-search.popup.popup-search
+#popup-search.popup-search
     .popup-search-container
         form
             .search-form
@@ -11,11 +11,62 @@
 
 // ПОПАП "РЕГИСТРАЦИЯ/АВТОРИЗАЦИЯ"
 #popup-auth.popup.popup-auth
-    .popup-auth-container
+
+    .popup-tab
+        .popup-tab__item.active(data-active=1) Регистрация
+        .popup-tab__item(data-active=2) Авторизация
+
+    .popup-block.active(data-show=1)
+        .popup-title Регистрация
         form
-            .search-form
+            .popup-form
                 .input-style
-                    input#search(type="search", name="search", autocomplete="off", placeholder="Поиск")
-                button.btn.btn--black(type="submit")
-                    p Поиск
+                    input(type="email" name="email" placeholder="Email*" autocomplete="off")
+                .input-style.input-style-password
+                    input(type="password" name="password" placeholder="Пароль*" autocomplete="off")
+                    .pass-eye
+                        include ../icons/eye.svg
+                .input-style.input-style-password
+                    input(type="password" name="passwordRe" placeholder="Повторите пароль*" autocomplete="off")
+                    .pass-eye
+                        include ../icons/eye.svg
+
+                .popup-submit
+                    button.btn.btn-arrow-right.btn--black(type="submit") Зарегистрироваться
+                        include ../icons/arrow-right.svg
+                    .agreement Нажимая кнопку, вы соглашаетесь с обработкой ваших персональных данных
+
+    .popup-block(data-show=2)
+        .popup-title Авторизоваться на сайте
+        form
+            .popup-form
+                .input-style
+                    input(type="email" name="email" placeholder="Email*" autocomplete="off")
+                .input-style.input-style-password
+                    input(type="password" name="password" placeholder="Пароль*" autocomplete="off")
+                    .pass-eye
+                        include ../icons/eye.svg
+
+                .popup-forgot Не помню пароль
+
+                .popup-submit
+                    button.btn.btn-arrow-right.btn--black(type="submit") Авторизоваться
+                        include ../icons/arrow-right.svg
+                    .agreement Нажимая кнопку, вы соглашаетесь с обработкой ваших персональных данных
+
+// ПОПАП "ЗАГРУЗКА ИЗОБРАЖЕНИЯ"
+#popup-upload.popup.popup-upload
+
+    .popup-title Загрузите своё изображение для печати
+    form
+        .popup-form
+            .input-style
+                input(type="text" name="email" placeholder="Имя" autocomplete="off")
+
+            .input-style
+                input(type="text" name="phone" placeholder="Телефон*" autocomplete="off")
+
+            .popup-submit
+                button.btn.btn-arrow-right.btn--black(type="submit") Отправить
                     include ../icons/arrow-right.svg
+                .agreement Нажимая кнопку, вы соглашаетесь с обработкой ваших персональных данных
