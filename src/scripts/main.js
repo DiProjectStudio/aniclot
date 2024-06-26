@@ -183,7 +183,15 @@ $('.option__item').on('click', (e) => {
 });
 
 $('html').on('click', (e) => {
-    if (!$(e.target).closest('.sort').length) {
+    if (
+        !$(e.target).closest('.filter').length &&
+        !$(e.target).closest('.filter-btn').length &&
+        !$(e.target).closest('.sort').length
+    ) {
+        $('body').removeClass('overflow-hidden');
+        $('#page').removeClass('bg-overlay');
+        $('.filter').removeClass('active');
+
         $('.select').removeClass('toggle');
     }
 });

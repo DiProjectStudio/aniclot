@@ -16,8 +16,16 @@
     }
 }
 
+.catalog-wrap {
+    @include breakpoint(lg) {
+        display: grid;
+        grid-template-columns: 4fr 8fr;
+        column-gap: 20px;
+    }
+}
+
 .filter {
-    background: #f1f4f5;
+    background: #fff;
 
     @include breakpointMax(lg) {
         padding: 20px 10px 0;
@@ -27,13 +35,30 @@
         width: 100%;
         height: 100%;
         transition: $transition;
-        overflow-y: scroll;
         z-index: 21;
+
+        @include breakpoint(md) {
+            padding: 20px 20px 0;
+            top: 25px;
+            width: 348px;
+            height: calc(100% - 45px);
+            border-radius: 20px;
+        }
+    }
+
+    @include breakpoint(lg) {
+        margin-top: 52px;
     }
 }
 
 .filter.active {
-    left: 0;
+    @include breakpointMax(lg) {
+        left: 0;
+
+        @include breakpoint(md) {
+            left: 20px;
+        }
+    }
 }
 
 .filter-close {
@@ -64,6 +89,7 @@
 }
 
 .filter__title {
+    padding-bottom: 16px;
     display: flex;
     align-items: center;
     font-size: 30px;
@@ -79,11 +105,16 @@
 
 .filter__inner {
     margin-bottom: 40px;
+    overflow-y: scroll;
 }
 
 .filter__row {
     padding: 16px 0;
     border-bottom: 1px solid #e0e0e0;
+
+    &:first-child {
+        padding-top: 0;
+    }
 }
 
 .filter__name {
@@ -206,8 +237,10 @@
 }
 
 .catalog {
-    display: grid;
-    column-gap: 10px;
+    @include breakpointMax(lg) {
+        display: grid;
+        column-gap: 10px;
+    }
 }
 
 .catalog .filter-btn {
@@ -216,6 +249,10 @@
     height: 52px;
     font-size: 18px;
     text-transform: capitalize;
+
+    @include breakpoint(md) {
+        height: 45px;
+    }
 
     @include breakpoint(lg) {
         display: none;
@@ -227,14 +264,25 @@
 }
 
 .sort {
-    margin-left: auto;
     display: flex;
     align-items: center;
+
+    @include breakpointMax(lg) {
+        margin-left: auto;
+    }
+
+    @include breakpoint(lg) {
+        justify-content: flex-end;
+    }
 }
 
 .sort p {
     @include breakpointMax(md) {
         display: none;
+    }
+
+    @include breakpoint(md) {
+        margin-right: 10px;
     }
 }
 
@@ -245,6 +293,10 @@
     border-radius: 10px;
     user-select: none;
     cursor: pointer;
+
+    @include breakpoint(md) {
+        width: 220px;
+    }
 }
 
 .sort .select-value {
@@ -259,6 +311,14 @@
 
     @include breakpointMax(md) {
         white-space: nowrap;
+    }
+
+    @include breakpoint(md) {
+        padding: 4px 8px;
+    }
+
+    @include breakpoint(lg) {
+        line-height: 1.5;
     }
 }
 
@@ -312,8 +372,16 @@
 .catalog-product {
     margin-top: 20px;
     display: grid;
-    row-gap: 10px;
+    gap: 10px;
     grid-column: 1 / 3;
+
+    @include breakpoint(md) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint(lg) {
+        gap: 20px;
+    }
 }
 
 .catalog .pagination {

@@ -24,7 +24,7 @@ block main
                         .filter-close
                         .filter__title Фильтр
 
-                        form.smartfilter(action="" name="" method="GET") 
+                        form.smartfilter(action="" name="" method="GET")
 
                             .filter__inner
 
@@ -68,12 +68,12 @@ block main
                                             input#filter_004(type="checkbox" checked)
                                             label(for="filter_004") Блич
                                             span 10
-                                        
+
                                         .filter__checkbox
                                             input#filter_005(type="checkbox")
                                             label(for="filter_005") Евангелион
                                             span 12
-                                        
+
                                         .filter__checkbox
                                             input#filter_006(type="checkbox")
                                             label(for="filter_006") Ван пис
@@ -83,12 +83,12 @@ block main
                                             input#filter_007(type="checkbox")
                                             label(for="filter_007") Блич
                                             span 10
-                                        
+
                                         .filter__checkbox
                                             input#filter_008(type="checkbox")
                                             label(for="filter_008") Евангелион
                                             span 12
-                                        
+
                                         .filter__checkbox
                                             input#filter_009(type="checkbox")
                                             label(for="filter_009") Ван пис
@@ -99,11 +99,11 @@ block main
 
                                 .filter__row
                                     .filter__name Цвет
-                                            
+
                             .filter__bottom
                                 input.btn.btn--black(type="submit", value="Применить")
                                 div
-                                    input.btn.btn--white(type="submit", value="Сбросить") 
+                                    input.btn.btn--white(type="submit", value="Сбросить")
 
                 .catalog
 
@@ -112,8 +112,8 @@ block main
                         |Фильтр
 
                     .sort
-                        p Сортировать
-                        
+                        p Сортировка:
+
                         .select
                             .select-value По популярности
                             .option
@@ -137,5 +137,5 @@ block main
                         +product('item-4.png', 'Магическая битва', 'Футболка Магическая битва')
                         +product('item-1.png', 'клинок рассекающий демонов', 'Футболка аниме клинок рассекающий демонов, чёрный цвет, 46 размер, 100% хлопок')
                         +product('item-2.png', 'Магическая битва', 'Футболка Магическая битва')
-                    
+
                     include ../components/_pagination
