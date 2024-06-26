@@ -68,6 +68,27 @@ main {
     max-width: 100%;
 }
 
+#page::before {
+    @include breakpointMax(lg) {
+        content: '';
+        background: rgba(0, 0, 0, 0);
+        display: block;
+        transition: all 0.5s ease;
+    }
+}
+
+#page.bg-overlay::before {
+    @include breakpointMax(lg) {
+        background: rgba(0, 0, 0, 0.6);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 21;
+    }
+}
+
 a {
     transition: opacity 0.3s ease;
 }

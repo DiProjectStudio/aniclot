@@ -1,13 +1,13 @@
 .breadcrumbs {
-    margin: 20px auto 0;
+    margin: 20px auto 30px;
     padding: 0 $container;
 
-    @include breakpoint(lg) {
-        margin-top: 30px;
+    @include breakpoint(md) {
+        margin-bottom: 40px;
     }
 
-    @include breakpoint(xl) {
-        margin-top: 40px;
+    @include breakpoint(hd) {
+        margin-bottom: 60px;
     }
 }
 
@@ -21,18 +21,18 @@
 }
 
 .breadcrumbs-item {
+    padding: 4px 8px;
+    background: #fff;
     display: flex;
     align-items: center;
-    font-size: 10px;
-    font-weight: 400;
+    font-size: 12px;
+    font-weight: 700;
     line-height: 140%;
-    color: #999;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: #666;
     white-space: nowrap;
-
-    @include breakpoint(md) {
-        font-size: 14px;
-        line-height: 150%;
-    }
+    border-radius: 4px;
 }
 
 .breadcrumbs-item span {
@@ -40,10 +40,10 @@
 }
 
 .breadcrumbs-separator {
-    margin: 0 8px;
-    color: red;
+    margin: 0 4px;
+    display: flex;
+}
 
-    @include breakpoint(md) {
-        margin: 0 20px;
-    }
+.breadcrumbs ~ .title {
+    padding: 0 var(--container);
 }

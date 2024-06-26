@@ -1,0 +1,321 @@
+.page-catalog {
+    & .title {
+        margin-bottom: 4px;
+    }
+
+    & .result {
+        margin-bottom: 20px;
+
+        @include breakpoint(md) {
+            margin-bottom: 30px;
+        }
+
+        @include breakpoint(hd) {
+            margin-bottom: 40px;
+        }
+    }
+}
+
+.filter {
+    background: #f1f4f5;
+
+    @include breakpointMax(lg) {
+        padding: 20px 10px 0;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        transition: $transition;
+        overflow-y: scroll;
+        z-index: 21;
+    }
+}
+
+.filter.active {
+    left: 0;
+}
+
+.filter-close {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    background: $brand;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    cursor: pointer;
+
+    @include breakpoint(lg) {
+        display: none;
+    }
+}
+
+.filter-close::before {
+    content: '';
+    background: url(/assets/images/x.svg) no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 24px;
+    height: 24px;
+}
+
+.filter__title {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.filter form {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 40px);
+}
+
+.filter__inner {
+    margin-bottom: 40px;
+}
+
+.filter__row {
+    padding: 16px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.filter__name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 140%;
+    user-select: none;
+    cursor: pointer;
+}
+
+.filter__name::after {
+    content: '';
+    background: url(/assets/images/chevron-down.svg) no-repeat;
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+    transition: $transition;
+
+    .filter__row.active & {
+        transform: rotate(180deg);
+    }
+}
+
+.filter__item {
+    margin-top: 16px;
+    max-height: 400px;
+    overflow-y: scroll;
+
+    .filter__row:not(:first-child) & {
+        display: none;
+    }
+}
+
+.filter__checkbox {
+    display: flex;
+    align-items: center;
+
+    & ~ .filter__checkbox {
+        margin-top: 10px;
+    }
+}
+
+.filter input {
+    display: none;
+}
+
+.filter label {
+    display: inline-flex;
+    font-size: 16px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.filter input:checked + label {
+    background: url(/assets/images/check.svg) no-repeat;
+    background-position: contain;
+}
+
+.filter label::before {
+    content: '';
+    margin-right: 12px;
+    background: #fff;
+    position: relative;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    z-index: -1;
+}
+
+.filter__checkbox span {
+    margin-left: 4px;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 160%;
+    color: #666;
+}
+
+.filter__bottom {
+    margin-top: auto;
+    padding-bottom: 20px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.filter__bottom .btn {
+    display: block;
+    width: 100%;
+    height: 56px;
+    text-align: center;
+    border: none;
+}
+
+.filter__bottom > div {
+    position: relative;
+
+    & .btn {
+        padding: 18px;
+        text-indent: 34px;
+        border: 1px solid #231f20;
+    }
+}
+
+.filter__bottom > div::before {
+    content: '';
+    background: url(/assets/images/x.svg) no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 50%;
+    left: 24px;
+    width: 24px;
+    height: 24px;
+    transform: translateY(-50%);
+    filter: brightness(0);
+}
+
+.catalog {
+    display: grid;
+    column-gap: 10px;
+}
+
+.catalog .filter-btn {
+    padding: 10px;
+    width: max-content;
+    height: 52px;
+    font-size: 18px;
+    text-transform: capitalize;
+
+    @include breakpoint(lg) {
+        display: none;
+    }
+}
+
+.catalog .filter-btn svg {
+    margin-right: 10px;
+}
+
+.sort {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.sort p {
+    @include breakpointMax(md) {
+        display: none;
+    }
+}
+
+.sort .select {
+    background: #fff;
+    position: relative;
+    width: 206px;
+    border-radius: 10px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.sort .select-value {
+    padding: 15px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: normal;
+    overflow: hidden;
+
+    @include breakpointMax(md) {
+        white-space: nowrap;
+    }
+}
+
+.sort .select-value::before {
+    content: '';
+    background: linear-gradient(90deg, transparent 1%, #fff 30%);
+    position: absolute;
+    right: 0;
+    width: 40px;
+    height: 100%;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.sort .select-value::after {
+    content: '';
+    background: url(/assets/images/chevron-down.svg) no-repeat;
+    background-size: contain;
+    position: absolute;
+    right: 10px;
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    z-index: 1;
+}
+
+.sort .option {
+    background: #fff;
+    padding: 8px 10px;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    visibility: hidden;
+    transform: scale(1, 0);
+    transform-origin: top center;
+    transition: 0.2s ease;
+    border-radius: 10px;
+    z-index: 10;
+}
+
+.sort .select.toggle .option {
+    visibility: visible;
+    transform: scale(1, 1);
+}
+
+.sort .option__item {
+    padding: 4px 0;
+    display: block;
+}
+
+.catalog-product {
+    margin-top: 20px;
+    display: grid;
+    row-gap: 10px;
+    grid-column: 1 / 3;
+}
+
+.catalog .pagination {
+    grid-column: 1 / 3;
+}

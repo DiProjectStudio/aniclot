@@ -46,6 +46,69 @@
             padding: 20px 40px;
         }
     }
+
+    body:not(.page-main) & {
+        position: sticky;
+        top: 0;
+
+        & .header__inner {
+            padding: 10px;
+            background: #fff;
+            border-radius: 20px;
+
+            @include breakpoint(xl) {
+                padding: 12px 20px;
+            }
+        }
+
+        & .header__logo {
+            filter: brightness(0);
+        }
+
+        & .nav__item-link {
+            color: $brand;
+        }
+
+        & .header__phone {
+            color: $brand;
+
+            & path {
+                stroke: $brand;
+            }
+
+            &:hover {
+                color: #666;
+
+                & path {
+                    stroke: #666;
+                }
+            }
+        }
+
+        & .header__user {
+            color: $brand;
+
+            & path {
+                fill: $brand;
+            }
+        }
+
+        & .header__icons .icon {
+            & path {
+                fill: $brand;
+            }
+
+            &:hover {
+                & path {
+                    fill: #666;
+                }
+            }
+        }
+
+        & .header__menu {
+            filter: brightness(0);
+        }
+    }
 }
 
 .header.header-fixed {
@@ -347,8 +410,8 @@
     }
 
     & svg {
-        width: 16px;
-        height: 16px;
+        width: 14px;
+        height: 14px;
     }
 
     & path {

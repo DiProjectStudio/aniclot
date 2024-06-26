@@ -6,4 +6,136 @@ block title
 
 block main
 
-    section
+    include ../components/_breadcrumbs
+    +breadcrumbs('Каталог', 'Каталог')
+
+    section.section-catalog
+
+        .container
+
+            .result 2000 товаров
+
+            .catalog-wrap
+
+                .catalog-filter
+
+                    .filter
+
+                        .filter-close
+                        .filter__title Фильтр
+
+                        form.smartfilter(action="" name="" method="GET") 
+
+                            .filter__inner
+
+                                .filter__row
+                                    .filter__item
+                                        .filter__checkbox
+                                            input#filter_all(type="checkbox" checked)
+                                            label(for="filter_all") Все
+                                            span 10 000
+                                        .filter__checkbox
+                                            input#filter_news(type="checkbox")
+                                            label(for="filter_news") Новинки
+                                            span 1 000
+                                        .filter__checkbox
+                                            input#filter_hits(type="checkbox")
+                                            label(for="filter_hits") Хиты
+                                            span 2 000
+
+                                .filter__row
+                                    .filter__name Тип одежды
+
+                                .filter__row
+                                    .filter__name Коллекции
+                                    .filter__item
+                                        .filter__checkbox
+                                            input#filter_001(type="checkbox" checked)
+                                            label(for="filter_001") Наруто
+                                            span 500
+
+                                        .filter__checkbox
+                                            input#filter_002(type="checkbox")
+                                            label(for="filter_002") Магическая битва
+                                            span 20
+
+                                        .filter__checkbox
+                                            input#filter_003(type="checkbox")
+                                            label(for="filter_003") Берсерк
+                                            span 23
+
+                                        .filter__checkbox
+                                            input#filter_004(type="checkbox" checked)
+                                            label(for="filter_004") Блич
+                                            span 10
+                                        
+                                        .filter__checkbox
+                                            input#filter_005(type="checkbox")
+                                            label(for="filter_005") Евангелион
+                                            span 12
+                                        
+                                        .filter__checkbox
+                                            input#filter_006(type="checkbox")
+                                            label(for="filter_006") Ван пис
+                                            span 34
+
+                                        .filter__checkbox
+                                            input#filter_007(type="checkbox")
+                                            label(for="filter_007") Блич
+                                            span 10
+                                        
+                                        .filter__checkbox
+                                            input#filter_008(type="checkbox")
+                                            label(for="filter_008") Евангелион
+                                            span 12
+                                        
+                                        .filter__checkbox
+                                            input#filter_009(type="checkbox")
+                                            label(for="filter_009") Ван пис
+                                            span 34
+
+                                .filter__row
+                                    .filter__name Размер
+
+                                .filter__row
+                                    .filter__name Цвет
+                                            
+                            .filter__bottom
+                                input.btn.btn--black(type="submit", value="Применить")
+                                div
+                                    input.btn.btn--white(type="submit", value="Сбросить") 
+
+                .catalog
+
+                    .filter-btn.btn.btn--black
+                        include ../icons/adjustments.svg
+                        |Фильтр
+
+                    .sort
+                        p Сортировать
+                        
+                        .select
+                            .select-value По популярности
+                            .option
+                                a.option__item.selected(href="javascript:void(0)") По популярности
+                                a.option__item(href="javascript:void(0)") По возрастанию цены
+                                a.option__item(href="javascript:void(0)") По убыванию цены
+                                a.option__item(href="javascript:void(0)") По новизне
+
+                    .catalog-product
+
+                        include ../components/_product
+                        +product('item-1.png', 'клинок рассекающий демонов', 'Футболка аниме клинок рассекающий демонов, чёрный цвет, 46 размер, 100% хлопок')
+                        +product('item-2.png', 'Магическая битва', 'Футболка Магическая битва')
+                        +product('item-3.png', 'клинок рассекающий демонов', 'Футболка аниме клинок рассекающий демонов, чёрный цвет, 46 размер, 100% хлопок')
+                        +product('item-4.png', 'Магическая битва', 'Футболка Магическая битва')
+                        +product('item-1.png', 'клинок рассекающий демонов', 'Футболка аниме клинок рассекающий демонов, чёрный цвет, 46 размер, 100% хлопок')
+                        +product('item-2.png', 'Магическая битва', 'Футболка Магическая битва')
+                        +product('item-1.png', 'клинок рассекающий демонов', 'Футболка аниме клинок рассекающий демонов, чёрный цвет, 46 размер, 100% хлопок')
+                        +product('item-2.png', 'Магическая битва', 'Футболка Магическая битва')
+                        +product('item-3.png', 'клинок рассекающий демонов', 'Футболка аниме клинок рассекающий демонов, чёрный цвет, 46 размер, 100% хлопок')
+                        +product('item-4.png', 'Магическая битва', 'Футболка Магическая битва')
+                        +product('item-1.png', 'клинок рассекающий демонов', 'Футболка аниме клинок рассекающий демонов, чёрный цвет, 46 размер, 100% хлопок')
+                        +product('item-2.png', 'Магическая битва', 'Футболка Магическая битва')
+                    
+                    include ../components/_pagination
