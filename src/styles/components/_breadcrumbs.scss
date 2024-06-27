@@ -33,6 +33,12 @@
     color: #666;
     white-space: nowrap;
     border-radius: 4px;
+
+    &:last-child span {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 290px;
+    }
 }
 
 .breadcrumbs-item span {

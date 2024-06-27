@@ -1,0 +1,233 @@
+.product {
+    .bricks {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 40px);
+        gap: 4px;
+    }
+
+    .brick-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        font-weight: 700;
+        line-height: 140%;
+        border: 1px solid #c1c1c1;
+        border-radius: 10px;
+        user-select: none;
+        cursor: pointer;
+
+        &.selected {
+            border-color: $brand;
+        }
+    }
+}
+
+.product-gallery {
+    @include breakpointMax(lg) {
+        margin-bottom: 40px;
+
+        @include breakpoint(md) {
+            margin-bottom: 60px;
+        }
+    }
+}
+
+.product-main {
+    position: relative;
+
+    & .product-label {
+        z-index: 2;
+
+        @include breakpoint(md) {
+            top: 30px;
+            left: 30px;
+        }
+    }
+
+    & .product-category {
+        padding: 4px 8px;
+        background: #e0e0e0;
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        width: min(52%, 245px);
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 140%;
+        color: #666;
+        letter-spacing: 0.6px;
+        text-align: center;
+        text-transform: uppercase;
+        text-overflow: ellipsis;
+        transform: translateX(-50%);
+        overflow: hidden;
+        border-radius: 4px;
+        z-index: 2;
+
+        @include breakpoint(md) {
+            top: 30px;
+        }
+    }
+
+    & .product-favourite {
+        @include breakpoint(md) {
+            top: 30px;
+            right: 30px;
+        }
+    }
+
+    .swiper-pagination {
+        @include breakpoint(md) {
+            display: block;
+        }
+    }
+}
+
+.product__slide {
+    padding: 90px 40px 40px;
+    background: #fff;
+    height: auto;
+    border-radius: 20px;
+
+    @include breakpoint(md) {
+        padding: 78px;
+    }
+
+    & > div {
+        aspect-ratio: 1;
+    }
+
+    & img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.product-thumbs {
+    @include breakpointMax(lg) {
+        display: none;
+    }
+}
+
+.product-info {
+    & .title {
+        margin-bottom: 20px;
+        font-size: 20px;
+    }
+}
+
+.product-info__desc {
+    margin-bottom: 30px;
+    display: grid;
+    row-gap: 4px;
+}
+
+.product-info__color {
+    margin-bottom: 20px;
+}
+
+.product-info__title {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 140%;
+}
+
+.product-info__color .brick-item {
+    &.selected {
+        position: relative;
+        border: 3px solid #fff;
+    }
+
+    &.selected::before {
+        content: '';
+        position: absolute;
+        top: -3px;
+        left: -3px;
+        width: 40px;
+        height: 40px;
+        border: 1px solid $brand;
+        border-radius: 10px;
+    }
+}
+
+.product-info__size {
+    margin-bottom: 30px;
+}
+
+.product-info__table {
+    margin-top: 20px;
+    padding: 7px 20px;
+    background: #fff;
+    width: max-content;
+    border: 1px solid #c1c1c1;
+    border-radius: 10px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.product-info__price {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 140%;
+
+    & .old-price {
+        margin-left: 12px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 160%;
+        color: #666;
+    }
+
+    & .bonus {
+        margin-left: 20px;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 140%;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+    }
+}
+
+.product-info__action {
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product-info__cart {
+    margin-left: 10px;
+    width: calc(100% - 126px);
+}
+
+.product-info__order {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.register-sale {
+    padding: 20px;
+    background: #fff;
+    display: grid;
+    column-gap: 20px;
+    grid-template-columns: 40px auto;
+    border-radius: 20px;
+
+    & svg {
+        grid-column: 1 / 2;
+    }
+
+    & p {
+        margin-bottom: 20px;
+        grid-column: 2 / 4;
+        color: #666;
+    }
+
+    & .btn {
+        grid-column: 2 / 4;
+    }
+}

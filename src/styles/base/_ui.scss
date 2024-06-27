@@ -272,7 +272,16 @@ section {
     }
 }
 
-.btn--border-white {
+.btn--border-white:hover {
+    border-color: #666;
+    color: #666;
+
+    & path {
+        stroke: #666;
+    }
+}
+
+.btn--border-black {
     color: $brand;
     border: 1px solid $brand;
 
@@ -281,9 +290,9 @@ section {
     }
 }
 
-.btn--border-white:hover {
-    border-color: #666;
+.btn--border-black:hover {
     color: #666;
+    border: 1px solid #666;
 
     & path {
         stroke: #666;
@@ -356,9 +365,53 @@ section {
     color: #666;
 }
 
-/////////////////////
+.qty-input {
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    min-width: 116px;
+    max-width: 116px;
+    border: 1px solid #8c8c8c;
+    border-radius: 10px;
+    overflow: hidden;
+    user-select: none;
+
+    & .qty {
+        width: 16px;
+        height: 16px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    & .qty::before {
+        content: '';
+        display: block;
+        width: 16px;
+        height: 16px;
+    }
+
+    & .qty-plus::before {
+        background: url(/assets/images/plus.svg) no-repeat;
+    }
+
+    & .qty-minus::before {
+        background: url(/assets/images/minus.svg) no-repeat;
+    }
+
+    & input {
+        background: transparent;
+        width: 100%;
+        height: 60px;
+        font-weight: 700;
+        line-height: 140%;
+        text-align: center;
+        border: none;
+    }
+}
+
+//////////////////////////////////////
 /// SWIPER SLIDER
-/////////////////////
+//////////////////////////////////////
 .swiper {
     opacity: 0;
     transition: opacity 0.3s ease;

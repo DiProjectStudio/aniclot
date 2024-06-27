@@ -23,4 +23,5 @@ mixin breadcrumbs(title, ...items)
                     .breadcrumbs-item
                         a(href="#")= item
 
-    h1.title= title
+    if title
+        h1.title= title

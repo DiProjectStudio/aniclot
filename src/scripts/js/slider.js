@@ -54,3 +54,31 @@ slider.forEach((container) => {
         }
     });
 });
+
+const productThumbs = new Swiper('.product-thumbs .swiper', {
+    modules: [Navigation],
+    slidesPerView: 'auto',
+    spaceBetween: 10,
+    watchSlidesProgress: true,
+    direction: 'horizontal',
+
+    navigation: {
+        nextEl: '.product-thumbs .swiper-btn-next',
+        prevEl: '.product-thumbs .swiper-btn-prev'
+    }
+});
+
+const product = new Swiper('.product-main .swiper', {
+    modules: [Pagination],
+    slidesPerView: 1,
+    spaceBetween: 30,
+
+    thumbs: {
+        swiper: productThumbs
+    },
+
+    pagination: {
+        el: '.product-main .swiper-pagination',
+        clickable: true
+    }
+});

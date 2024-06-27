@@ -1,0 +1,169 @@
+extends /layout/layout
+
+block title
+    - var title = 'Футболка аниме клинок рассекающий демонов, чёрный цвет, 46 размер, 100% хлопок'
+    - var page = 'page-product'
+
+block main
+
+    include ../components/_breadcrumbs
+    +breadcrumbs('', 'Каталог', 'Аниме', 'Футболка аниме клинок рассекающий демонов, чёрный цвет, 46 размер, 100% хлопок')
+
+    section.section-product
+
+        .container
+
+            .product
+
+                .product-gallery
+
+                    .product-main
+                        .product-label New!
+
+                        .product-category клинок рассекающий демонов
+
+                        .product-favourite
+                            svg(data-state="default" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                path(d="M14.6875 1.90625C12.3689 1.90625 10.808 3.04559 10 3.84207C9.19203 3.04559 7.63105 1.90625 5.3125 1.90625C2.13746 1.90625 0 4.45703 0 7.58016C0 11.6588 3.87668 14.2266 9.49984 18.9127C9.64469 19.0334 9.82234 19.0937 10 19.0937C10.1777 19.0937 10.3553 19.0334 10.5002 18.9127C16.1221 14.2276 20 11.6589 20 7.58016C20 4.45512 17.8606 1.90625 14.6875 1.90625ZM10 17.2971C4.82988 13.0199 1.5625 10.7438 1.5625 7.58016C1.5625 5.53707 2.85063 3.46875 5.3125 3.46875C6.4109 3.46875 7.41926 3.79922 8.30953 4.45094C8.97473 4.93789 9.33027 5.43676 9.35266 5.46867C9.49727 5.68746 9.73766 5.8191 10 5.8191C10.2623 5.8191 10.5027 5.68746 10.6473 5.46867C10.6697 5.43676 11.0253 4.93789 11.6905 4.45094C12.5807 3.79922 13.5891 3.46875 14.6875 3.46875C17.1494 3.46875 18.4375 5.53707 18.4375 7.58016C18.4375 10.7401 15.1875 13.0054 10 17.2971Z" fill="white")
+                            svg(data-state="active" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                path(d="M14.6875 0.40625C12.3689 0.40625 10.808 1.54559 10 2.34207C9.19203 1.54559 7.63105 0.40625 5.3125 0.40625C2.13746 0.40625 0 2.95703 0 6.08016C0 10.1588 3.87668 12.7266 9.49984 17.4127C9.64469 17.5334 9.82234 17.5937 10 17.5937C10.1777 17.5937 10.3553 17.5334 10.5002 17.4127C16.1221 12.7276 20 10.1589 20 6.08016C20 2.95512 17.8606 0.40625 14.6875 0.40625Z" fill="#231F20")
+                                        
+                        .swiper
+
+                            .swiper-wrapper
+
+                                .product__slide.swiper-slide
+                                    div
+                                        +img('item-3.png')
+                                .product__slide.swiper-slide
+                                    div
+                                        +img('item-2.png')
+                                .product__slide.swiper-slide
+                                    div
+                                        +img('item-1.png')
+                                .product__slide.swiper-slide
+                                    div
+                                        +img('item-4.png')
+                                .product__slide.swiper-slide
+                                    div
+                                        +img('item-3.png')
+                                .product__slide.swiper-slide
+                                    div
+                                        +img('item-2.png')
+
+                        .swiper-pagination
+
+                    .product-thumbs
+                        
+                        .swiper
+
+                            .swiper-wrapper
+
+                                .product__nav.swiper-slide
+                                    div
+                                        +img('item-3.png')
+                                .product__nav.swiper-slide
+                                    div
+                                        +img('item-2.png')
+                                .product__nav.swiper-slide
+                                    div
+                                        +img('item-1.png')
+                                .product__nav.swiper-slide
+                                    div
+                                        +img('item-4.png')
+                                .product__nav.swiper-slide
+                                    div
+                                        +img('item-3.png')
+                                .product__nav.swiper-slide
+                                    div
+                                        +img('item-2.png')
+
+                .product-info
+
+                    h1.title Футболка аниме клинок рассекающий демонов, чёрный цвет, 46 размер, 100% хлопок
+                    
+                    .product-info__desc
+                        p Состав материала: 70% хлопок, 25% полиэстер, 5% лайкра
+                        p Коллекция: Клинок рассекающий демонов
+                        p Российский размер: 56
+                        p Размер производителя: XL
+                    
+                    .product-info__color
+                        .product-info__title Цвет
+                        .bricks
+                            .brick-item.selected(style="background-color: #333333" title="Черный")
+                            .brick-item(style="background-color: #ffffff" title="Белый")
+                            .brick-item(style="background-color: #F1F4F5" title="Слоновая кость")
+                            .brick-item(style="background-color: #D81823" title="Красный")
+                            .brick-item(style="background-color: #F2994A" title="Оранжевый")
+                            .brick-item(style="background-color: #219653" title="Зеленый")
+                            .brick-item(style="background-color: #2F80ED" title="Синий")
+                            .brick-item(style="background-color: #9B51E0" title="Фиолетовый")
+                            .brick-item(style="background-color: #6FCF97" title="Светло-зеленый")
+                            .brick-item(style="background-color: #56CCF2" title="Голубой")
+                    
+                    .product-info__size
+                        .product-info__title Размер
+                        .bricks
+                            .brick-item XS
+                            .brick-item S
+                            .brick-item.selected M
+                            .brick-item L
+                            .brick-item XL
+                            .brick-item XXL
+
+                        .product-info__table Таблица размеров
+
+                    .product-info__price 10 000 ₽
+                        .old-price 20 000 ₽
+                        .bonus + 200 Баллов
+
+                    .product-info__action
+                        .qty-input
+                            .qty.qty-plus
+                            input(type="text" value="1" number-only)
+                            .qty.qty-minus
+
+                        .product-info__cart.btn.btn--black В корзину
+                        .product-info__order.btn.btn--border-black Купить в 1 клик
+
+                    .register-sale
+                        include ../icons/flame.svg
+
+                        p Скидка 20% на первый заказ после регистрации
+
+                        .btn.btn-arrow-right.btn--gray(data-src="#popup-auth" data-fancybox) Зарегистрироваться
+                            include ../icons/arrow-right.svg
+
+    section.section-slider
+
+        .container
+
+            .section-title Похожие товары
+
+        .slider
+
+            .swiper
+
+                .swiper-wrapper
+
+                    .swiper-slide
+                        +product('item-1.png', 'клинок рассекающий демонов', 'Футболка аниме клинок рассекающий демонов, чёрный цвет, 46 размер, 100% хлопок')
+                    .swiper-slide
+                        +product('item-2.png', 'Магическая битва', 'Футболка Магическая битва')
+                    .swiper-slide
+                        +product('item-3.png', 'клинок рассекающий демонов', 'Футболка аниме клинок рассекающий демонов, чёрный цвет, 46 размер, 100% хлопок')
+                    .swiper-slide
+                        +product('item-4.png', 'Магическая битва', 'Футболка Магическая битва')
+                    .swiper-slide
+                        +product('item-1.png', 'клинок рассекающий демонов', 'Футболка аниме клинок рассекающий демонов, чёрный цвет, 46 размер, 100% хлопок')
+                    .swiper-slide
+                        +product('item-2.png', 'Магическая битва', 'Футболка Магическая битва')
+
+            .swiper-pagination
+
+            .swiper-navigation
+                .btn.btn--gray.btn-arrow.swiper-btn-next
+                    include ../icons/arrow-right.svg
+                .btn.btn--gray.btn-arrow.swiper-btn-prev
+                    include ../icons/arrow-right.svg

@@ -20,15 +20,23 @@
     @include breakpoint(lg) {
         display: grid;
         grid-template-columns: 4fr 8fr;
-        column-gap: 20px;
+        column-gap: 40px;
+    }
+
+    @include breakpoint(xl) {
+        grid-template-columns: 3fr 9fr;
+    }
+
+    @include breakpoint(hd) {
+        grid-template-columns: 2.53fr 9fr;
+        column-gap: 80px;
     }
 }
 
 .filter {
-    background: #fff;
-
     @include breakpointMax(lg) {
         padding: 20px 10px 0;
+        background: #fff;
         position: fixed;
         top: 0;
         left: -100%;
@@ -105,7 +113,10 @@
 
 .filter__inner {
     margin-bottom: 40px;
-    overflow-y: scroll;
+
+    @include breakpointMax(lg) {
+        overflow-y: scroll;
+    }
 }
 
 .filter__row {
@@ -145,6 +156,11 @@
     margin-top: 16px;
     max-height: 400px;
     overflow-y: scroll;
+
+    @include breakpoint(lg) {
+        overflow-y: scroll;
+        scrollbar-width: none;
+    }
 
     .filter__row:not(:first-child) & {
         display: none;
@@ -198,11 +214,15 @@
 
 .filter__bottom {
     margin-top: auto;
-    padding-bottom: 20px;
+    padding-bottom: 36px;
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
+
+    @include breakpoint(lg) {
+        grid-template-columns: 2fr 1fr;
+    }
 }
 
 .filter__bottom .btn {
@@ -381,6 +401,10 @@
 
     @include breakpoint(lg) {
         gap: 20px;
+    }
+
+    @include breakpoint(xl) {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
