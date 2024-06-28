@@ -490,18 +490,24 @@
             max-width: 648px;
         }
     }
+}
 
-    & .tab-content {
-        @include breakpoint(md) {
-            font-size: 20px;
-        }
+.desc-text {
+    @include breakpoint(md) {
+        font-size: 20px;
+    }
 
-        @include breakpoint(lg) {
-            max-width: 868px;
-        }
+    @include breakpoint(lg) {
+        max-width: 868px;
+    }
 
-        @include breakpoint(xl) {
-            max-width: 928px;
-        }
+    @include breakpoint(xl) {
+        max-width: 928px;
+    }
+}
+
+.desc-char {
+    & p ~ p {
+        margin-top: 4px;
     }
 }

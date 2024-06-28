@@ -36,6 +36,22 @@ Inputmask({
     showMaskOnFocus: false
 }).mask('[calendar]');
 
+// JS Anchor
+const anchor = document.querySelectorAll('[data-anchor]');
+if (anchor.length > 0) {
+    anchor.forEach((el) => {
+        el.onclick = function (e) {
+            e.preventDefault();
+            document
+                .querySelector(`#${el.getAttribute('data-anchor').split('#')[1]}`)
+                .scrollIntoView({
+                    block: 'start',
+                    behavior: 'smooth'
+                });
+        };
+    });
+}
+
 // HEADER
 if ($('body').hasClass('page-main')) {
     $(window).on('scroll', function () {
