@@ -222,3 +222,12 @@ $('.qty-input .qty').on('click', (e) => {
             .val(Number($(e.target).parent().find('input').val()) + 1);
     }
 });
+
+// TAB
+$('.tab .tab-item').on('click', (e) => {
+    $('.tab .tab-item').removeClass('active');
+    $(e.currentTarget).addClass('active');
+
+    $('.tab-content').removeClass('active');
+    $(`.tab-content[data-show=${$(e.currentTarget).attr('data-active')}]`).addClass('active');
+});

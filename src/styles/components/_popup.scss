@@ -19,7 +19,7 @@
     --f-button-color: #fff;
     --f-button-svg-width: 18px;
     --f-button-svg-height: 18px;
-    --f-button-hover-color: #fff;
+    --f-button-hover-color: #666;
     --f-button-border-radius: 10px;
     --f-button-outline-color: unset;
     --f-button-bg: #231f20;
@@ -36,11 +36,6 @@
         top: 20px;
         right: 20px;
     }
-}
-
-.f-button:hover:not([disabled]) {
-    color: unset;
-    background-color: unset;
 }
 
 .fancybox__container {
@@ -303,5 +298,18 @@
 .popup-upload {
     @include breakpoint(md) {
         padding-top: 84px;
+    }
+}
+
+.popup.popup-table {
+    @include breakpointMax(md) {
+        padding: 15px 10px;
+        position: absolute;
+        bottom: 0;
+        height: 270px;
+    }
+
+    @include breakpoint(lg) {
+        max-width: 840px;
     }
 }

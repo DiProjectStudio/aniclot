@@ -37,19 +37,19 @@ block main
                                         +img('item-3.png')
                                 .product__slide.swiper-slide
                                     div
-                                        +img('item-2.png')
-                                .product__slide.swiper-slide
-                                    div
-                                        +img('item-1.png')
-                                .product__slide.swiper-slide
-                                    div
-                                        +img('item-4.png')
+                                        +img('item-3.png')
                                 .product__slide.swiper-slide
                                     div
                                         +img('item-3.png')
                                 .product__slide.swiper-slide
                                     div
-                                        +img('item-2.png')
+                                        +img('item-3.png')
+                                .product__slide.swiper-slide
+                                    div
+                                        +img('item-3.png')
+                                .product__slide.swiper-slide
+                                    div
+                                        +img('item-3.png')
 
                         .swiper-pagination
 
@@ -64,19 +64,23 @@ block main
                                         +img('item-3.png')
                                 .product__nav.swiper-slide
                                     div
-                                        +img('item-2.png')
-                                .product__nav.swiper-slide
-                                    div
-                                        +img('item-1.png')
-                                .product__nav.swiper-slide
-                                    div
-                                        +img('item-4.png')
+                                        +img('item-3.png')
                                 .product__nav.swiper-slide
                                     div
                                         +img('item-3.png')
                                 .product__nav.swiper-slide
                                     div
-                                        +img('item-2.png')
+                                        +img('item-3.png')
+                                .product__nav.swiper-slide
+                                    div
+                                        +img('item-3.png')
+                                .product__nav.swiper-slide
+                                    div
+                                        +img('item-3.png')
+
+                        .swiper-navigation
+                            .swiper-button.swiper-button-next
+                            .swiper-button.swiper-button-prev
 
                 .product-info
 
@@ -112,7 +116,7 @@ block main
                             .brick-item XL
                             .brick-item XXL
 
-                        .product-info__table Таблица размеров
+                        .product-info__table(data-src="#popup-table" data-fancybox) Таблица размеров
 
                     .product-info__price 10 000 ₽
                         .old-price 20 000 ₽
@@ -121,7 +125,7 @@ block main
                     .product-info__action
                         .qty-input
                             .qty.qty-plus
-                            input(type="text" value="1" number-only)
+                            input(type="text" name="qty" value="10" number-only)
                             .qty.qty-minus
 
                         .product-info__cart.btn.btn--black В корзину
@@ -134,6 +138,24 @@ block main
 
                         .btn.btn-arrow-right.btn--gray(data-src="#popup-auth" data-fancybox) Зарегистрироваться
                             include ../icons/arrow-right.svg
+
+    section.section-desc
+
+        .container
+
+            .tab
+                .tab-item.active(data-active=1) Описание
+                .tab-item(data-active=2) Характеристики
+                .tab-item(data-active=3) Отзывы
+                    span 50
+                .tab-item(data-active=4) Доставка и оплата
+
+            .tab-content.active(data-show=1)
+                p Футболочки с сасными принтами. Чёрный клевер Аста гримуар Футболка streetwear оверсайз зайдёт всем топовым тян и кун. Этот стилек сделан нами с любовью для фанатов аниме Evangelion, Ван Пис, Магическая битва, Клинок расскающий демонов, Атака титанов, Хантер и Джо джо. Женская футболка с иероглифами отлично подойдёт для бега и офиса, занятий йогой и танцами или просто для повседневного ношения. Это няшный подарок для чёткой E-girl, так же как и для топового гуля. Чёрная футболка oversize комфортная для повседневной носки и прекрасно дополнит любой ваш стильный лук. Тишка будет офигенно смотреться на альтушках и тех кто топит за альт! Аниме футболка в стиле харадзюку сделана из 100% хлопка, чтобы кожа наших любимых дед инсайдов и томбоев всегда дышала. В этой майке аниме все вокруг сразу поймут, что ты настоящий краш. Летняя мужская футболка оверсайз обладает устойчивостью к кринжу и токсикам. Принт на футболке выполнен качественным современным методом печати. Если любишь ахегао аниме хентай майки в стиле юникло и asos, бери футболку, и делай флекс в шкалке, унике или на работе.
+
+            .tab-content.active(data-show=2) 
+            .tab-content.active(data-show=3)
+            .tab-content.active(data-show=4)
 
     section.section-slider
 

@@ -406,6 +406,135 @@ section {
         line-height: 140%;
         text-align: center;
         border: none;
+
+        @include breakpoint(md) {
+            height: 48px;
+        }
+    }
+}
+
+.table {
+    margin-top: 10px;
+
+    @include breakpointMax(md) {
+        overflow-x: scroll;
+    }
+}
+
+.table-row {
+    background: #fff;
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+    border-radius: 10px;
+
+    &:nth-child(odd) {
+        background: #f1f4f5;
+    }
+
+    .table-head & {
+        background: #f1f4f5;
+    }
+}
+
+.table-cell {
+    padding: 10px;
+    width: 132px;
+    flex-shrink: 0;
+    font-size: 14px;
+
+    @include breakpoint(lg) {
+        width: 160px;
+    }
+
+    .table-head & {
+        font-weight: 700;
+    }
+}
+
+.tab {
+    margin-bottom: 20px;
+    padding: 4px;
+    background: #fff;
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 4px;
+    border-radius: 16px;
+
+    @include breakpointMax(md) {
+        overflow-x: scroll;
+    }
+
+    @include breakpoint(md) {
+        margin-bottom: 30px;
+        width: max-content;
+    }
+}
+
+.tab-item {
+    padding: 14px 20px;
+    background: #f1f4f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 140%;
+    color: $brand;
+    text-align: center;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    user-select: none;
+    cursor: pointer;
+
+    &.active {
+        background: $brand;
+        color: #fff;
+    }
+
+    &:first-child {
+        border-top-left-radius: 16px;
+        border-bottom-left-radius: 16px;
+    }
+
+    &:last-child {
+        border-top-right-radius: 16px;
+        border-bottom-right-radius: 16px;
+    }
+
+    & span {
+        margin-left: 6px;
+        padding: 2px;
+        background: $brand;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: max-content;
+        min-width: 20px;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 140%;
+        color: #fff;
+        text-transform: uppercase;
+        border-radius: 50%;
+        aspect-ratio: 1;
+    }
+
+    &.active span {
+        background: #fff;
+        color: $brand;
+    }
+}
+
+.tab-content {
+    &.active {
+        animation: fadeIn 0.5s ease forwards;
+    }
+
+    &:not(.active) {
+        display: none;
     }
 }
 

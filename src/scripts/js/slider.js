@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Thumbs } from 'swiper/modules';
 
 const heroSlider = new Swiper('.hero .swiper', {
     modules: [Navigation, Pagination],
@@ -57,19 +57,27 @@ slider.forEach((container) => {
 
 const productThumbs = new Swiper('.product-thumbs .swiper', {
     modules: [Navigation],
-    slidesPerView: 'auto',
+    slidesPerView: 5,
     spaceBetween: 10,
     watchSlidesProgress: true,
     direction: 'horizontal',
 
     navigation: {
-        nextEl: '.product-thumbs .swiper-btn-next',
-        prevEl: '.product-thumbs .swiper-btn-prev'
+        nextEl: '.product-thumbs .swiper-button-next',
+        prevEl: '.product-thumbs .swiper-button-prev'
+    },
+
+    breakpoints: {
+        1440: {
+            slidesPerView: 5,
+            spaceBetween: 20,
+            direction: 'vertical'
+        }
     }
 });
 
 const product = new Swiper('.product-main .swiper', {
-    modules: [Pagination],
+    modules: [Pagination, Thumbs],
     slidesPerView: 1,
     spaceBetween: 30,
 
