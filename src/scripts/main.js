@@ -45,7 +45,7 @@ if (anchor.length > 0) {
             document
                 .querySelector(`#${el.getAttribute('data-anchor').split('#')[1]}`)
                 .scrollIntoView({
-                    block: 'start',
+                    block: 'center',
                     behavior: 'smooth'
                 });
         };

@@ -153,23 +153,72 @@ block main
             .tab-content.active(data-show=1)
                 .desc-text
                     p Футболочки с сасными принтами. Чёрный клевер Аста гримуар Футболка streetwear оверсайз зайдёт всем топовым тян и кун. Этот стилек сделан нами с любовью для фанатов аниме Evangelion, Ван Пис, Магическая битва, Клинок расскающий демонов, Атака титанов, Хантер и Джо джо. Женская футболка с иероглифами отлично подойдёт для бега и офиса, занятий йогой и танцами или просто для повседневного ношения. Это няшный подарок для чёткой E-girl, так же как и для топового гуля. Чёрная футболка oversize комфортная для повседневной носки и прекрасно дополнит любой ваш стильный лук. Тишка будет офигенно смотреться на альтушках и тех кто топит за альт! Аниме футболка в стиле харадзюку сделана из 100% хлопка, чтобы кожа наших любимых дед инсайдов и томбоев всегда дышала. В этой майке аниме все вокруг сразу поймут, что ты настоящий краш. Летняя мужская футболка оверсайз обладает устойчивостью к кринжу и токсикам. Принт на футболке выполнен качественным современным методом печати. Если любишь ахегао аниме хентай майки в стиле юникло и asos, бери футболку, и делай флекс в шкалке, унике или на работе.
-
-            .tab-content.active(data-show=2)
+                
+            .tab-content(data-show=2)
                 .desc-char
                     p Состав материала: 70% хлопок, 25% полиэстер, 5% лайкра
                     p Коллекция: Клинок рассекающий демонов
                     p Российский размер: 56
                     p Размер производителя: XL
 
-            .tab-content.active(data-show=3)
-                .desc-review
-                    .desc-review__block
+            .tab-content(data-show=3)
+                .desc-reviews
+                    .desc-reviews__block
                         +img('anime-girl-2.svg')
                         p Наша команда стремится к тому, чтобы каждый клиент остался доволен покупкой. Спасибо за то, что выбрали нас и оставили классные отзывы о нашей работе!
                         .btn.btn--black(data-anchor="#review_form") Оставить отзыв
 
+                    .desc-reviews-list
+
+                        .desc-reviews__item
+                            .desc-reviews__item-top
+                                .desc-reviews__item-img
+                                    +img('review-img-sample.jpg')
+                                .desc-reviews__item-name Екатерина Рождественская
+                                .desc-reviews__item-date 23.11.2023
+                            .desc-reviews__item-main
+                                .rating
+                                    i.fill(style="width: 70%;")
+                                    i.empty
+                                p Хочу поделиться своими впечатлениями от магазина с анимешной одеждой. Это просто потрясающе! Я давно искала место, где можно купить качественную одежду с любимыми персонажами, и наконец‑то нашла его.
+                                    br
+                                    br
+                                    |Первое, что меня поразило, — это огромный выбор товаров. Здесь есть всё: футболки, свитшоты, сумки, носки и многое другое. Я смогла найти вещи с моими самыми любимыми тайтлами, такими как «Наруто», «Моя геройская академия» и «Одиннадцать сантиметров». Каждая вещь выполнена очень аккуратно и с любовью к деталям. Яркие принты и надписи смотрятся стильно и современно.
+
+                        .desc-reviews__item
+                            .desc-reviews__item-top
+                                .desc-reviews__item-img
+                                    +img('review-img-sample.jpg')
+                                .desc-reviews__item-name Милана
+                                .desc-reviews__item-date 23.11.2023
+                            .desc-reviews__item-main
+                                .rating
+                                    i.fill(style="width: 50%;")
+                                    i.empty
+                                p Отличный магазин с анимешной одеждой! Большой выбор товаров, качественные материалы и быстрая доставка. Рекомендую!
+                        
+                        .desc-reviews__item
+                            .desc-reviews__item-top
+                                .desc-reviews__item-img
+                                    +img('review-img-sample.jpg')
+                                .desc-reviews__item-name Валерия
+                                .desc-reviews__item-date 23.11.2023
+                            .desc-reviews__item-main
+                                .rating
+                                    i.fill(style="width: 80%;")
+                                    i.empty
+                                p Заказывал в этом магазине несколько вещей с разными персонажами. Все пришло быстро и в отличном состоянии. Качество одежды на высоте, рисунки яркие и чёткие. Буду заказывать ещё!
+                    
                     #review_form
-            .tab-content.active(data-show=4)
+                        form(action="/", method="post")
+                            .input-style
+                                input(type="text" name="name" placeholder="Имя *" autocomplete="off" required)
+                            .input-style
+                                input(type="text" name="email" placeholder="Email *" autocomplete="off" required)
+                            .textarea-style
+                                textarea(name="text" placeholder="Отзыв *" required)
+
+            .tab-content(data-show=4)
 
     section.section-slider
 
