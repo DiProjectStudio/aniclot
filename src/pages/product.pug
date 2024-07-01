@@ -184,6 +184,10 @@ block main
                                     br
                                     br
                                     |Первое, что меня поразило, — это огромный выбор товаров. Здесь есть всё: футболки, свитшоты, сумки, носки и многое другое. Я смогла найти вещи с моими самыми любимыми тайтлами, такими как «Наруто», «Моя геройская академия» и «Одиннадцать сантиметров». Каждая вещь выполнена очень аккуратно и с любовью к деталям. Яркие принты и надписи смотрятся стильно и современно.
+                                
+                                span.show-more Показать ещё
+                                    svg(xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none")
+                                        path(d="M14.1654 10.8333L9.9987 15M9.9987 15L5.83203 10.8333M9.9987 15L9.9987 5" stroke="#231F20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
 
                         .desc-reviews__item
                             .desc-reviews__item-top
@@ -195,7 +199,7 @@ block main
                                 .rating
                                     i.fill(style="width: 50%;")
                                     i.empty
-                                p Отличный магазин с анимешной одеждой! Большой выбор товаров, качественные материалы и быстрая доставка. Рекомендую!
+                                p Отличный магазин с анимешной одеждой! Большой выбор товаров, качественные материалы и быстрая доставка. Рекомендую!
                         
                         .desc-reviews__item
                             .desc-reviews__item-top
@@ -207,18 +211,82 @@ block main
                                 .rating
                                     i.fill(style="width: 80%;")
                                     i.empty
-                                p Заказывал в этом магазине несколько вещей с разными персонажами. Все пришло быстро и в отличном состоянии. Качество одежды на высоте, рисунки яркие и чёткие. Буду заказывать ещё!
+                                p Заказывал в этом магазине несколько вещей с разными персонажами. Все пришло быстро и в отличном состоянии. Качество одежды на высоте, рисунки яркие и чёткие. Буду заказывать ещё!
                     
                     #review_form
                         form(action="/", method="post")
-                            .input-style
-                                input(type="text" name="name" placeholder="Имя *" autocomplete="off" required)
-                            .input-style
-                                input(type="text" name="email" placeholder="Email *" autocomplete="off" required)
-                            .textarea-style
-                                textarea(name="text" placeholder="Отзыв *" required)
+                            .review-form
+                                .input-style
+                                    input(type="text" name="name" placeholder="Имя *" autocomplete="off" required)
+                                .input-style
+                                    input(type="text" name="email" placeholder="Email *" autocomplete="off" required)
+                                .textarea-style
+                                    textarea(name="text" placeholder="Отзыв *" required)
+                        
+                                button.btn.btn--black(type="submit") Оставить отзыв
+                                .agreement Нажимая кнопку, вы соглашаетесь с обработкой ваших персональных данных
 
             .tab-content(data-show=4)
+                .info
+                    .info-block
+                        h3 Доставка
+                        .block
+                            .block-item
+                                .block-item-icon
+                                    +img('deliver.png')
+                                p Мы доставляем через СДЭК и Почту России
+
+                            .block-item
+                                .block-item-icon
+                                    +img('tracking.svg')
+                                p Как только сделаете заказ, мы дадим вам трек-номер, чтобы вы могли следить за своим заказом
+
+                            .block-item
+                                .block-item-icon
+                                    +img('shipping-cost.svg')
+                                p Стоимость и сроки доставки посчитаем, при оформлении заказа.
+
+                    .info-block
+                        h3 Оплата
+                        .block.block-payment
+                            .block-item
+                                .block-item-icon
+                                    +img('smartphone.svg')
+                                h4 Банковская карта
+                                p Прошлый век, когда нужно было бегать за сдачей! Оплатите свой заказ онлайн прямо на сайте через банковскую карту.
+
+                            .block-item
+                                .block-item-icon
+                                    +img('qr-code.svg')
+                                h4 QR-код
+                                p Все делается мгновенно — отсканируйте QR-код с помощью своего мобильного банковского приложения и оплатите заказ за считанные секунды.
+
+                    .info-text Если у вас остались вопросы, не стесняйтесь спрашивать у нашей поддержки.
+
+                    .info-contacts
+                        .info-contacts__item
+                            .info-contacts__item-label Телефон
+                            .info-contacts__item-value
+                                a(href="tel:+79000000000") +7 900 000-00-00
+
+                        .info-contacts__item
+                            .info-contacts__item-label Email
+                            .info-contacts__item-value
+                                a(href="mailto:support@aniclot.com") support@aniclot.com
+
+                        .info-contacts__item
+                            .info-contacts__item-label Социальные сети
+                            .info-contacts__item-value
+                                a(href="vk.com" target="_blank")
+                                    include ../icons/vk.svg
+                                a(href="instagram.com" target="_blank")
+                                    include ../icons/insta.svg
+                                a(href="web.telegram.org" target="_blank")
+                                    include ../icons/telegram.svg
+
+                        .info-contacts__item
+                            .info-contacts__item-label Заявка на сайте
+                            .btn.btn--black(data-src="#popup-request" data-fancybox) Оставить заявку
 
     section.section-slider
 

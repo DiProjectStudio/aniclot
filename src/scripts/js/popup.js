@@ -84,6 +84,28 @@ const popupSuccessSubscribe = () => {
 
 window.popupSuccessSubscribe = popupSuccessSubscribe;
 
+// Success review
+const popupSuccessReview = () => {
+    const template = `
+        <div class="popup popup-success">
+            <img src="${home_dir}/assets/images/anime-girl.svg" alt="img"/>
+            <div class="popup-title">Отзыв успешно отправлен!</div>
+            <p>Наша команда стремится к тому, чтобы каждый клиент остался доволен покупкой. Спасибо за то, что выбрали нас и оставили отзыв о нашей работе!</p>
+        </div>
+    `;
+    Fancybox.show([{ src: template, type: 'html' }], {
+        dragToClose: false,
+        autoFocus: false,
+        hideScrollbar: false,
+        l10n: {
+            CLOSE: 'Закрыть',
+            MODAL: 'Вы можете закрыть это модальное окно, нажав клавишу ESC'
+        }
+    });
+};
+
+window.popupSuccessReview = popupSuccessReview;
+
 // Popup success
 const popupSuccess = () => {
     const template = `

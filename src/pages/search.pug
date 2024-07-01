@@ -1,0 +1,58 @@
+extends /layout/layout
+
+block title
+    - var title = 'Поиск'
+    - var page = 'page-search'
+
+block main
+
+    include ../components/_breadcrumbs
+    +breadcrumbs('Поиск', 'Поиск')
+
+    section.section-search
+
+        .container
+
+            .search
+
+                form
+                    .search-form
+                        .input-style
+                            input#search_cat(type="search", name="search", placeholder="Поиск", autocomplete="off")
+
+                        button.btn.btn--black(type="submit")
+                            p Поиск
+                            include ../icons/arrow-right.svg
+
+            .catalog-top
+
+                .result Найдено 100 товаров
+
+                .sort
+                    p Сортировка:
+
+                    .select
+                        .select-value По популярности
+                        .option
+                            a.option__item.selected(href="javascript:void(0)") По популярности
+                            a.option__item(href="javascript:void(0)") По возрастанию цены
+                            a.option__item(href="javascript:void(0)") По убыванию цены
+                            a.option__item(href="javascript:void(0)") По новизне
+
+            .catalog-result
+
+                include ../components/_product
+                +product('item-1.png', 'клинок рассекающий демонов', 'Футболка аниме клинок рассекающий демонов, чёрный цвет, 46 размер, 100% хлопок')
+                +product('item-2.png', 'Магическая битва', 'Футболка Магическая битва')
+                +product('item-3.png', 'клинок рассекающий демонов', 'Футболка аниме клинок рассекающий демонов, чёрный цвет, 46 размер, 100% хлопок')
+                +product('item-4.png', 'Магическая битва', 'Футболка Магическая битва')
+                +product('item-1.png', 'клинок рассекающий демонов', 'Футболка аниме клинок рассекающий демонов, чёрный цвет, 46 размер, 100% хлопок')
+                +product('item-2.png', 'Магическая битва', 'Футболка Магическая битва')
+                +product('item-1.png', 'клинок рассекающий демонов', 'Футболка аниме клинок рассекающий демонов, чёрный цвет, 46 размер, 100% хлопок')
+                +product('item-2.png', 'Магическая битва', 'Футболка Магическая битва')
+                +product('item-3.png', 'клинок рассекающий демонов', 'Футболка аниме клинок рассекающий демонов, чёрный цвет, 46 размер, 100% хлопок')
+                +product('item-4.png', 'Магическая битва', 'Футболка Магическая битва')
+                +product('item-1.png', 'клинок рассекающий демонов', 'Футболка аниме клинок рассекающий демонов, чёрный цвет, 46 размер, 100% хлопок')
+                +product('item-2.png', 'Магическая битва', 'Футболка Магическая битва')
+
+            include ../components/_pagination

@@ -490,19 +490,21 @@
             max-width: 648px;
         }
     }
+
+    & .tab-content {
+        @include breakpoint(lg) {
+            max-width: 868px;
+        }
+
+        @include breakpoint(xl) {
+            max-width: 930px;
+        }
+    }
 }
 
 .desc-text {
     @include breakpoint(md) {
         font-size: 20px;
-    }
-
-    @include breakpoint(lg) {
-        max-width: 868px;
-    }
-
-    @include breakpoint(xl) {
-        max-width: 928px;
     }
 }
 
@@ -515,27 +517,103 @@
 .desc-reviews__block {
     margin-bottom: 30px;
     padding: 20px;
+    background: #fff;
+    border-radius: 20px;
+
+    @include breakpoint(md) {
+        @include breakpointMax(lg) {
+            display: grid;
+            justify-content: flex-start;
+        }
+    }
+
+    @include breakpoint(lg) {
+        padding-bottom: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    & img {
+        @include breakpoint(md) {
+            margin-right: 20px;
+            grid-column: 1;
+        }
+    }
 
     & p {
         margin: 20px 0;
+
+        @include breakpoint(md) {
+            margin-top: 0;
+            grid-column: 2;
+        }
+
+        @include breakpoint(lg) {
+            margin: 0;
+            margin-bottom: auto;
+            max-width: 511px;
+        }
     }
+
+    & .btn {
+        @include breakpoint(md) {
+            grid-column: 2;
+            width: max-content;
+        }
+
+        @include breakpoint(lg) {
+            margin-left: auto;
+            margin-bottom: 15px;
+            flex-shrink: 0;
+        }
+    }
+}
+
+.desc-reviews-list {
+    margin-bottom: 30px;
 }
 
 .desc-reviews__item {
     padding: 20px;
+    background: #fff;
+    border-radius: 20px;
+
+    @include breakpoint(md) {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    & ~ .desc-reviews__item {
+        margin-top: 10px;
+    }
 }
 
 .desc-reviews__item-top {
-    margin-bottom: 30px;
-    display: grid;
-    gap: 4px 20px;
-    justify-content: flex-start;
+    @include breakpointMax(md) {
+        margin-bottom: 30px;
+        display: grid;
+        gap: 4px 20px;
+        justify-content: flex-start;
+    }
+
+    @include breakpoint(md) {
+        margin-right: 40px;
+        flex-shrink: 0;
+        width: 150px;
+    }
 }
 
 .desc-reviews__item-img {
-    grid-row: 1 / 5;
     width: 80px;
     height: 80px;
+
+    @include breakpointMax(md) {
+        grid-row: 1 / 5;
+    }
+
+    @include breakpoint(md) {
+        margin-bottom: 20px;
+    }
 
     & img {
         width: 100%;
@@ -545,17 +623,91 @@
 }
 
 .desc-reviews__item-name {
-    grid-column: 2;
-    grid-row: 2;
+    margin-bottom: 4px;
+    font-weight: 700;
+
+    @include breakpointMax(md) {
+        grid-column: 2;
+        grid-row: 2;
+    }
 }
 
 .desc-reviews__item-date {
-    grid-column: 2;
-    grid-row: 3;
+    font-size: 14px;
+
+    @include breakpointMax(md) {
+        grid-column: 2;
+        grid-row: 3;
+    }
 }
 
 .desc-reviews__item-main {
     & .rating {
         margin-bottom: 10px;
+    }
+
+    & p {
+        @include textLimit(14);
+        max-height: 358px;
+    }
+
+    & .show-more {
+        margin-top: 20px;
+        display: inline-flex;
+        align-items: center;
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 140%;
+        letter-spacing: 0.65px;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        & svg {
+            margin-left: 10px;
+        }
+    }
+}
+
+.review-form {
+    display: grid;
+    row-gap: 10px;
+
+    @include breakpoint(lg) {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    & .input-style {
+        @include breakpoint(lg) {
+            width: 100%;
+        }
+    }
+
+    & .textarea-style {
+        height: 150px;
+
+        @include breakpoint(lg) {
+            width: 100%;
+        }
+    }
+
+    & .btn {
+        margin-top: 20px;
+        width: max-content;
+
+        @include breakpoint(xl) {
+            padding: 18px 28px;
+        }
+    }
+
+    & .agreement {
+        margin-top: 10px;
+        color: $brand;
+
+        @include breakpoint(lg) {
+            margin-top: 20px;
+            margin-left: 20px;
+        }
     }
 }
