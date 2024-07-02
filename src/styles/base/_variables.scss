@@ -10,4 +10,7 @@ $brand: var(--color-brand);
 $bg: var(--color-bg);
 $accent: var(--color-accent);
 
+$filter-black: brightness(0) saturate(100%) invert(11%) sepia(6%) saturate(752%) hue-rotate(295deg)
+    brightness(90%) contrast(93%);
+
 $transition: var(--transition);

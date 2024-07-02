@@ -1,0 +1,97 @@
+.section-404 {
+    padding: 0 var(--container) 60px;
+    text-align: center;
+
+    @include breakpoint(md) {
+        margin: auto;
+        padding-bottom: 80px;
+        max-width: 555px;
+    }
+
+    @include breakpoint(lg) {
+        max-width: 658px;
+    }
+
+    @include breakpoint(hd) {
+        padding-bottom: 100px;
+        max-width: 864px;
+    }
+
+    & img {
+        margin-bottom: 20px;
+        width: 69%;
+
+        @include breakpoint(md) {
+            margin-bottom: 30px;
+            width: 348px;
+        }
+
+        @include breakpoint(lg) {
+            margin-bottom: 40px;
+            width: 448px;
+        }
+
+        @include breakpoint(hd) {
+            width: 562px;
+        }
+    }
+
+    & h2 {
+        margin-bottom: 10px;
+        font-size: 35px;
+        font-weight: 700;
+        line-height: 140%;
+        text-align: center;
+
+        @include breakpoint(lg) {
+            font-size: 42px;
+        }
+
+        @include breakpoint(xl) {
+            margin-bottom: 20px;
+        }
+
+        @include breakpoint(hd) {
+            font-size: 56px;
+        }
+    }
+
+    & p {
+        margin-bottom: 30px;
+
+        @include breakpoint(md) {
+            margin-bottom: 40px;
+        }
+
+        @include breakpoint(xl) {
+            font-size: 20px;
+        }
+    }
+}
+
+.section-404-action {
+    @include breakpoint(md) {
+        display: flex;
+        justify-content: center;
+    }
+
+    & .btn {
+        width: 340px;
+        height: 60px;
+
+        @include breakpoint(md) {
+            padding: 18px 28px;
+            width: auto;
+        }
+
+        & ~ .btn {
+            @include breakpointMax(md) {
+                margin-top: 10px;
+            }
+
+            @include breakpoint(md) {
+                margin-left: 10px;
+            }
+        }
+    }
+}

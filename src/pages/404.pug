@@ -1,0 +1,24 @@
+extends /layout/layout
+
+block title
+    - var title = 'Каталог'
+    - var page = 'page-404'
+
+block main
+
+    include ../components/_breadcrumbs
+    +breadcrumbs('', '404')
+
+    section.section-404
+
+        +img('404.png')
+
+        h2 Кажется, что-то пошло не так
+
+        p Страница, которую вы запрашиваете не существует. Возможно она устарела, была удалена, или введён неправильный адрес в строке
+
+        .section-404-action
+            a(href="javascript:void(0);" onclick="history.back()").btn.btn-arrow-left.btn--border-black Вернуться назад
+                include ../icons/arrow-right.svg
+            a(href="/").btn.btn-arrow-right.btn--black Перейти на главнаю
+                include ../icons/arrow-right.svg
