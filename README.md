@@ -1,5 +1,5 @@
 # Aniclot v1.0.0
 
--   npm install
--   npm run dev #development
--   npm run build #production
+-   <code>npm install</code>
+-   <code>npm run dev</code>
+-   <code>npm run build</code>
