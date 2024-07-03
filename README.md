@@ -2,4 +2,4 @@
 
 -   npm install
 -   npm run dev #development
--   npm run build #production
+  <code>  npm run build </code>
