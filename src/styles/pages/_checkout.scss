@@ -1,0 +1,326 @@
+.checkout {
+    @include breakpoint(lg) {
+        display: grid;
+        align-items: flex-start;
+        grid-template-columns: 7fr 5fr;
+        column-gap: 15px;
+    }
+
+    @include breakpoint(xl) {
+        column-gap: 40px;
+    }
+
+    & .input-style {
+        display: grid;
+        gap: 10px;
+
+        @include breakpoint(md) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        & input {
+            background: #f4f4f4;
+            height: 58px;
+        }
+    }
+}
+
+.block {
+    padding: 16px;
+    background: #fff;
+    border-radius: 12px;
+
+    @include breakpoint(md) {
+        padding: 20px;
+    }
+
+    & ~ .block {
+        margin-top: 10px;
+    }
+}
+
+.block-title {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.block-header {
+    display: flex;
+    align-items: center;
+
+    & span {
+        margin-right: 10px;
+        background: $brand;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 140%;
+        color: #fff;
+        border-radius: 4px;
+    }
+}
+
+.block__name {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 140%;
+}
+
+.block-wrap {
+    margin-top: 20px;
+    display: none;
+
+    .block.active & {
+        display: block;
+    }
+}
+
+.block-footer {
+    margin-top: 20px;
+    display: flex;
+
+    & .btn {
+        padding: 12px 16px;
+        display: flex;
+        height: 44px;
+        font-size: 13px;
+    }
+
+    & .btn-next {
+        margin-left: auto;
+    }
+}
+
+.delivery {
+    @include breakpoint(md) {
+        display: flex;
+        align-items: flex-start;
+        column-gap: 30px;
+    }
+
+    @include breakpoint(hd) {
+        column-gap: 40px;
+    }
+}
+
+.delivery-items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 7px;
+
+    @include breakpoint(md) {
+        grid-auto-rows: 1fr;
+    }
+
+    @include breakpoint(hd) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    & label {
+        padding: 10px;
+        background: #f4f4f4;
+        display: block;
+        border: 1px solid transparent;
+        border-radius: 12px;
+        overflow: hidden;
+        cursor: pointer;
+
+        @include breakpoint(md) {
+            height: 100%;
+        }
+    }
+
+    & input {
+        display: none;
+
+        &:checked {
+            & + label {
+                border-color: $brand;
+            }
+        }
+    }
+}
+
+.delivery__item {
+    & img {
+        margin-bottom: 10px;
+    }
+
+    & .block-title {
+        margin-bottom: 4px;
+    }
+
+    & p {
+        font-size: 14px;
+    }
+}
+
+.delivery-block {
+    padding: 20px;
+    background: #f2f2f2;
+    border-radius: 20px;
+
+    @include breakpointMax(md) {
+        margin-top: 20px;
+    }
+
+    @include breakpoint(md) {
+        flex-shrink: 0;
+        width: 230px;
+    }
+
+    @include breakpoint(hd) {
+        width: 256px;
+    }
+
+    & img {
+        margin-bottom: 10px;
+    }
+
+    & .btn {
+        padding: 12px 16px;
+        width: 100%;
+    }
+}
+
+.delivery-block__text {
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.delivery-block__item {
+    margin-top: 20px;
+
+    & p {
+        &:last-child {
+            margin-top: 4px;
+            font-weight: 700;
+            line-height: 140%;
+        }
+    }
+}
+
+.payment {
+    display: grid;
+    column-gap: 10px;
+}
+
+.payment__item {
+    padding: 12px;
+
+    & input {
+        display: none;
+    }
+}
+
+.customer-info {
+    display: grid;
+    gap: 10px;
+
+    @include breakpoint(md) {
+        gap: 20px;
+    }
+
+    & .input-style {
+        gap: 10px;
+
+        @include breakpoint(md) {
+            gap: 20px;
+        }
+    }
+}
+
+.checkout-total {
+    padding: 16px;
+    background: #fff;
+    border-radius: 20px;
+
+    @include breakpoint(md) {
+        padding: 20px;
+    }
+
+    @include breakpointMax(lg) {
+        margin-top: 40px;
+    }
+
+    @include breakpoint(lg) {
+        margin-left: auto;
+        position: sticky;
+        top: 110px;
+        width: calc(100% - 104px);
+    }
+
+    @include breakpoint(xl) {
+        top: 120px;
+        width: calc(100% - 124px);
+    }
+
+    @include breakpoint(hd) {
+        width: calc(100% - 164px);
+    }
+
+    & .total-props {
+        margin: 0 0 10px;
+
+        @include breakpoint(md) {
+            margin-bottom: 14px;
+        }
+
+        &.total-sum {
+            margin: 0 0 20px;
+
+            & .total-props__name {
+                width: 45%;
+                color: $brand;
+            }
+        }
+    }
+
+    & .total-props__name {
+        width: 45%;
+    }
+
+    & .total-action {
+        margin-top: 20px;
+
+        & .btn {
+            @include breakpoint(md) {
+                height: 56px;
+            }
+        }
+    }
+
+    & .agreement {
+        margin-top: 20px;
+    }
+}
+
+.section-checkout-success {
+    .title {
+        margin-bottom: 20px;
+        text-align: center;
+
+        @include breakpoint(md) {
+            margin-bottom: 40px;
+        }
+
+        @include breakpoint(lg) {
+            margin-bottom: 50px;
+        }
+    }
+
+    p {
+        margin: 0 auto;
+        max-width: 582px;
+        font-size: 16px;
+        text-align: center;
+
+        @include breakpoint(lg) {
+            max-width: 680px;
+        }
+    }
+}

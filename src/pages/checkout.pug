@@ -1,0 +1,164 @@
+extends /layout/layout
+
+block title
+    - var title = 'Оформление'
+    - var page = 'page-checkout'
+
+block main
+
+    include ../components/_breadcrumbs
+    +breadcrumbs('Оформление', 'Оформление')
+
+    section.section-checkout
+
+        .container
+
+            .checkout
+
+                .checkout-main
+                    
+                    // step 1
+                    .block
+                        .block-header
+                            span 1
+                            .block__name Регион доставки
+
+                        .block-wrap
+                            .block-body
+
+                                .input-style
+                                    input(type="text", name="customer-city", placeholder="*Местоположение")
+                                    input(type="text", name="customer-index", placeholder="*Индекс")
+
+                            .block-footer
+                                .btn-next.btn.btn--black Далее
+
+                    // step 2
+                    .block
+                        .block-header
+                            span 2
+                            .block__name Доставка
+
+                        .block-wrap
+                            .block-body
+
+                                .delivery
+
+                                    .delivery-items
+
+                                        .delivery__item
+                                            input#delivery_1(type="radio", name="delivery", checked)
+                                            label(for="delivery_1")
+                                                +img('cdek.png')
+                                                .block-title СДЭК, Доставка курьером
+                                                p Стоимость и сроки доставки рассчитывается индивидуально
+                                    
+                                        .delivery__item
+                                            input#delivery_2(type="radio", name="delivery")
+                                            label(for="delivery_2")
+                                                +img('cdek.png')
+                                                .block-title СДЭК, Доставка в почтамат
+                                                p Стоимость и сроки доставки рассчитывается индивидуально
+                                        
+                                        .delivery__item
+                                            input#delivery_3(type="radio", name="delivery")
+                                            label(for="delivery_3")
+                                                +img('cdek.png')
+                                                .block-title СДЭК, Доставка в пункт выдачи
+                                                p Стоимость и сроки доставки рассчитывается индивидуально
+
+                                        .delivery__item
+                                            input#delivery_4(type="radio", name="delivery")
+                                            label(for="delivery_4")
+                                                +img('pochta-russia.png')
+                                                .block-title Доставка почтой России
+                                                p Стоимость и сроки доставки рассчитывается индивидуально
+
+                                    .delivery-block
+                                        +img('cdek.png')
+                                        .delivery-block__text СДЭК, Доставка в почтамат
+                                        .btn.btn--border-black Выбрать почтамат
+
+                                        .delivery-block__item
+                                            p Стоимость
+                                            p 100 000 ₽
+                                        
+                                        .delivery-block__item
+                                            p Срок доставки
+                                            p 2–3 дня
+
+                            .block-footer
+                                .btn-back.btn.btn--border-black Назад
+                                .btn-next.btn.btn--black Далее
+
+                    // step 3
+                    .block.active
+                        .block-header
+                            span 3
+                            .block__name Оплата
+
+                        .block-wrap
+                            .block-body
+                                
+                                .payment
+                                    
+                                    .payment__item
+                                        input#payment_1(type="radio", name="payment", checked)
+                                        label(for="payment_1")
+                                            +img('smartphone.svg')
+                                            .block-title Банковская карта
+
+                                    .payment__item
+                                        input#payment_2(type="radio", name="payment", checked)
+                                        label(for="payment_2")
+                                            +img('qr-code.svg')
+                                            .block-title QR-код
+                                    
+
+                            .block-footer
+                                .btn-back.btn.btn--stroke-black Назад
+                                .btn-next.btn.btn--black Далее
+
+                    // step 4
+                    .block
+                        .block-header
+                            span 4
+                            .block__name Покупатель
+
+                        .block-wrap
+                            .block-body
+                                .customer-info
+                                    .input-style
+                                        input(type="text", name="customer-name", placeholder="*ФИО")
+                                        input(type="text", name="customer-email", placeholder="*E-mail")
+                                        input(type="text", name="customer-phone", placeholder="*Телефон", phone-number)
+                                        input(type="text", name="customer-address", placeholder="*Адрес доставки")
+                                    .input-textarea
+                                        textarea(name="customer-comment", placeholder="*Комментарии к заказу")
+                                        
+                            .block-footer
+                                .btn-back.btn.btn--stroke-black Назад
+                    
+                .checkout-total
+
+                    .total-props.total-sum
+                        .total-props__name Итого
+                        .total-props__value 100 000 ₽
+
+                    .total-props
+                        .total-props__name Доставка
+                        .total-props__value СДЭК почтамат
+
+                    .total-props
+                        .total-props__name Оплата
+                        .total-props__value Банковская карта
+
+                    .total-props
+                        .total-props__name Списание баллов
+                        .total-props__value 1000
+
+                    .total-action
+                        .btn.btn--black Оформить заказ
+                    
+                    .agreement
+                        p Нажимая кнопку, вы соглашаетесь с обработкой ваших персональных данных

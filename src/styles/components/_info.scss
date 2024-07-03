@@ -18,7 +18,7 @@
     margin-bottom: 50px;
 }
 
-.block {
+.unit {
     @include breakpoint(md) {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -30,13 +30,13 @@
     }
 }
 
-.block-payment {
+.unit-payment {
     @include breakpoint(md) {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-.block-item {
+.unit-item {
     padding: 20px;
     background: #fff;
     border-radius: 20px;
@@ -50,7 +50,7 @@
         min-height: 204px;
     }
 
-    & ~ .block-item {
+    & ~ .unit-item {
         @include breakpointMax(md) {
             margin-top: 10px;
         }
@@ -63,7 +63,7 @@
     }
 }
 
-.block-item-icon {
+.unit-item-icon {
     margin-bottom: 20px;
 }
 
