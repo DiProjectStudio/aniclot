@@ -1,0 +1,29 @@
+extends /layout/layout
+
+block title
+    - var title = 'Бонусный счёт'
+    - var page = 'page-personal'
+
+block main
+
+    include ../components/_breadcrumbs
+    +breadcrumbs('Бонусный счёт', 'Личный кабинет', 'Бонусный счёт')
+
+    section.section-personal-bonus
+
+        .container
+
+            .personal-wrap
+
+                .personal-aside
+
+                    a.personal-aside__item(href="/personal") Личные данные
+                    a.personal-aside__item(href="/personal-orders") Текущие заказы
+                    a.personal-aside__item(href="/personal-history") История заказов
+                    a.personal-aside__item.active(href="/personal-bonus") Бонусный счёт
+
+                .personal-main
+
+                    .personal-bonus На вашем бонусном счёте: <b>2000 баллов</b>
+
+                    .bonuses

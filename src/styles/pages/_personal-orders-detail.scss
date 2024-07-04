@@ -1,0 +1,196 @@
+.page-back {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    cursor: pointer;
+
+    &::before {
+        content: '';
+        margin-right: 10px;
+        background: url('../images/arrow-narrow-left.svg') no-repeat;
+        background-size: contain;
+        background-position: center;
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.order-detail {
+    & .order__body:nth-last-child(2) {
+        border: none;
+    }
+
+    & .order-customer {
+        display: grid;
+        row-gap: 20px;
+
+        @include breakpoint(md) {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            column-gap: 30px;
+        }
+    }
+
+    & .customer-item {
+        & p {
+            font-size: 16px;
+
+            &:first-child {
+                margin-bottom: 10px;
+                font-size: 14px;
+            }
+        }
+    }
+
+    & .customer-action .btn {
+        margin-bottom: 10px;
+        padding: 14px 20px;
+    }
+
+    & .order-link {
+        margin: 0;
+    }
+
+    & .order-customer .order-link {
+        @include breakpoint(md) {
+            width: 100%;
+        }
+    }
+
+    & .current-delivery .order-link {
+        margin-top: 10px;
+    }
+
+    & .order-content {
+        margin-top: 20px;
+        display: grid;
+        row-gap: 20px;
+        column-gap: 20px;
+        grid-template-columns: repeat(4, 1fr);
+        font-size: 16px;
+
+        @include breakpoint(lg) {
+            grid-template-columns: 353px 1fr 1fr 1fr 1fr;
+        }
+
+        @include breakpoint(hd) {
+            grid-template-columns: 507px 1fr 1fr 1fr 1fr;
+        }
+    }
+
+    & .order-content__head {
+        margin-bottom: 10px;
+        font-size: 14px;
+        color: #666;
+
+        @include breakpoint(lg) {
+            margin-bottom: 20px;
+        }
+    }
+
+    & .order-content-name {
+        @include breakpointMax(lg) {
+            grid-column: 1 / 5;
+        }
+
+        & .order-content__head {
+            margin-bottom: 20px;
+        }
+    }
+
+    & .order-content-quantity .order-content__head p {
+        @include breakpointMax(md) {
+            margin-left: 0;
+        }
+    }
+
+    & .order-content__item {
+        display: flex;
+        align-items: flex-start;
+        font-size: 14px;
+    }
+
+    & .order-content-name .order-content__item {
+        margin-left: 0;
+        display: grid;
+        justify-content: flex-start;
+    }
+
+    & .order-content-quantity .order-content__item {
+        @include breakpointMax(md) {
+            margin-left: 0;
+        }
+    }
+
+    .order-content-sum .order-content__item {
+        font-weight: 700;
+    }
+
+    & .order-content__img {
+        margin-right: 20px;
+        grid-row: 1 / 4;
+        width: 60px;
+        aspect-ratio: 1;
+
+        @include breakpoint(hd) {
+            width: 101px;
+        }
+    }
+
+    & .order-content__img img {
+        height: 100%;
+    }
+
+    & .order-content__title {
+        margin-bottom: 12px;
+        grid-column: 2 / 3;
+
+        & a {
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 140%;
+            @include textLimit(2);
+        }
+    }
+
+    & .order-content__variant {
+        grid-column: 2 / 3;
+        display: flex;
+        column-gap: 15px;
+    }
+
+    & .order__bottom {
+        padding-top: 0;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        row-gap: 12px;
+
+        @include breakpoint(md) {
+            row-gap: 10px;
+            max-width: 387px;
+        }
+
+        @include breakpoint(lg) {
+            max-width: 353px;
+        }
+
+        @include breakpoint(hd) {
+            max-width: 507px;
+        }
+
+        & p {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+
+        & span {
+            font-weight: 700;
+            color: #666;
+        }
+    }
+}

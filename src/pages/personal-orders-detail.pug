@@ -1,0 +1,125 @@
+extends /layout/layout
+
+block title
+    - var title = 'Мой заказ № 3, создан 16.10.2023'
+    - var page = 'page-personal'
+
+block main
+
+    include ../components/_breadcrumbs
+    +breadcrumbs('Мой заказ № 3, создан 16.10.2023', 'Личный кабинет', 'Текущие заказы', 'Мой заказ № 3, создан 16.10.2023')
+
+    section.section-personal
+
+        .container
+
+            .personal-wrap
+
+                .personal-aside
+
+                    a.personal-aside__item(href="/personal") Личные данные
+                    a.personal-aside__item.active(href="/personal-orders") Текущие заказы
+                    a.personal-aside__item(href="/personal-history") История заказов
+                    a.personal-aside__item(href="/personal-bonus") Бонусный счёт
+
+                .personal-main
+
+                    .order-detail
+
+                        .order__block
+
+                            .order__top Заказ № 3 от 21.05.2024 на сумму 10 000 ₽
+                            .order__body
+                                .order__body-title Информация о заказе
+                                .order-customer
+                                    .customer-item
+                                        p Ф.И.О.:
+                                        p <b>Иван Иванович</b>
+
+                                    .customer-item
+                                        p Текущий статус
+                                        p <b>Ожидается оплата</b>
+
+                                    .customer-item
+                                        p Сумма:
+                                        p <b>10 000 ₽</b>
+
+                                    .customer-action    
+                                        .btn.btn--black Повторить заказ
+                                        .order-link.order-link-cancel
+                                            include ../icons/x.svg
+                                            a(href="#") Отменить заказ
+                                    
+                                    .order-link.order-link-info
+                                        a(href="javascript:void(0)") Подробнее
+
+                            .order__body
+                                .order__body-title Оплата
+                                .order-payment
+                                    .order-payment-item
+                                        .order-payment-name Счёт№ 104 от 21.05.2024, QR-code
+                                        .order-payment-status.order-payment-status--declined Не оплачено
+                                        .btn.btn--black Оплатить
+                                    .order-payment-total Сумма к оплате по счёту: 10 000 ₽
+                                    .change-payment
+                                        a(href="javascript:void(0)") Сменить способ оплаты
+
+                            .order__body
+                                .order__body-title Параметры отгрузки
+                                .current-delivery
+                                    .current-delivery-item
+                                        p Отгрузка № 104
+                                        .order-payment-status.order-payment-status--declined Не отгружено
+
+                                    .current-delivery-item
+                                        p Статус отгрузки:
+                                        .order-payment-status.order-payment-status--pending Ожидает обработки
+
+                                    .current-delivery-item
+                                        p Служба доставки: СДЭК, Доставка в почтамат
+
+                                    .order-link.order-link-info
+                                        a(href="javascript:void(0)") Показать всё
+
+                            .order__body
+                                .order__body-title Содержимое заказа
+
+                                .order-content
+                                    .order-content-col.order-content-name
+                                        .order-content__head Наименование
+                                        .order-content__item
+                                            .order-content__img
+                                                a(href="/product") 
+                                                    +img('item-3.png')
+                                            .order-content__title
+                                                a(href="/product") Футболка аниме клинок рассекающий демонов, чёрный цвет, 46 размер, 100% хлопок, ещё какая‑то информация для длинного названия
+                                            .order-content__variant
+                                                p Цвет: чёрный
+                                                p Размер: XL
+                                    
+                                    .order-content-col.order-content-price
+                                        .order-content__head Цена
+                                        .order-content__item 20 000 ₽
+
+                                    .order-content-col.order-content-sale
+                                        .order-content__head Скидка
+                                        .order-content__item 10 000 ₽
+
+                                    .order-content-col.order-content-quantity
+                                        .order-content__head Кол-во
+                                        .order-content__item 1 шт
+
+                                    .order-content-col.order-content-sum
+                                        .order-content__head Сумма
+                                        .order-content__item 10 000 ₽
+
+                            .order__bottom
+                                p
+                                    span Товар на
+                                    | 10 000 ₽
+                                p
+                                    span Стоимость доставки
+                                    | 0 ₽
+                                p
+                                    span Начислены баллы
+                                    | + 250

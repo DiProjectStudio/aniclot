@@ -18,20 +18,26 @@ block main
                 .checkout-main
                     
                     // step 1
-                    .block
+                    .block.active
                         .block-header
                             span 1
                             .block__name Регион доставки
+                            <!-- <div class="block__edit">Изменить</div> -->
 
                         .block-wrap
                             .block-body
 
-                                .input-style
-                                    input(type="text", name="customer-city", placeholder="*Местоположение")
-                                    input(type="text", name="customer-index", placeholder="*Индекс")
+                                .location
+                                    .input-style
+                                        input(type="text", name="customer-city", placeholder="*Местоположение")
+                                        input(type="text", name="customer-index", placeholder="*Индекс")
 
                             .block-footer
                                 .btn-next.btn.btn--black Далее
+
+                        <!-- <div class="block-content"><b>Местоположение:</b>
+                            <p>Москва, Центр, Россия</p>
+                        </div> -->
 
                     // step 2
                     .block
@@ -91,8 +97,12 @@ block main
                                 .btn-back.btn.btn--border-black Назад
                                 .btn-next.btn.btn--black Далее
 
+                        <!-- <div class="block-content"><b>Доставка:</b>
+                            <p>СДЭК, Доставка в&nbsp;почтамат 200&nbsp;₽</p>
+                        </div> -->
+
                     // step 3
-                    .block.active
+                    .block
                         .block-header
                             span 3
                             .block__name Оплата
@@ -114,30 +124,69 @@ block main
                                             +img('qr-code.svg')
                                             .block-title QR-код
                                     
-
                             .block-footer
-                                .btn-back.btn.btn--stroke-black Назад
+                                .btn-back.btn.btn--border-black Назад
                                 .btn-next.btn.btn--black Далее
+
+                        <!-- <div class="block-content"><b>Оплата:</b>
+                            <p>Банковская карта</p>
+                        </div> -->
 
                     // step 4
                     .block
                         .block-header
                             span 4
+                            .block__name Бонусный счёт
+
+                        .block-wrap
+                            .block-body
+                                
+                                .bonus-account
+                                    .bonus-account__item
+                                        p Бонусный счёт: <b>2 500 балов</b>
+
+                                    .bonus-account__item
+                                        p Вы можете оплатить: <b>1 000</b>
+
+                                    .input-style
+                                        input(type="text", name="bonus", placeholder="Введите сумму")
+
+                            .block-footer
+                                .btn-back.btn.btn--border-black Назад
+                                .btn-next.btn.btn--black Далее
+
+                        <!-- <div class="block-content">
+                            <p>Оплатить:<b>&nbsp;1000&nbsp;баллов</b></p>
+                        </div> -->
+
+                    // step 5
+                    .block
+                        .block-header
+                            span 5
                             .block__name Покупатель
 
                         .block-wrap
                             .block-body
                                 .customer-info
                                     .input-style
-                                        input(type="text", name="customer-name", placeholder="*ФИО")
-                                        input(type="text", name="customer-email", placeholder="*E-mail")
-                                        input(type="text", name="customer-phone", placeholder="*Телефон", phone-number)
-                                        input(type="text", name="customer-address", placeholder="*Адрес доставки")
-                                    .input-textarea
-                                        textarea(name="customer-comment", placeholder="*Комментарии к заказу")
+                                        input(type="text", name="customer-name", placeholder="ФИО*")
+                                        input(type="text", name="customer-email", placeholder="E-mail*")
+                                        input(type="text", name="customer-phone", placeholder="Телефон*", phone-number)
+                                        input(type="text", name="customer-address", placeholder="Адрес*")
+                                    .textarea-style
+                                        textarea(name="customer-comment", placeholder="Комментарии к заказу")
                                         
                             .block-footer
-                                .btn-back.btn.btn--stroke-black Назад
+                                .btn-back.btn.btn--border-black Назад
+                                .btn-next.btn.btn--black Далее
+
+                        <!-- <div class="block-content">
+                            <p><b>ФИО:</b>Иванов Иван Иванович</p>
+                            <p><b>Email:</b>ivan@mail.ru</p>
+                            <p><b>Телефон:</b>+7&nbsp;900&nbsp;800-08-81</p>
+                            <p><b>Адрес:</b>г.&nbsp;Москва, ул.&nbsp;Мясницкая, д.&nbsp;1</p>
+                            <p><b>Комментарий к&nbsp;заказу:</b>положите в&nbsp;разные коробки</p>
+                        </div> -->
                     
                 .checkout-total
 

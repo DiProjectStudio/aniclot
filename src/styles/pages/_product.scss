@@ -686,8 +686,6 @@
     }
 
     & .textarea-style {
-        height: 150px;
-
         @include breakpoint(lg) {
             width: 100%;
         }

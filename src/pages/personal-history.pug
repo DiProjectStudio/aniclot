@@ -1,0 +1,55 @@
+extends /layout/layout
+
+block title
+    - var title = 'История заказов'
+    - var page = 'page-personal'
+
+block main
+
+    include ../components/_breadcrumbs
+    +breadcrumbs('История заказов', 'Личный кабинет', 'История заказов')
+
+    section.section-personal-history
+
+        .container
+
+            .personal-bonus На вашем бонусном счёте: <b>2000 баллов</b>
+
+            .personal-wrap
+
+                .personal-aside
+
+                    a.personal-aside__item(href="/personal") Личные данные
+                    a.personal-aside__item(href="/personal-orders") Текущие заказы
+                    a.personal-aside__item.active(href="/personal-history") История заказов
+                    a.personal-aside__item(href="/personal-bonus") Бонусный счёт
+
+                .personal-main
+
+                    .orders
+
+                        .order__block
+
+                            .order__top Заказ № 1 от 21.05.2024 на сумму 10 000 ₽
+                            .order__body
+                                p <b>Начислены баллы</b>
+                                    span + 250
+                            .order__bottom
+                                .order-link.order-link-info
+                                    a(href="/personal-orders-detail") Подробнее о заказе
+                                .order-link.order-link-repeat
+                                    include ../icons/refresh.svg
+                                    a(href="#") Повторить заказ
+
+                        .order__block
+
+                            .order__top Заказ № 2 от 21.05.2024 на сумму 10 000 ₽
+                            .order__body
+                                p <b>Начислены баллы</b>
+                                    span + 250
+                            .order__bottom
+                                .order-link.order-link-info
+                                    a(href="/personal-orders-detail") Подробнее о заказе
+                                .order-link.order-link-repeat
+                                    include ../icons/refresh.svg
+                                    a(href="#") Повторить заказ

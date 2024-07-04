@@ -1,0 +1,12 @@
+.personal-bonus {
+    margin-bottom: 30px;
+    font-size: 20px;
+
+    @include breakpoint(hd) {
+        margin-bottom: 40px;
+    }
+
+    & b {
+        line-height: 140%;
+    }
+}

@@ -1,0 +1,25 @@
+extends /layout/layout
+
+block title
+    - var title = 'Оформление'
+    - var page = 'page-checkout'
+
+block main
+
+    include ../components/_breadcrumbs
+    +breadcrumbs('', 'Заказ оформлен')
+
+    section.section-checkout-success
+
+        .checkout-success
+
+            +img('anime-girl.svg')
+
+            h2 Спасибо!
+                br
+                |Заказ оформлен
+
+            p Ваш заказ № 30 от 25.04.2024 12:03 успешно создан. Номер вашей оплаты: № 30/1
+                br
+                br
+                |Вы можете следить за выполнением своего заказа в Личном кабинете. Пароль от личного кабинета отправили вам на почту

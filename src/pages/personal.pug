@@ -1,0 +1,75 @@
+extends /layout/layout
+
+block title
+    - var title = 'Личный кабинет'
+    - var page = 'page-personal'
+
+block main
+
+    include ../components/_breadcrumbs
+    +breadcrumbs('Личный кабинет', 'Личный кабинет')
+
+    section.section-personal
+
+        .container
+
+            .personal-wrap
+
+                .personal-aside
+
+                    a.personal-aside__item.active(href="/personal") Личные данные
+                    a.personal-aside__item(href="/personal-orders") Текущие заказы
+                    a.personal-aside__item(href="/personal-history") История заказов
+                    a.personal-aside__item(href="/personal-bonus") Бонусный счёт
+
+                .personal-main
+
+                    .profile
+
+                        .profile__row
+                            .field-name Обращение
+                            .input-style
+                                input(type="text" value="Иван")
+
+                        .profile__row
+                            .field-name Имя
+                            .input-style
+                                input(type="text" value="Иван")
+
+                        .profile__row
+                            .field-name Фамилия
+                            .input-style
+                                input(type="text" value="Иванов")
+
+                        .profile__row
+                            .field-name Отчество
+                            .input-style
+                                input(type="text" value="Иванович")
+
+                        .profile__row
+                            .field-name Логин (мин. 3 символа)*
+                            .input-style
+                                input(type="text" value="Ivan")
+
+                        .profile__row
+                            .field-name Почта
+                            .input-style
+                                input(type="email" value="ivan@mail.ru")
+
+                        .profile__row
+                            .field-name Новый пароль
+                            .input-style.input-style-password
+                                input(type="password")
+                                .pass-eye
+                                    include ../icons/eye.svg
+
+                        .profile__row
+                            .field-name Подтверждение нового пароля
+                            .input-style.input-style-password
+                                input(type="password")
+                                .pass-eye
+                                    include ../icons/eye.svg
+
+                    .profile-action
+                        .profile-btn-save.btn.btn--black Сохранить
+                        .profile-btn-reset.btn.btn--border-black Сбросить

@@ -1,0 +1,100 @@
+extends /layout/layout
+
+block title
+    - var title = 'Текущие заказы'
+    - var page = 'page-personal'
+
+block main
+
+    include ../components/_breadcrumbs
+    +breadcrumbs('Текущие заказы', 'Личный кабинет', 'Текущие заказы')
+
+    section.section-personal
+
+        .container
+
+            .personal-wrap
+
+                .personal-aside
+
+                    a.personal-aside__item(href="/personal") Личные данные
+                    a.personal-aside__item.active(href="/personal-orders") Текущие заказы
+                    a.personal-aside__item(href="/personal-history") История заказов
+                    a.personal-aside__item(href="/personal-bonus") Бонусный счёт
+
+                .personal-main
+
+                    .orders
+
+                        .order__block
+
+                            .order__top Заказ № 3 от 21.05.2024 на сумму 10 000 ₽
+                            .order__body
+                                .order__body-title Оплата
+                                .order-payment
+                                    .order-payment-item
+                                        .order-payment-name Счёт№ 104 от 21.05.2024, QR-code
+                                        .order-payment-status.order-payment-status--declined Не оплачено
+                                        .btn.btn--black Оплатить
+                                    .order-payment-total Сумма к оплате по счёту: 10 000 ₽
+                                    .change-payment
+                                        a(href="javascript:void(0)") Сменить способ оплаты
+
+                            .order__body
+                                .order__body-title Доставка
+                                .current-delivery
+                                    .current-delivery-item
+                                        p Отгрузка № 104
+                                        .order-payment-status.order-payment-status--declined Не отгружено
+
+                                    .current-delivery-item
+                                        p Статус отгрузки:
+                                        .order-payment-status.order-payment-status--pending Ожидает обработки
+
+                                    .current-delivery-item
+                                        p Служба доставки: СДЭК, Доставка в почтамат
+
+                            .order__bottom
+                                .order-link.order-link-info
+                                    a(href="/personal-orders-detail") Подробнее о заказе
+                                .order-link.order-link-repeat
+                                    include ../icons/refresh.svg
+                                    a(href="#") Повторить заказ
+                                .order-link.order-link-cancel
+                                    include ../icons/x.svg
+                                    a(href="#") Отменить заказ
+
+                        .order__block
+
+                            .order__top Заказ № 4 от 21.05.2024 на сумму 10 000 ₽
+                            .order__body
+                                .order__body-title Оплата
+                                .order-payment
+                                    .order-payment-item
+                                        .order-payment-name Счёт№ 104 от 21.05.2024, QR-code
+                                        .order-payment-status.order-payment-status--success Оплачено
+                                    .order-payment-total Сумма к оплате по счёту: 10 000 ₽
+
+                            .order__body
+                                .order__body-title Доставка
+                                .current-delivery
+                                    .current-delivery-item
+                                        p Отгрузка № 104
+                                        .order-payment-status.order-payment-status--declined Не отгружено
+
+                                    .current-delivery-item
+                                        p Статус отгрузки:
+                                        .order-payment-status.order-payment-status--pending Ожидает обработки
+
+                                    .current-delivery-item
+                                        p Служба доставки: СДЭК, Доставка в почтамат
+
+                            .order__bottom
+                                .order-link.order-link-info
+                                    a(href="/personal-orders-detail") Подробнее о заказе
+                                .order-link.order-link-repeat
+                                    include ../icons/refresh.svg
+                                    a(href="#") Повторить заказ
+                                .order-link.order-link-cancel
+                                    include ../icons/x.svg
+                                    a(href="#") Отменить заказ

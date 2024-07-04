@@ -10,18 +10,12 @@
         column-gap: 40px;
     }
 
-    & .input-style {
-        display: grid;
-        gap: 10px;
+    & .input-style input {
+        background: #f4f4f4;
+    }
 
-        @include breakpoint(md) {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        & input {
-            background: #f4f4f4;
-            height: 58px;
-        }
+    & .textarea-style textarea {
+        background: #f4f4f4;
     }
 }
 
@@ -42,6 +36,7 @@
 .block-title {
     font-size: 16px;
     font-weight: 700;
+    line-height: 140%;
 }
 
 .block-header {
@@ -70,6 +65,26 @@
     line-height: 140%;
 }
 
+.block__edit {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &::after {
+        content: '';
+        margin-left: 10px;
+        background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjEiIHZpZXdCb3g9IjAgMCAyMCAyMSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgaWQ9Ikljb24vT3V0bGluZS9jaGVjay1jaXJjbGUiPgo8cGF0aCBpZD0iSWNvbiIgZD0iTTcuNSAxMC41TDkuMTY2NjcgMTIuMTY2N0wxMi41IDguODMzMzNNMTcuNSAxMC41QzE3LjUgMTQuNjQyMSAxNC4xNDIxIDE4IDEwIDE4QzUuODU3ODYgMTggMi41IDE0LjY0MjEgMi41IDEwLjVDMi41IDYuMzU3ODYgNS44NTc4NiAzIDEwIDNDMTQuMTQyMSAzIDE3LjUgNi4zNTc4NiAxNy41IDEwLjVaIiBzdHJva2U9IiMyMTk2NTMiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjwvZz4KPC9zdmc+Cg==);
+        display: block;
+        width: 20px;
+        height: 20px;
+    }
+}
+
 .block-wrap {
     margin-top: 20px;
     display: none;
@@ -92,6 +107,36 @@
 
     & .btn-next {
         margin-left: auto;
+    }
+}
+
+.block-content {
+    margin-top: 20px;
+
+    & p {
+        & ~ p {
+            margin-top: 10px;
+        }
+    }
+
+    & b {
+        margin-right: 5px;
+    }
+}
+
+.location {
+    & .input-style {
+        display: grid;
+        gap: 10px;
+
+        @include breakpoint(md) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        & input {
+            background: #f4f4f4;
+            height: 58px;
+        }
     }
 }
 
@@ -206,14 +251,62 @@
 
 .payment {
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
     column-gap: 10px;
+
+    @include breakpoint(xl) {
+        grid-template-columns: 291px 291px;
+    }
 }
 
 .payment__item {
-    padding: 12px;
+    & label {
+        padding: 12px;
+        background: #f4f4f4;
+        display: block;
+        height: 100%;
+        border: 1px solid transparent;
+        border-radius: 12px;
+        overflow: hidden;
+        cursor: pointer;
+
+        @include breakpoint(md) {
+            padding: 20px;
+        }
+    }
 
     & input {
         display: none;
+
+        &:checked {
+            & + label {
+                border-color: $brand;
+            }
+        }
+    }
+
+    & img {
+        margin-bottom: 10px;
+    }
+}
+
+.bonus-account {
+    & .input-style {
+        margin-top: 20px;
+    }
+}
+
+.bonus-account__item {
+    display: flex;
+    align-items: center;
+
+    & ~ .bonus-account__item {
+        margin-top: 4px;
+    }
+
+    & b {
+        margin-left: 10px;
     }
 }
 
@@ -221,16 +314,10 @@
     display: grid;
     gap: 10px;
 
-    @include breakpoint(md) {
-        gap: 20px;
-    }
-
     & .input-style {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         gap: 10px;
-
-        @include breakpoint(md) {
-            gap: 20px;
-        }
     }
 }
 
@@ -300,27 +387,66 @@
 }
 
 .section-checkout-success {
-    .title {
-        margin-bottom: 20px;
-        text-align: center;
+    margin-top: 60px;
+    text-align: center;
+
+    @include breakpointMax(md) {
+        padding: 0 var(--container);
+    }
+
+    & img {
+        margin-bottom: 40px;
+        width: 80px;
+        height: 80px;
 
         @include breakpoint(md) {
-            margin-bottom: 40px;
-        }
-
-        @include breakpoint(lg) {
-            margin-bottom: 50px;
+            width: 125px;
+            height: 125px;
         }
     }
 
-    p {
-        margin: 0 auto;
-        max-width: 582px;
-        font-size: 16px;
-        text-align: center;
+    & h2 {
+        margin-bottom: 20px;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 140%;
+
+        @include breakpoint(md) {
+            font-size: 24px;
+        }
 
         @include breakpoint(lg) {
-            max-width: 680px;
+            font-size: 30px;
         }
+
+        @include breakpoint(hd) {
+            font-size: 35px;
+        }
+    }
+
+    & p {
+        @include breakpoint(hd) {
+            font-size: 20px;
+        }
+    }
+}
+
+.checkout-success {
+    margin: auto;
+    padding: 20px 15px;
+    background: #fff;
+    max-width: 466px;
+    border-radius: 20px;
+
+    @include breakpoint(md) {
+        padding: 40px;
+    }
+
+    @include breakpoint(lg) {
+        max-width: 690px;
+    }
+
+    @include breakpoint(hd) {
+        max-width: 930px;
     }
 }

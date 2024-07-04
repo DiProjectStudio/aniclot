@@ -1,0 +1,145 @@
+.page-personal {
+    & .title {
+        margin-bottom: 10px;
+    }
+}
+
+.section-personal {
+    margin-top: 20px;
+
+    @include breakpoint(md) {
+        margin-top: 30px;
+    }
+
+    @include breakpoint(hd) {
+        margin-top: 40px;
+    }
+}
+
+.personal-wrap {
+    @include breakpoint(lg) {
+        display: grid;
+        align-items: flex-start;
+        justify-content: space-between;
+        grid-template-columns: 66% 23%;
+        column-gap: 40px;
+    }
+
+    @include breakpoint(xl) {
+    }
+}
+
+.personal-aside {
+    padding: 4px;
+    background: #fff;
+    display: grid;
+    row-gap: 4px;
+    border-radius: 16px;
+
+    @include breakpointMax(lg) {
+        margin-bottom: 40px;
+    }
+
+    @include breakpoint(lg) {
+        order: 2;
+    }
+}
+
+.personal-aside__item {
+    padding: 14px 20px;
+    background: #f1f4f5;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 140%;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+
+    &.active {
+        background: $brand;
+        color: #fff;
+    }
+
+    &:first-child {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    &:last-child {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+}
+
+.personal-main {
+    @include breakpoint(lg) {
+        order: 1;
+    }
+}
+
+.profile {
+    margin-bottom: 40px;
+    display: grid;
+    row-gap: 20px;
+
+    & input {
+        background: #fff;
+    }
+}
+
+.profile__row {
+    @include breakpoint(md) {
+        display: grid;
+        grid-template-columns: 5fr 7fr;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 10px;
+    }
+
+    @include breakpoint(lg) {
+        grid-template-columns: 275px 7fr;
+        column-gap: 20px;
+    }
+
+    @include breakpoint(hd) {
+        grid-template-columns: 295px 7fr;
+    }
+}
+
+.field-name {
+    @include breakpointMax(md) {
+        margin-bottom: 10px;
+    }
+}
+
+.profile-action {
+    display: grid;
+    column-gap: 10px;
+
+    @include breakpointMax(md) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include breakpoint(md) {
+        display: flex;
+    }
+
+    & .btn {
+        @include breakpointMax(md) {
+            height: 64px;
+        }
+
+        @include breakpoint(lg) {
+            padding: 18px 28px;
+        }
+    }
+}
+
+.profile-btn-reset::after {
+    content: '';
+    margin-left: 10px;
+    background: url(/assets/images/x.svg) no-repeat;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    filter: $filter-black;
+}
