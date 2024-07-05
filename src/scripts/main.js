@@ -8,7 +8,7 @@ import './js/map.js';
 import './js/popup.js';
 import './js/slider.js';
 
-// INPUT MASK PHONE NUMBER
+/* INPUT MASK PHONE NUMBER */
 Inputmask({
     mask: '+7 (999) 999-99-99',
     showMaskOnHover: false,
@@ -247,3 +247,12 @@ $('.tab .tab-item').on('click', (e) => {
     $('.tab-content').removeClass('active');
     $(`.tab-content[data-show=${$(e.currentTarget).attr('data-active')}]`).addClass('active');
 });
+
+if ($(window).width() < 744) {
+    $('.news-nav__item').on('click', (e) => {
+        if ($(e.currentTarget).hasClass('active')) {
+            e.preventDefault();
+            $(e.currentTarget).closest('.news-nav').toggleClass('dropdown');
+        }
+    });
+}

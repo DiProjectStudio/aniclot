@@ -9,9 +9,15 @@ block main
     include ../components/_breadcrumbs
     +breadcrumbs('Мой заказ № 3, создан 16.10.2023', 'Личный кабинет', 'Текущие заказы', 'Мой заказ № 3, создан 16.10.2023')
 
-    section.section-personal
+    section.section-personal-order
 
         .container
+            
+            .personal-back(onclick="history.back()")
+                svg(xmlns='http://www.w3.org/2000/svg' width='16' height='17' viewBox='0 0 16 17' fill='none')
+                    path(d='M6.66667 13.1673L2 8.50065M2 8.50065L6.66667 3.83398M2 8.50065L14 8.50065' stroke='#231F20' stroke-linecap='round' stroke-linejoin='round')
+
+                p Вернуться в список заказов
 
             .personal-wrap
 
@@ -123,3 +129,9 @@ block main
                                 p
                                     span Начислены баллы
                                     | + 250
+
+                    .personal-back(onclick="history.back()")
+                        svg(xmlns='http://www.w3.org/2000/svg' width='16' height='17' viewBox='0 0 16 17' fill='none')
+                            path(d='M6.66667 13.1673L2 8.50065M2 8.50065L6.66667 3.83398M2 8.50065L14 8.50065' stroke='#231F20' stroke-linecap='round' stroke-linejoin='round')
+
+                        p Вернуться в список заказов

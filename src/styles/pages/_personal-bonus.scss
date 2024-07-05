@@ -1,12 +1,70 @@
-.personal-bonus {
-    margin-bottom: 30px;
-    font-size: 20px;
+.section-personal-bonus {
+    & .personal-bonus {
+        @include breakpointMax(md) {
+            margin-bottom: 20px;
+        }
 
-    @include breakpoint(hd) {
-        margin-bottom: 40px;
+        & b {
+            display: inline-block;
+
+            @include breakpointMax(md) {
+                margin: 10px 0 20px;
+            }
+        }
+
+        & p {
+            font-weight: 700;
+            line-height: 140%;
+
+            @include breakpoint(md) {
+                margin: 30px 0;
+            }
+
+            @include breakpoint(hd) {
+                margin: 40px 0;
+            }
+        }
+    }
+}
+
+.bonuses-table {
+    @include breakpointMax(md) {
+        overflow-x: scroll;
+    }
+}
+
+.bonuses-table__row {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(5, 116px);
+    column-gap: 20px;
+    width: max-content;
+    border-radius: 10px;
+
+    @include breakpoint(lg) {
+        grid-template-columns: repeat(5, 1fr);
+        width: 100%;
     }
 
-    & b {
-        line-height: 140%;
+    @include breakpoint(hd) {
+        column-gap: 40px;
+    }
+
+    &:first-child {
+        background: $brand;
+        font-weight: 700;
+        color: #fff;
+    }
+
+    &:not(:first-child):nth-child(odd) {
+        background: #fff;
+    }
+}
+
+.bonuses-table__item {
+    font-size: 14px;
+
+    @include breakpoint(lg) {
+        font-size: 16px;
     }
 }

@@ -1,0 +1,132 @@
+extends /layout/layout
+
+block title
+    - var title = 'Новости'
+    - var page = 'page-news'
+
+block main
+
+    include ../components/_breadcrumbs
+    +breadcrumbs('Новости бренда', 'Новости')
+
+    section.section-news
+
+        .container
+
+            .news-nav
+                .news-nav__item.active
+                    a(href="/news") Новости бренда
+                .news-nav__item
+                    a(href="/news-anime") Сводка из мира аниме
+
+            .news
+
+                a(href="/news-detail").news__item
+                    .news__item-img
+                        +img('news-1.jpg')
+                    .news__item-wrap
+                        .news__item-date 15.05.2024
+                        .news__item-text Новая коллекция футболок, худи, лонгсливов по аниме «Клинок, рассекающий демонов» уже доступна в каталоге нашего магазина, переходи по кнопке и выбирай, что нравится. У нас огромный выбор и лучшее соотношение цены и каяества
+                        .btn.btn--dark-gray.btn-arrow
+                            include ../icons/arrow-right.svg
+
+                a(href="/news-detail").news__item
+                    .news__item-img
+                        +img('news-2.jpg')
+                    .news__item-wrap
+                        .news__item-date 15.05.2024
+                        .news__item-text На Китай-Городе открылся наш первый шоу-рум. Приходите в гости
+                        .btn.btn--dark-gray.btn-arrow
+                            include ../icons/arrow-right.svg
+
+                a(href="/news-detail").news__item
+                    .news__item-img
+                        +img('news-3.jpg')
+                    .news__item-wrap
+                        .news__item-date 15.05.2024
+                        .news__item-text Новая коллекция футболок Наруто
+                        .btn.btn--dark-gray.btn-arrow
+                            include ../icons/arrow-right.svg
+
+                a(href="/news-detail").news__item
+                    .news__item-img
+                        +img('news-4.jpg')
+                    .news__item-wrap
+                        .news__item-date 15.05.2024
+                        .news__item-text Поздравляем с Новым годом и дарим скидку 20% на весь ассортимент
+                        .btn.btn--dark-gray.btn-arrow
+                            include ../icons/arrow-right.svg
+
+                a(href="/news-detail").news__item
+                    .news__item-img
+                        +img('news-5.jpg')
+                    .news__item-wrap
+                        .news__item-date 15.05.2024
+                        .news__item-text На Китай-Городе открылся наш первый шоу-рум. Приходите в гости
+                        .btn.btn--dark-gray.btn-arrow
+                            include ../icons/arrow-right.svg
+
+                a(href="/news-detail").news__item
+                    .news__item-img
+                        +img('news-6.jpg')
+                    .news__item-wrap
+                        .news__item-date 15.05.2024
+                        .news__item-text Поздравляем с Новым годом и дарим скидку 20% на весь ассортимент
+                        .btn.btn--dark-gray.btn-arrow
+                            include ../icons/arrow-right.svg
+
+                a(href="/news-detail").news__item
+                    .news__item-img
+                        +img('news-7.jpg')
+                    .news__item-wrap
+                        .news__item-date 15.05.2024
+                        .news__item-text Новая коллекция футболок Наруто
+                        .btn.btn--dark-gray.btn-arrow
+                            include ../icons/arrow-right.svg
+
+                a(href="/news-detail").news__item
+                    .news__item-img
+                        +img('news-8.jpg')
+                    .news__item-wrap
+                        .news__item-date 15.05.2024
+                        .news__item-text Новая коллекция футболок, худи, лонгсливов по аниме «Клинок, рассекающий демонов» уже доступна в каталоге нашего магазина, переходи по кнопке и выбирай, что нравится. У нас огромный выбор и лучшее соотношение цены и каяества
+                        .btn.btn--dark-gray.btn-arrow
+                            include ../icons/arrow-right.svg
+
+                a(href="/news-detail").news__item
+                    .news__item-img
+                        +img('news-9.jpg')
+                    .news__item-wrap
+                        .news__item-date 15.05.2024
+                        .news__item-text Новая коллекция футболок, худи, лонгсливов по аниме «Клинок, рассекающий демонов» уже доступна в каталоге нашего магазина, переходи по кнопке и выбирай, что нравится. У нас огромный выбор и лучшее соотношение цены и каяества
+                        .btn.btn--dark-gray.btn-arrow
+                            include ../icons/arrow-right.svg
+
+                a(href="/news-detail").news__item
+                    .news__item-img
+                        +img('news-10.jpg')
+                    .news__item-wrap
+                        .news__item-date 15.05.2024
+                        .news__item-text На Китай-Городе открылся наш первый шоу-рум. Приходите в гости
+                        .btn.btn--dark-gray.btn-arrow
+                            include ../icons/arrow-right.svg
+
+                a(href="/news-detail").news__item
+                    .news__item-img
+                        +img('news-11.jpg')
+                    .news__item-wrap
+                        .news__item-date 15.05.2024
+                        .news__item-text Новая коллекция футболок Наруто
+                        .btn.btn--dark-gray.btn-arrow
+                            include ../icons/arrow-right.svg
+
+                a(href="/news-detail").news__item
+                    .news__item-img
+                        +img('news-12.jpg')
+                    .news__item-wrap
+                        .news__item-date 15.05.2024
+                        .news__item-text Поздравляем с Новым годом и дарим скидку 20% на весь ассортимент
+                        .btn.btn--dark-gray.btn-arrow
+                            include ../icons/arrow-right.svg
+
+            include ../components/_pagination
