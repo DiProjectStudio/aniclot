@@ -53,18 +53,16 @@ if (anchor.length > 0) {
 }
 
 // HEADER
-if ($('body').hasClass('page-main')) {
-    $(window).on('scroll', function () {
-        if ($(window).scrollTop() > $('#header').height()) {
-            $('#header').addClass('header-fixed');
-        } else if ($(window).scrollTop() == 0) {
-            $('#header').removeClass('header-fixed');
-        }
-    });
-
+$(window).on('scroll', function () {
     if ($(window).scrollTop() > $('#header').height()) {
         $('#header').addClass('header-fixed');
+    } else if ($(window).scrollTop() == 0) {
+        $('#header').removeClass('header-fixed');
     }
+});
+
+if ($(window).scrollTop() > $('#header').height()) {
+    $('#header').addClass('header-fixed');
 }
 
 // HEADER MENU

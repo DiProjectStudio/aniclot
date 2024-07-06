@@ -1,0 +1,81 @@
+extends /layout/layout
+
+block title
+    - var title = 'Новости'
+    - var page = 'page-news'
+
+block main
+
+    include ../components/_breadcrumbs
+    +breadcrumbs('', 'Новости', 'Новая коллекция футболок по аниме «Клинок, рассекающий демонов»')
+
+    section.section-news-detail
+        
+        .container
+
+            .news-wrapper
+
+                .news-detail
+
+                    h1.title Новая коллекция футболок по аниме «Клинок, рассекающий демонов»
+
+                    .news-detail__date 15.05.2024
+
+                    +img('news-detail.jpg')
+
+                    p «Клинок, рассекающий демонов» — аниме, которое уже успело завоевать миллионы сердец по всему миру. Теперь и у вас есть возможность прикоснуться к миру «Клинка» и стать его частью, купив футболку из новой коллекции, которую мы разработали с любовью для вас. 
+                        br
+                        br
+                        |В коллекции представлены мужские, женские и детские модели футболок с изображениями главных героев аниме: Камадо Танджиро, Незуко Камадо, Сабито, Ренгоку Хашибира и других. 
+                        br
+                        br
+                        |Все футболки изготовлены из высококачественного хлопка, что обеспечивает комфорт и долговечность. Они представлены в различных размерах, чтобы каждый смог найти себе подходящую модель. 
+                        br
+                        br
+                        |Не упустите возможность стать частью мира «Клинка, рассекающего демонов» и приобрести футболку из новой коллекции уже сегодня!
+
+                .news-other
+                    h2 Другие новости
+                    
+                    .news-block
+                        a(href="/news-detail").news-block__item
+                            .news-block__item-img
+                                +img('news-5.jpg')
+                            .news-block__item-wrap
+                                .news-block__item-date 15.05.2024
+                                .news-block__item-text На Китай-Городе открылся наш первый шоу-рум. Приходите в гости
+                        
+                        a(href="/news-detail").news-block__item
+                            .news-block__item-img
+                                +img('news-6.jpg')
+                            .news-block__item-wrap
+                                .news-block__item-date 15.05.2024
+                                .news-block__item-text Новая коллекция футболок, худи, лонгсливов по аниме «Клинок, рассекающий демонов» уже доступна в каталоге нашего магазина, переходи по кнопке и выбирай, что нравится. У нас огромный выбор и лучшее соотношение цены и каяества
+
+                        a(href="/news-detail").news-block__item
+                            .news-block__item-img
+                                +img('news-7.jpg')
+                            .news-block__item-wrap
+                                .news-block__item-date 15.05.2024
+                                .news-block__item-text Поздравляем с Новым годом и дарим скидку 20% на весь ассортимент
+                        
+                        a(href="/news-detail").news-block__item
+                            .news-block__item-img
+                                +img('news-8.jpg')
+                            .news-block__item-wrap
+                                .news-block__item-date 15.05.2024
+                                .news-block__item-text Новая коллекция футболок Наруто
+                        
+                        a(href="/news-detail").news-block__item
+                            .news-block__item-img
+                                +img('news-9.jpg')
+                            .news-block__item-wrap
+                                .news-block__item-date 15.05.2024
+                                .news-block__item-text Новая коллекция футболок, худи, лонгсливов по аниме «Клинок, рассекающий демонов» уже доступна в каталоге нашего магазина, переходи по кнопке и выбирай, что нравится. У нас огромный выбор и лучшее соотношение цены и каяества
+                        
+                        a(href="/news-detail").news-block__item
+                            .news-block__item-img
+                                +img('news-10.jpg')
+                            .news-block__item-wrap
+                                .news-block__item-date 15.05.2024
+                                .news-block__item-text На Китай-Городе открылся наш первый шоу-рум. Приходите в гости

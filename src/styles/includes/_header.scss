@@ -119,6 +119,14 @@
         top: 0;
     }
 
+    body:not(.page-main) & {
+        padding-top: 0;
+
+        & .header__inner {
+            border-radius: 0;
+        }
+    }
+
     & .header__logo {
         filter: brightness(0);
     }
