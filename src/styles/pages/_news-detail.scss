@@ -1,11 +1,41 @@
+.news-wrapper {
+    @include breakpoint(lg) {
+        display: grid;
+        align-items: flex-start;
+        grid-template-columns: 8fr 4fr;
+        column-gap: 20px;
+    }
+
+    @include breakpoint(xl) {
+        grid-template-columns: 58% 454px;
+        justify-content: space-between;
+    }
+}
+
 .news-detail {
     margin-bottom: 40px;
+
+    @include breakpoint(md) {
+        margin-bottom: 60px;
+    }
+
+    @include breakpoint(lg) {
+        margin-bottom: 0;
+    }
 
     & img {
         margin-bottom: 20px;
         width: 100%;
         object-fit: contain;
         border-radius: 20px;
+
+        @include breakpoint(md) {
+            margin-bottom: 30px;
+        }
+
+        @include breakpoint(hd) {
+            margin-bottom: 40px;
+        }
     }
 
     & p {
@@ -21,17 +51,31 @@
     @include breakpoint(md) {
         margin-bottom: 30px;
     }
+
+    @include breakpoint(hd) {
+        margin-bottom: 40px;
+    }
 }
 
 .news-other {
-    & h2 {
-        margin-bottom: 20px;
+    .section-title {
+        @include breakpoint(md) {
+            margin-bottom: 20px;
+        }
     }
 }
 
 .news-block {
     display: grid;
-    row-gap: 10px;
+    gap: 10px;
+
+    @include breakpoint(md) {
+        grid-auto-rows: 1fr;
+
+        @include breakpointMax(lg) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
 }
 
 .news-block__item {
@@ -83,4 +127,65 @@
     line-height: 140%;
     color: #fff;
     @include textLimit(4);
+
+    @include breakpoint(lg) {
+        @include textLimit(6);
+    }
+}
+
+.summary-item {
+    padding-bottom: 20px;
+    background: $brand;
+    display: block;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.summary-item__img {
+    margin-bottom: 20px;
+    position: relative;
+    aspect-ratio: 340 / 282;
+
+    @include breakpoint(lg) {
+        aspect-ratio: 335 / 253;
+    }
+
+    &::before {
+        content: '';
+        background: linear-gradient(180deg, rgba(35, 31, 32, 0) 58.14%, #231f20 100%);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.summary-item__date {
+    margin-bottom: 10px;
+    padding: 0 20px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 140%;
+    color: #c1c1c1;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+.summary-item__title {
+    padding: 0 20px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 140%;
+    color: #fff;
+    @include textLimit(3);
+
+    @include breakpoint(hd) {
+        font-size: 20px;
+    }
 }
