@@ -171,6 +171,7 @@
         display: block;
         border: 1px solid transparent;
         border-radius: 12px;
+        transition: $transition;
         overflow: hidden;
         cursor: pointer;
 
@@ -191,6 +192,12 @@
 }
 
 .delivery__item {
+    &:hover {
+        & label {
+            border-color: #c1c1c1;
+        }
+    }
+
     & img {
         margin-bottom: 10px;
     }
@@ -268,11 +275,18 @@
         height: 100%;
         border: 1px solid transparent;
         border-radius: 12px;
+        transition: $transition;
         overflow: hidden;
         cursor: pointer;
 
         @include breakpoint(md) {
             padding: 20px;
+        }
+    }
+
+    &:hover {
+        & label {
+            border-color: #c1c1c1;
         }
     }
 

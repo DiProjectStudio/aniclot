@@ -73,27 +73,27 @@ block header
                         li.nav__item
                             a.nav__item-link(href="/catalog") худи
                         li.nav__item.has-child
-                            a.nav__item-link(href="/catalog") Инфо
+                            a.nav__item-link(href="/info") Инфо
                             .arrow-down
                             ul.subnav
                                 li
-                                    a(href="/catalog") О Бренде
+                                    a(href="/info") О Бренде
                                 li
-                                    a(href="/catalog") Доставка и оплата
+                                    a(href="/delivery-and-payment") Доставка и оплата
                                 li
-                                    a(href="/catalog") Возврат и обмен
+                                    a(href="/return") Возврат и обмен
                                 li
-                                    a(href="/catalog") FAQ
+                                    a(href="/faq") FAQ
                                 li
-                                    a(href="/catalog") Контакты
+                                    a(href="/contacts") Контакты
                         li.nav__item.has-child
                             a.nav__item-link(href="/news") Новости
                             .arrow-down
                             ul.subnav
                                 li
-                                    a(href="/catalog") Новости бренда
+                                    a(href="/news") Новости бренда
                                 li
-                                    a(href="/catalog") Сводка из мира аниме
+                                    a(href="/news") Сводка из мира аниме
                         li.nav__item
                             a.nav__item-link(href="/contacts") Контакты
 
@@ -124,7 +124,7 @@ block header
 
                 .header__icons
                     .icon.icon__user
-                        a(href="/personal")
+                        a(data-src="#popup-auth" data-fancybox)
                             include ../icons/user.svg
 
                     .icon.icon__search(href="#popup-search" data-fancybox)

@@ -128,6 +128,28 @@ const popupSuccess = () => {
 
 window.popupSuccess = popupSuccess;
 
+// Popup success question
+const popupSuccessQuestion = () => {
+    const template = `
+        <div class="popup popup-success">
+            <img src="${home_dir}/assets/images/anime-girl.svg" alt="img"/>
+            <div class="popup-title">Спасибо за ваш вопрос!</div>
+            <p>В ближайшее время мы пришлём ответ на ваш email</p>
+        </div>
+    `;
+    Fancybox.show([{ src: template, type: 'html' }], {
+        dragToClose: false,
+        autoFocus: false,
+        hideScrollbar: false,
+        l10n: {
+            CLOSE: 'Закрыть',
+            MODAL: 'Вы можете закрыть это модальное окно, нажав клавишу ESC'
+        }
+    });
+};
+
+window.popupSuccessQuestion = popupSuccessQuestion;
+
 // POPUP CART ADDED
 let timeout;
 

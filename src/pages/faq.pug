@@ -1,0 +1,84 @@
+extends /layout/layout
+
+block title
+    - var title = 'FAQ'
+    - var page = 'page-info'
+
+block main
+
+    include ../components/_breadcrumbs
+    +breadcrumbs('FAQ', 'Инфо', 'FAQ')
+
+    .navigation
+        .container
+            .nav-link
+                a(href="/info").nav-link__item О бренде
+                a(href="/delivery-and-payment").nav-link__item Доставка и оплата
+                a(href="/return").nav-link__item Возврат и обмен
+                a(href="/faq").nav-link__item.active FAQ
+                a(href="/contacts").nav-link__item Контакты
+
+    section.section-faq
+
+        .container
+
+            .faq
+
+                .faq__item
+                    .faq__item-title Как оформить заказ?
+                    .faq__item-text Potter ipsum wand elf parchment wingardium. Bat eye room moon grayback chance petrified restricted world. Spider granger red glory elf mimubulus «zis. Galleons jinxes leg cup trace which. Feint with match wars are dirigible invisibility stand under armchairs. Tail kittens gamp’s his charm telescope large creature
+
+                .faq__item
+                    .faq__item-title Сроки доставки
+                    .faq__item-text Potter ipsum wand elf parchment wingardium. Bat eye room moon grayback chance petrified restricted world. Spider granger red glory elf mimubulus «zis. Galleons jinxes leg cup trace which. Feint with match wars are dirigible invisibility stand under armchairs. Tail kittens gamp’s his charm telescope large creature
+                
+                .faq__item
+                    .faq__item-title Подлежит ли товар возврату?
+                    .faq__item-text Potter ipsum wand elf parchment wingardium. Bat eye room moon grayback chance petrified restricted world. Spider granger red glory elf mimubulus «zis. Galleons jinxes leg cup trace which. Feint with match wars are dirigible invisibility stand under armchairs. Tail kittens gamp’s his charm telescope large creature
+
+                .faq__item
+                    .faq__item-title Можно ли нанести свой принт?
+                    .faq__item-text Potter ipsum wand elf parchment wingardium. Bat eye room moon grayback chance petrified restricted world. Spider granger red glory elf mimubulus «zis. Galleons jinxes leg cup trace which. Feint with match wars are dirigible invisibility stand under armchairs. Tail kittens gamp’s his charm telescope large creature
+
+                .faq__item
+                    .faq__item-title Качество продукции
+                    .faq__item-text Potter ipsum wand elf parchment wingardium. Bat eye room moon grayback chance petrified restricted world. Spider granger red glory elf mimubulus «zis. Galleons jinxes leg cup trace which. Feint with match wars are dirigible invisibility stand under armchairs. Tail kittens gamp’s his charm telescope large creature
+
+                .faq__item
+                    .faq__item-title Сколько стоит доставка?
+                    .faq__item-text Potter ipsum wand elf parchment wingardium. Bat eye room moon grayback chance petrified restricted world. Spider granger red glory elf mimubulus «zis. Galleons jinxes leg cup trace which. Feint with match wars are dirigible invisibility stand under armchairs. Tail kittens gamp’s his charm telescope large creature
+
+                .faq__item
+                    .faq__item-title Как работает бонусная система?
+                    .faq__item-text Potter ipsum wand elf parchment wingardium. Bat eye room moon grayback chance petrified restricted world. Spider granger red glory elf mimubulus «zis. Galleons jinxes leg cup trace which. Feint with match wars are dirigible invisibility stand under armchairs. Tail kittens gamp’s his charm telescope large creature
+
+                .faq__item
+                    .faq__item-title Стирается ли принт при стирке?
+                    .faq__item-text Potter ipsum wand elf parchment wingardium. Bat eye room moon grayback chance petrified restricted world. Spider granger red glory elf mimubulus «zis. Galleons jinxes leg cup trace which. Feint with match wars are dirigible invisibility stand under armchairs. Tail kittens gamp’s his charm telescope large creature
+
+    section.section-question
+
+        .container
+
+            .question
+
+                .contact-form
+                    h2 Не нашли ответ на свой вопрос?
+                    p Задайте свой вопрос и мы обязательно ответим на него вам на почту
+
+                    form(action="/")
+                        .input-style
+                            input(type="text" name="name" placeholder="Имя" autocomplete="off")
+                        
+                        .input-style
+                            input(type="email" name="email" placeholder="Email*" autocomplete="off")
+
+                        .textarea-style
+                            textarea(name="question" placeholder="Вопрос*")
+                        
+                        .form-submit
+                            button(type="submit").btn.btn--white Отправить
+                            .agreement Нажимая кнопку, вы соглашаетесь с обработкой ваших персональных данных
+
+                .contact-bg
+                    +img('pikaso_texttoimage_colorful-flat-illustration-classical-animes-2-happ.png')

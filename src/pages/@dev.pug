@@ -27,10 +27,27 @@ block main
             color: yellow;
         }
 
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        a:hover {
+            color: red;
+        }
+
+        ul li {
+            line-height: 250%;
+        }
+
     div
         code popupSuccess()
         span —
         p Вызывает попап успешной заявки
+
+    div
+        code popupSuccessQuestion()
+        span —
+        p Вызывает попап успешной отправки вопроса
 
     div
         code popupSuccessReg()
@@ -51,3 +68,65 @@ block main
         code popupAddedCart($img, $productName)
         span —
         p Товар добавлен в корзину
+
+    hr
+
+    h2 Список страниц:
+    ul
+        li
+            a(href="index.html") Главная
+
+        li
+            a(href="info.html") Инфо
+            ul
+                li
+                    a(href="info.html") О бренде
+                li
+                    a(href="delivery-and-payment.html") Доставка и оплата
+                li
+                    a(href="return.html") Возврат и обмен
+                li
+                    a(href="faq.html") FAQ
+                li
+                    a(href="contacts.html") Контакты
+
+        li
+            a(href="news.html") Новости
+            ul
+                li
+                    a(href="news-detail.html") Детальная новости
+
+        li
+            a(href="catalog.html") Каталог
+            ul
+                li
+                    a(href="product.html") Карточка товара
+                    
+        li
+            a(href="cart.html") Корзина
+            ul
+                li
+                    a(href="checkout.html") Оформление заказа
+                li
+                    a(href="checkout-success.html") Успешное оформление заказа
+                    
+        li
+            a(href="favourite.html") Избранное
+
+        li
+            a(href="search.html") Поиск
+
+        li
+            a(href="personal.html") Личный кабинет
+            ul
+                li
+                    a(href="personal-orders.html") Текущие заказы
+                    ul
+                        li
+                            a(href="personal-orders-detail.html") Детальная заказа
+                
+                li
+                    a(href="personal-bonus.html") Бонусный счёт
+
+        li
+            a(href="404.html") Страница 404

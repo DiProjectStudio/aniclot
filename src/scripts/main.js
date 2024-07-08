@@ -247,10 +247,23 @@ $('.tab .tab-item').on('click', (e) => {
 });
 
 if ($(window).width() < 744) {
-    $('.news-nav__item').on('click', (e) => {
+    $('.nav-link__item').on('click', (e) => {
         if ($(e.currentTarget).hasClass('active')) {
             e.preventDefault();
-            $(e.currentTarget).closest('.news-nav').toggleClass('dropdown');
+            $(e.currentTarget).closest('.nav-link').toggleClass('dropdown');
         }
     });
 }
+
+// FAQ
+$('.faq__item-title').on('click', (e) => {
+    if (!$(e.currentTarget).hasClass('active')) {
+        $('.faq__item-title').removeClass('active');
+        $('.faq__item-title').next().slideUp();
+        $(e.currentTarget).addClass('active');
+        $(e.currentTarget).next().slideDown();
+    } else {
+        $(e.currentTarget).removeClass('active');
+        $(e.currentTarget).next().slideUp();
+    }
+});

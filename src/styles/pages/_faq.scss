@@ -1,0 +1,89 @@
+.faq {
+    display: grid;
+    gap: 10px;
+
+    @include breakpoint(md) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint(lg) {
+        gap: 10px 20px;
+    }
+}
+
+.faq__item {
+    padding: 12px;
+    background: #fff;
+    height: max-content;
+    border-radius: 20px;
+    user-select: none;
+
+    @include breakpoint(lg) {
+        padding: 20px;
+    }
+}
+
+.faq__item-title {
+    padding-right: 82px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 40px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+
+    @include breakpoint(lg) {
+        padding-right: 90px;
+        font-size: 24px;
+    }
+
+    &::before {
+        content: '';
+        background: $brand;
+        position: absolute;
+        right: 0;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        transition: $transition;
+    }
+
+    &:hover::before {
+        background: #666;
+    }
+
+    &::after {
+        content: '';
+        background: url(/assets/images/plus-white.svg) no-repeat;
+        background-size: contain;
+        position: absolute;
+        right: 8px;
+        width: 24px;
+        height: 24px;
+    }
+
+    &.active::after {
+        background: url(/assets/images/minus-white.svg) no-repeat;
+    }
+}
+
+.faq__item-text {
+    margin-top: 10px;
+    display: none;
+
+    @include breakpoint(lg) {
+        font-size: 20px;
+    }
+}
+
+.question {
+    background: $brand;
+    border-radius: 20px;
+
+    @include breakpoint(lg) {
+        position: relative;
+        display: flex;
+        overflow: hidden;
+    }
+}

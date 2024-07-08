@@ -1,0 +1,67 @@
+extends /layout/layout
+
+block title
+    - var title = 'Контакты'
+    - var page = 'page-info'
+
+block main
+
+    include ../components/_breadcrumbs
+    +breadcrumbs('Контакты', 'Инфо', 'Контакты')
+
+    .navigation
+        .container
+            .nav-link
+                a(href="/info").nav-link__item О бренде
+                a(href="/delivery-and-payment").nav-link__item Доставка и оплата
+                a(href="/return").nav-link__item Возврат и обмен
+                a(href="/faq").nav-link__item FAQ
+                a(href="/contacts").nav-link__item.active Контакты
+
+    section.section-contacts
+
+        .container
+
+            .contacts
+
+                .contacts-block
+
+                    .contacts-block__item
+                        p Телефон
+                        a(href="tel:+79000000000") +7 900 000-00-00
+
+                    .contacts-block__item
+                        p Email
+                        a(href="mailto:support@aniclot.com") support@aniclot.com
+                        
+                    .contacts-block__item
+                        p Социальные сети
+                        .contacts-block__item-social
+                            a(href="vk.com" target="_blank")
+                                include ../icons/vk.svg
+                            a(href="instagram.com" target="_blank")
+                                include ../icons/insta.svg
+                            a(href="web.telegram.org" target="_blank")
+                                include ../icons/telegram.svg
+
+                .contacts-feedback
+
+                    .contact-form
+                        h2 Напишите нам
+                        
+                        form(action="/")
+                            .input-style
+                                input(type="text" name="name" placeholder="Имя" autocomplete="off")
+                            
+                            .input-style
+                                input(type="email" name="email" placeholder="Email*" autocomplete="off")
+
+                            .textarea-style
+                                textarea(name="question" placeholder="Вопрос*")
+                            
+                            .form-submit
+                                button(type="submit").btn.btn--white Отправить
+                                .agreement Нажимая кнопку, вы соглашаетесь с обработкой ваших персональных данных
+
+                    .contact-bg
+                        +img('pikaso_texttoimage_colorful-flat-illustration-.png')

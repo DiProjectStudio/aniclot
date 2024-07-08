@@ -77,6 +77,10 @@
         @include breakpoint(sm) {
             right: 20px;
         }
+
+        &:hover {
+            background: transparent;
+        }
     }
 
     & .popup-search-container {
@@ -175,6 +179,10 @@
         padding: 20px;
         max-width: 700px;
         border-radius: 20px;
+    }
+
+    & input {
+        background: #f4f4f4;
     }
 }
 

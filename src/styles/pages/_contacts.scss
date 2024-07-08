@@ -1,0 +1,209 @@
+.contacts {
+    @include breakpoint(xl) {
+        display: grid;
+        grid-template-columns: 3fr 9fr;
+        column-gap: 20px;
+    }
+}
+
+.contacts-block {
+    margin-bottom: 20px;
+    display: grid;
+    gap: 10px;
+
+    @include breakpoint(md) {
+        @include breakpointMax(xl) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @include breakpoint(xl) {
+        margin-bottom: 0;
+    }
+}
+
+.contacts-block__item {
+    padding: 20px;
+    background: #fff;
+    text-align: center;
+    border-radius: 20px;
+
+    & p {
+        margin-bottom: 20px;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 140%;
+
+        @include breakpoint(lg) {
+            font-size: 20px;
+        }
+    }
+}
+
+.contacts-block__item-social {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    column-gap: 8px;
+}
+
+.contacts-feedback {
+    background: $brand;
+    border-radius: 20px;
+
+    @include breakpoint(lg) {
+        position: relative;
+        display: flex;
+        flex-direction: row-reverse;
+        overflow: hidden;
+    }
+}
+
+.contact-form {
+    padding: 20px;
+    color: #fff;
+
+    @include breakpointMax(lg) {
+        margin-bottom: 20px;
+    }
+
+    @include breakpoint(md) {
+        padding: 30px;
+    }
+
+    @include breakpoint(lg) {
+        padding: 40px;
+        width: 56%;
+    }
+
+    @include breakpoint(xl) {
+        width: 52%;
+    }
+
+    @include breakpoint(hd) {
+        width: 44%;
+    }
+
+    & h2 {
+        margin-bottom: 20px;
+        font-size: 24px;
+        line-height: 140%;
+
+        @include breakpoint(lg) {
+            font-size: 30px;
+        }
+    }
+
+    & p {
+        margin-bottom: 20px;
+    }
+
+    & .input-style {
+        margin-bottom: 10px;
+    }
+
+    & input {
+        background: #666;
+        color: #fff;
+    }
+
+    & textarea {
+        background: #666;
+        color: #fff;
+    }
+
+    & .btn {
+        @include breakpointMax(md) {
+            margin-top: 10px;
+            padding: 20px 32px;
+            width: 100%;
+        }
+
+        @include breakpoint(md) {
+            padding: 18px 28px;
+            flex-shrink: 0;
+        }
+    }
+
+    .form-submit {
+        @include breakpoint(md) {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    & .agreement {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #fff;
+
+        @include breakpoint(md) {
+            margin-top: 0;
+            margin-left: 20px;
+            max-width: 450px;
+        }
+    }
+
+    .contacts-feedback & {
+        @include breakpoint(lg) {
+            width: 50%;
+
+            @include breakpointMax(hd) {
+                padding: 20px;
+            }
+        }
+
+        @include breakpoint(xl) {
+            width: 45%;
+        }
+
+        @include breakpoint(hd) {
+            width: 50%;
+        }
+    }
+}
+
+.contact-bg {
+    @include breakpoint(md) {
+        @include breakpointMax(lg) {
+            max-width: 704px;
+        }
+    }
+
+    @include breakpoint(lg) {
+        position: absolute;
+        right: -295px;
+        bottom: 0;
+        height: 458px;
+    }
+
+    @include breakpoint(xl) {
+        height: 530px;
+    }
+
+    @include breakpoint(hd) {
+        right: 0;
+    }
+
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .contacts-feedback & {
+        @include breakpoint(lg) {
+            left: -110px;
+            right: auto;
+        }
+
+        @include breakpoint(xl) {
+            height: 454px;
+        }
+
+        @include breakpoint(hd) {
+            left: 0;
+        }
+    }
+}

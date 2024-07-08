@@ -1,0 +1,65 @@
+.info {
+    @include breakpoint(md) {
+        max-width: 865px;
+    }
+
+    @include breakpoint(xl) {
+        max-width: 930px;
+    }
+
+    & h2 {
+        margin-bottom: 20px;
+        font-size: 24px;
+        line-height: 140%;
+
+        @include breakpoint(lg) {
+            font-size: 30px;
+        }
+
+        @include breakpoint(hd) {
+            font-size: 35px;
+        }
+
+        & ~ h2 {
+            margin-top: 50px;
+        }
+    }
+
+    & ol li {
+        @include breakpoint(md) {
+            font-size: 20px;
+        }
+    }
+}
+
+.section-about .info {
+    @include breakpoint(hd) {
+        display: flex;
+        flex-direction: row-reverse;
+        column-gap: 20px;
+        max-width: 1920px;
+    }
+}
+
+.about-img {
+    margin-bottom: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+
+    @include breakpoint(hd) {
+        flex-shrink: 0;
+        width: 930px;
+    }
+
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.about-text {
+    @include breakpoint(lg) {
+        font-size: 20px;
+    }
+}

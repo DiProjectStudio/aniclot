@@ -163,8 +163,9 @@
         text-decoration-skip-ink: none;
     }
 
-    & svg {
+    & img {
         margin-right: 10px;
+        filter: $filter-black;
     }
 }
 
