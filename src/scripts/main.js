@@ -267,3 +267,63 @@ $('.faq__item-title').on('click', (e) => {
         $(e.currentTarget).next().slideUp();
     }
 });
+
+// UPLOAD IMAGE
+const fileInput = $('#file')[0];
+const progressBar = $('.progress');
+
+$(fileInput).on('change', function () {
+    $(this).parent().find('.progress').css('width', 0);
+    const fileName = $(this).val().split('\\').pop();
+    const fileSize =
+        this.files[0].size / 1000 >= 1024
+            ? (this.files[0].size / 1000000).toFixed(1) + ' MB'
+            : (this.files[0].size / 1000).toFixed(1) + ' KB';
+
+    $(this).parent().find('.file-name').text(`Файл ${fileName} загружен`);
+    $(this).parent().find('.file-info').text(fileSize);
+    $(
+        '.input-file-img'
+    ).html(`<svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12" fill="none">
+            <path d="M1 7L5 11L15 1" stroke="#219653" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>`);
+
+    const file = this.files[0];
+    const f_size = file.size;
+    const chunkSize = 1024 * 1024; // 1MB chunk size
+    let bytesUploaded = 0;
+
+    const uploadChunk = () => {
+        const chunk = file.slice(bytesUploaded, bytesUploaded + chunkSize);
+        bytesUploaded += chunk.size;
+
+        // Simulate file upload delay
+        setTimeout(() => {
+            const progress = Math.min(100, Math.round((bytesUploaded / f_size) * 100));
+            progressBar.css('width', progress + '%');
+            if (bytesUploaded < f_size) {
+                uploadChunk();
+            }
+        }, 1); // Simulate delay
+    };
+
+    uploadChunk();
+
+    $('.input-file-icon').addClass('remove');
+    $(this).attr('disabled', true);
+});
+
+$('.input-file-icon').on('click', function () {
+    if ($(this).hasClass('remove')) {
+        $(this).removeClass('remove');
+        $(this).parent().find($(fileInput)).removeAttr('disabled');
+        $(this).parent().find('.progress').css('width', 0);
+        $(this).parent().find('.file-name').text('Загрузите изображение *');
+        $(this).parent().find('.file-info').text('jpeg, png, pdf');
+        $(this)
+            .parent()
+            .find('.input-file-img')
+            .html(`<img src="${home_dir}/assets/images/img.svg" alt="">`);
+        $(fileInput).val('');
+    }
+});

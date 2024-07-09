@@ -45,6 +45,18 @@
     grid-auto-flow: column;
     justify-content: center;
     column-gap: 8px;
+
+    & a {
+        height: 30px;
+
+        & rect {
+            transition: $transition;
+
+            &:hover {
+                fill: #666;
+            }
+        }
+    }
 }
 
 .contacts-feedback {

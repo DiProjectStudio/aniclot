@@ -57,7 +57,7 @@
 // ПОПАП "ЗАГРУЗКА ИЗОБРАЖЕНИЯ"
 #popup-upload.popup.popup-upload
 
-    .popup-title Загрузите своё изображение для печати
+    .popup-title Загрузите своё изображение для печати
     form
         .popup-form
             .input-style
@@ -65,6 +65,18 @@
 
             .input-style
                 input(type="text" name="phone" placeholder="Телефон*" autocomplete="off")
+
+            .input-file
+                input#file(type="file", name="image", accept="image/jpeg, image/jpg, image/png, application/pdf")
+                label(for="file")
+                    .progress
+                    .input-file-img
+                        +img('img.svg')
+                    .wrap
+                        p.file-name Загрузите изображение *
+                        p.file-info jpeg, png, pdf
+                .input-file-icon
+                    +img('plus.svg')
 
             .popup-submit
                 button.btn.btn-arrow-right.btn--black(type="submit") Отправить

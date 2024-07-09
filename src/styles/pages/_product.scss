@@ -154,6 +154,8 @@
     }
 
     & > div {
+        margin: auto;
+        max-width: 476px;
         aspect-ratio: 1;
     }
 
@@ -330,8 +332,8 @@
     &.selected::before {
         content: '';
         position: absolute;
-        top: -3px;
-        left: -3px;
+        top: -2px;
+        left: -2px;
         width: 40px;
         height: 40px;
         border: 1px solid $brand;

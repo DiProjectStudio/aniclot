@@ -90,6 +90,10 @@
                 content: none;
             }
         }
+
+        &:hover {
+            background: #e0e0e0;
+        }
     }
 
     & ~ .nav-link__item {
@@ -110,9 +114,5 @@
             border-top-right-radius: 10px;
             border-bottom-right-radius: 10px;
         }
-    }
-
-    &:hover {
-        background: #e0e0e0;
     }
 }
