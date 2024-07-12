@@ -156,6 +156,10 @@ let timeout;
 function popupAddedCart($img, $productName) {
     clearTimeout(timeout);
 
+    if (document.querySelector('.header-popup')) {
+        document.querySelector('.header-popup').remove();
+    }
+
     const headerContainer = document.querySelector('#header .container');
     const headerPopup = document.createElement('div');
     headerPopup.className = 'header-popup';
