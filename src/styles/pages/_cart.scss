@@ -296,9 +296,20 @@
 
         @include breakpoint(lg) {
             margin-top: 10px;
-            display: grid;
-            grid-template-columns: 40px auto;
-            column-gap: 20px;
+
+            @include breakpointMax(hd) {
+                display: grid;
+                grid-template-columns: 40px auto;
+                column-gap: 20px;
+            }
+
+            @include breakpoint(hd) {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+        @include breakpoint(hd) {
+            max-width: 100%;
         }
 
         & svg {
@@ -320,8 +331,10 @@
             height: 44px;
 
             @include breakpoint(lg) {
-                margin: 20px 0 0;
-                grid-column: 2;
+                @include breakpointMax(hd) {
+                    margin: 20px 0 0;
+                    grid-column: 2;
+                }
             }
         }
     }
@@ -389,6 +402,10 @@
         flex-direction: column;
     }
 
+    @include breakpoint(hd) {
+        flex-direction: row;
+    }
+
     & .btn {
         width: 100%;
         height: 60px;
@@ -409,6 +426,11 @@
             @include breakpoint(lg) {
                 margin-top: 10px;
                 margin-left: 0;
+            }
+
+            @include breakpoint(hd) {
+                margin-top: 0;
+                margin-left: 10px;
             }
         }
     }

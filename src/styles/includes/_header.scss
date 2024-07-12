@@ -119,6 +119,10 @@
         top: 0;
     }
 
+    @include breakpoint(hd) {
+        padding: 12px 40px;
+    }
+
     body:not(.page-main) & {
         padding-top: 0;
 
@@ -129,6 +133,10 @@
 
     & .header__logo {
         filter: brightness(0);
+
+        @include breakpoint(hd) {
+            width: 100px;
+        }
     }
 
     & .nav__item-link {
