@@ -1,7 +1,5 @@
 // Import Plugins
 import Inputmask from 'inputmask';
-import $ from 'jquery';
-window.$ = $;
 
 // Import Scripts
 import './js/map.js';
