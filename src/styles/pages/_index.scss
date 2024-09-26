@@ -149,6 +149,7 @@
     background: #231f20;
     display: grid;
     grid-template-columns: auto auto;
+    grid-auto-rows: max-content auto;
     justify-content: space-between;
     column-gap: 10px;
     height: 180px;
