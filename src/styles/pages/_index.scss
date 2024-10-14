@@ -146,7 +146,7 @@
 }
 
 .collection__item {
-    background: #231f20;
+    background: #fff;
     display: grid;
     grid-template-columns: auto auto;
     grid-auto-rows: max-content auto;
@@ -268,7 +268,7 @@
     font-size: 14px;
     font-weight: 700;
     line-height: 1.4;
-    color: #fff;
+    color: #231f20;
     @include textLimit(2);
 
     @include breakpoint(md) {

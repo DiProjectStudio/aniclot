@@ -278,9 +278,29 @@
 .nav__item {
     position: relative;
     line-height: 1.2;
+
+    @include breakpoint(lg) {
+        display: flex;
+    }
 }
 
-.nav__item.has-child::before {
+.nav__item.has-child:first-child {
+    cursor: default;
+
+    & .nav__item-link {
+        cursor: default;
+    }
+
+    & .arrow-down {
+        cursor: default;
+    }
+
+    &:hover .nav__item-link {
+        color: #fff;
+    }
+}
+
+.nav__item.has-child:hover::before {
     @include breakpoint(lg) {
         content: '';
         position: absolute;
@@ -319,6 +339,12 @@
     @include breakpoint(hd) {
         font-size: 14px;
     }
+
+    .has-child & {
+        @include breakpoint(lg) {
+            padding-right: 5px;
+        }
+    }
 }
 
 .nav__item:hover .nav__item-link {
@@ -332,18 +358,25 @@
 }
 
 .nav__item .arrow-down {
+    background: url(/assets/images/chevron-down.svg) no-repeat;
+    width: 16px;
+    height: 16px;
+    transition: $transition;
+
     @include breakpointMax(lg) {
-        background: url(/assets/images/chevron-down.svg) no-repeat;
         position: absolute;
         top: 5px;
         right: 0;
-        width: 16px;
-        height: 16px;
-        transition: $transition;
     }
 
     @include breakpoint(lg) {
-        display: none;
+        cursor: pointer;
+    }
+
+    .page-main header:not(.header-fixed) & {
+        @include breakpoint(lg) {
+            filter: brightness(100);
+        }
     }
 }
 
